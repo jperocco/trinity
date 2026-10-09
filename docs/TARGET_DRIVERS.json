@@ -1,0 +1,1130 @@
+{
+  "source": "Supplied Fantasy Points 2021\u20132025 only; no external joins",
+  "method": "Spearman same-season associations; standardized ridge alpha=10 fixed for every future-year model. Train outcomes 2022\u20132024; test outcome 2025, already inspected in previous experiments. Same complete-case sample per position for all models.",
+  "features": [
+    "routes_per_game",
+    "route_share",
+    "target_share",
+    "tprr",
+    "air_yard_share",
+    "yard_share",
+    "yprr",
+    "redzone_targets_per_game",
+    "endzone_targets_per_game",
+    "targets_per_game",
+    "prior_ppr"
+  ],
+  "blocks": {
+    "prior_ppr": [
+      "prior_ppr"
+    ],
+    "routes_per_game": [
+      "routes_per_game"
+    ],
+    "route_share": [
+      "route_share"
+    ],
+    "target_share": [
+      "target_share"
+    ],
+    "tprr": [
+      "tprr"
+    ],
+    "yard_share": [
+      "yard_share"
+    ],
+    "yprr": [
+      "yprr"
+    ],
+    "targets_per_game": [
+      "targets_per_game"
+    ],
+    "volume_relevance": [
+      "targets_per_game",
+      "target_share"
+    ],
+    "volume_relevance_routes": [
+      "targets_per_game",
+      "target_share",
+      "routes_per_game",
+      "route_share"
+    ],
+    "volume_relevance_quality": [
+      "targets_per_game",
+      "target_share",
+      "air_yard_share",
+      "redzone_targets_per_game",
+      "endzone_targets_per_game"
+    ],
+    "all_opportunity": [
+      "targets_per_game",
+      "target_share",
+      "routes_per_game",
+      "route_share",
+      "tprr",
+      "air_yard_share",
+      "redzone_targets_per_game",
+      "endzone_targets_per_game"
+    ],
+    "prior_ppr_plus_usage": [
+      "prior_ppr",
+      "targets_per_game",
+      "target_share",
+      "routes_per_game",
+      "route_share",
+      "tprr",
+      "air_yard_share",
+      "redzone_targets_per_game",
+      "endzone_targets_per_game"
+    ],
+    "prior_ppr_plus_usage_efficiency": [
+      "prior_ppr",
+      "targets_per_game",
+      "target_share",
+      "routes_per_game",
+      "route_share",
+      "tprr",
+      "air_yard_share",
+      "redzone_targets_per_game",
+      "endzone_targets_per_game",
+      "yard_share",
+      "yprr"
+    ]
+  },
+  "audit": {
+    "2021": {
+      "rows": 388,
+      "duplicate_rows": 0,
+      "invalid_share_rows": 1,
+      "missing_rows": 42,
+      "short_sample_rows": 82,
+      "unresolved_identity_rows": 0,
+      "unresolved_otherwise_eligible": 0,
+      "eligible_rows": 298
+    },
+    "2022": {
+      "rows": 378,
+      "duplicate_rows": 2,
+      "invalid_share_rows": 2,
+      "missing_rows": 44,
+      "short_sample_rows": 74,
+      "unresolved_identity_rows": 0,
+      "unresolved_otherwise_eligible": 0,
+      "eligible_rows": 287
+    },
+    "2023": {
+      "rows": 368,
+      "duplicate_rows": 0,
+      "invalid_share_rows": 0,
+      "missing_rows": 49,
+      "short_sample_rows": 64,
+      "unresolved_identity_rows": 0,
+      "unresolved_otherwise_eligible": 0,
+      "eligible_rows": 296
+    },
+    "2024": {
+      "rows": 381,
+      "duplicate_rows": 0,
+      "invalid_share_rows": 0,
+      "missing_rows": 49,
+      "short_sample_rows": 70,
+      "unresolved_identity_rows": 0,
+      "unresolved_otherwise_eligible": 0,
+      "eligible_rows": 294
+    },
+    "2025": {
+      "rows": 376,
+      "duplicate_rows": 0,
+      "invalid_share_rows": 0,
+      "missing_rows": 33,
+      "short_sample_rows": 61,
+      "unresolved_identity_rows": 0,
+      "unresolved_otherwise_eligible": 0,
+      "eligible_rows": 306
+    }
+  },
+  "positions": {
+    "WR": {
+      "annual_n": 943,
+      "train_pairs": 390,
+      "test_pairs": 132,
+      "same_season_rank_correlations": {
+        "targets_per_game": {
+          "routes_per_game": 0.945828635967817,
+          "route_share": 0.9437381537445397,
+          "target_share": 0.9912045517225744,
+          "tprr": 0.6224588554617115,
+          "air_yard_share": 0.8946052557785746,
+          "yard_share": 0.9630427904526415,
+          "yprr": 0.6170815278458315,
+          "redzone_targets_per_game": 0.8785882277353405,
+          "endzone_targets_per_game": 0.7833866928967377,
+          "targets_per_game": 1.0,
+          "prior_ppr": 0.9708554510332444
+        },
+        "prior_ppr": {
+          "routes_per_game": 0.9143481768390402,
+          "route_share": 0.9183712477201431,
+          "target_share": 0.9659953863059575,
+          "tprr": 0.6144388940327183,
+          "air_yard_share": 0.8725131094500119,
+          "yard_share": 0.9754090850706973,
+          "yprr": 0.7117244966840144,
+          "redzone_targets_per_game": 0.8692963045543918,
+          "endzone_targets_per_game": 0.7760248153949084,
+          "targets_per_game": 0.9708554510332444,
+          "prior_ppr": 1.0
+        }
+      },
+      "next_season_forecasts": {
+        "future_targets": {
+          "prior_ppr": {
+            "holdout": {
+              "n": 132,
+              "mae": 1.10489235817003,
+              "rmse": 1.4394819731156105,
+              "pearson": 0.8357134520923734,
+              "spearman": 0.8307434630161633
+            },
+            "versus_prior_ppr": {
+              "delta_mae": 0.0,
+              "ci95": [
+                0.0,
+                0.0
+              ]
+            }
+          },
+          "routes_per_game": {
+            "holdout": {
+              "n": 132,
+              "mae": 1.3330943651190075,
+              "rmse": 1.7358541954696571,
+              "pearson": 0.743974417707413,
+              "spearman": 0.7648977941923186
+            },
+            "versus_prior_ppr": {
+              "delta_mae": 0.22820200694897744,
+              "ci95": [
+                0.05525593890786935,
+                0.40856481818385265
+              ]
+            }
+          },
+          "route_share": {
+            "holdout": {
+              "n": 132,
+              "mae": 1.2916970763276736,
+              "rmse": 1.7046560096700167,
+              "pearson": 0.7574630885930084,
+              "spearman": 0.7951661064242068
+            },
+            "versus_prior_ppr": {
+              "delta_mae": 0.1868047181576438,
+              "ci95": [
+                0.014186735597452354,
+                0.36658910120982613
+              ]
+            }
+          },
+          "target_share": {
+            "holdout": {
+              "n": 132,
+              "mae": 1.056269347220872,
+              "rmse": 1.3678872098073271,
+              "pearson": 0.8545137055024089,
+              "spearman": 0.8567757256099169
+            },
+            "versus_prior_ppr": {
+              "delta_mae": -0.04862301094915804,
+              "ci95": [
+                -0.14917461276916955,
+                0.05767084132283958
+              ]
+            }
+          },
+          "tprr": {
+            "holdout": {
+              "n": 132,
+              "mae": 1.7138081611853395,
+              "rmse": 2.1987977757173,
+              "pearson": 0.558530173625219,
+              "spearman": 0.55851628645877
+            },
+            "versus_prior_ppr": {
+              "delta_mae": 0.6089158030153093,
+              "ci95": [
+                0.3631134549588685,
+                0.855314950073371
+              ]
+            }
+          },
+          "yard_share": {
+            "holdout": {
+              "n": 132,
+              "mae": 1.0953425958304635,
+              "rmse": 1.4350350613108875,
+              "pearson": 0.8374212809194219,
+              "spearman": 0.8425925448382963
+            },
+            "versus_prior_ppr": {
+              "delta_mae": -0.009549762339566281,
+              "ci95": [
+                -0.10790413528507245,
+                0.09116453844084271
+              ]
+            }
+          },
+          "yprr": {
+            "holdout": {
+              "n": 132,
+              "mae": 1.6446330685749195,
+              "rmse": 2.1963277521695477,
+              "pearson": 0.5704727125199202,
+              "spearman": 0.556303450700091
+            },
+            "versus_prior_ppr": {
+              "delta_mae": 0.5397407104048896,
+              "ci95": [
+                0.30521594039779787,
+                0.7923633613971754
+              ]
+            }
+          },
+          "targets_per_game": {
+            "holdout": {
+              "n": 132,
+              "mae": 1.0279592364205596,
+              "rmse": 1.3524320133976377,
+              "pearson": 0.8544847211786016,
+              "spearman": 0.8537604783886669
+            },
+            "versus_prior_ppr": {
+              "delta_mae": -0.07693312174947063,
+              "ci95": [
+                -0.17455354361057174,
+                0.01861846617771195
+              ]
+            }
+          },
+          "volume_relevance": {
+            "holdout": {
+              "n": 132,
+              "mae": 1.0035076059278238,
+              "rmse": 1.3389272546827717,
+              "pearson": 0.8582370938388584,
+              "spearman": 0.8567459263328434
+            },
+            "versus_prior_ppr": {
+              "delta_mae": -0.10138475224220625,
+              "ci95": [
+                -0.19475743817570432,
+                -0.004838555046384213
+              ]
+            }
+          },
+          "volume_relevance_routes": {
+            "holdout": {
+              "n": 132,
+              "mae": 1.006657813867748,
+              "rmse": 1.3389732831933805,
+              "pearson": 0.8582964025059285,
+              "spearman": 0.856067602939409
+            },
+            "versus_prior_ppr": {
+              "delta_mae": -0.09823454430228215,
+              "ci95": [
+                -0.1926015522893895,
+                -0.0020041472970699437
+              ]
+            }
+          },
+          "volume_relevance_quality": {
+            "holdout": {
+              "n": 132,
+              "mae": 1.0004285174620937,
+              "rmse": 1.3190227934312577,
+              "pearson": 0.8627822164552887,
+              "spearman": 0.8577581935507379
+            },
+            "versus_prior_ppr": {
+              "delta_mae": -0.10446384070793635,
+              "ci95": [
+                -0.19456121549452518,
+                -0.011842168069902407
+              ]
+            }
+          },
+          "all_opportunity": {
+            "holdout": {
+              "n": 132,
+              "mae": 1.0088220948822944,
+              "rmse": 1.3192096386776568,
+              "pearson": 0.8628332249023632,
+              "spearman": 0.8558901952826646
+            },
+            "versus_prior_ppr": {
+              "delta_mae": -0.09607026328773563,
+              "ci95": [
+                -0.18683180482607536,
+                -0.0033444062827103042
+              ]
+            }
+          },
+          "prior_ppr_plus_usage": {
+            "holdout": {
+              "n": 132,
+              "mae": 1.0402887840947412,
+              "rmse": 1.361018443030556,
+              "pearson": 0.8542058623672234,
+              "spearman": 0.8478807613678813
+            },
+            "versus_prior_ppr": {
+              "delta_mae": -0.06460357407528865,
+              "ci95": [
+                -0.11128826912952801,
+                -0.017027523165708332
+              ]
+            }
+          },
+          "prior_ppr_plus_usage_efficiency": {
+            "holdout": {
+              "n": 132,
+              "mae": 1.0590410378660042,
+              "rmse": 1.372147036665389,
+              "pearson": 0.8520412556017385,
+              "spearman": 0.8458066571456491
+            },
+            "versus_prior_ppr": {
+              "delta_mae": -0.04585132030402579,
+              "ci95": [
+                -0.09450666972818503,
+                0.0045878631918342145
+              ]
+            }
+          }
+        },
+        "future_ppr": {
+          "prior_ppr": {
+            "holdout": {
+              "n": 132,
+              "mae": 2.357372299470425,
+              "rmse": 3.112187352361656,
+              "pearson": 0.798726215684366,
+              "spearman": 0.8005547440762496
+            },
+            "versus_prior_ppr": {
+              "delta_mae": 0.0,
+              "ci95": [
+                0.0,
+                0.0
+              ]
+            }
+          },
+          "routes_per_game": {
+            "holdout": {
+              "n": 132,
+              "mae": 2.8645027797668647,
+              "rmse": 3.7811136754168695,
+              "pearson": 0.6731242460017361,
+              "spearman": 0.7051724597369214
+            },
+            "versus_prior_ppr": {
+              "delta_mae": 0.5071304802964398,
+              "ci95": [
+                0.15673679867350715,
+                0.8635949982821594
+              ]
+            }
+          },
+          "route_share": {
+            "holdout": {
+              "n": 132,
+              "mae": 2.8163997499368483,
+              "rmse": 3.7035799200444512,
+              "pearson": 0.693463968633963,
+              "spearman": 0.7385869552551527
+            },
+            "versus_prior_ppr": {
+              "delta_mae": 0.4590274504664233,
+              "ci95": [
+                0.11982734231859574,
+                0.8065315273289175
+              ]
+            }
+          },
+          "target_share": {
+            "holdout": {
+              "n": 132,
+              "mae": 2.3795356638098646,
+              "rmse": 3.0558889854368885,
+              "pearson": 0.8075189566338516,
+              "spearman": 0.8154344905655224
+            },
+            "versus_prior_ppr": {
+              "delta_mae": 0.02216336433943936,
+              "ci95": [
+                -0.1734839697044397,
+                0.22838810143759686
+              ]
+            }
+          },
+          "tprr": {
+            "holdout": {
+              "n": 132,
+              "mae": 3.5054809314843083,
+              "rmse": 4.357549622861081,
+              "pearson": 0.5528684065779219,
+              "spearman": 0.5467165004312332
+            },
+            "versus_prior_ppr": {
+              "delta_mae": 1.1481086320138836,
+              "ci95": [
+                0.6621865678163616,
+                1.642343263297966
+              ]
+            }
+          },
+          "yard_share": {
+            "holdout": {
+              "n": 132,
+              "mae": 2.4012429348255018,
+              "rmse": 3.13780026384482,
+              "pearson": 0.7952208019169394,
+              "spearman": 0.8065443653308118
+            },
+            "versus_prior_ppr": {
+              "delta_mae": 0.04387063535507653,
+              "ci95": [
+                -0.13613648987930782,
+                0.22486091358971977
+              ]
+            }
+          },
+          "yprr": {
+            "holdout": {
+              "n": 132,
+              "mae": 3.311875189828933,
+              "rmse": 4.274593508948627,
+              "pearson": 0.5841512610220049,
+              "spearman": 0.5639331783281935
+            },
+            "versus_prior_ppr": {
+              "delta_mae": 0.9545028903585081,
+              "ci95": [
+                0.49474589842518785,
+                1.4614621997237176
+              ]
+            }
+          },
+          "targets_per_game": {
+            "holdout": {
+              "n": 132,
+              "mae": 2.3131296168232622,
+              "rmse": 3.0486870714597862,
+              "pearson": 0.80337114364932,
+              "spearman": 0.808604288855371
+            },
+            "versus_prior_ppr": {
+              "delta_mae": -0.044242682647162766,
+              "ci95": [
+                -0.23273825622796365,
+                0.14880414880310158
+              ]
+            }
+          },
+          "volume_relevance": {
+            "holdout": {
+              "n": 132,
+              "mae": 2.2896695723520595,
+              "rmse": 3.0232011310937175,
+              "pearson": 0.8085944693570626,
+              "spearman": 0.8122040386881086
+            },
+            "versus_prior_ppr": {
+              "delta_mae": -0.0677027271183658,
+              "ci95": [
+                -0.25415337939687166,
+                0.12876200724615672
+              ]
+            }
+          },
+          "volume_relevance_routes": {
+            "holdout": {
+              "n": 132,
+              "mae": 2.2940614225591967,
+              "rmse": 3.0069760079782752,
+              "pearson": 0.8112532615506857,
+              "spearman": 0.8117083214234712
+            },
+            "versus_prior_ppr": {
+              "delta_mae": -0.06331087691122828,
+              "ci95": [
+                -0.25525683425514395,
+                0.13184045181581328
+              ]
+            }
+          },
+          "volume_relevance_quality": {
+            "holdout": {
+              "n": 132,
+              "mae": 2.2798892199947627,
+              "rmse": 2.9944420758931383,
+              "pearson": 0.8129193271554304,
+              "spearman": 0.8138973045025814
+            },
+            "versus_prior_ppr": {
+              "delta_mae": -0.07748307947566269,
+              "ci95": [
+                -0.25623447894396895,
+                0.10498270652823975
+              ]
+            }
+          },
+          "all_opportunity": {
+            "holdout": {
+              "n": 132,
+              "mae": 2.2932427169400404,
+              "rmse": 2.97621862123154,
+              "pearson": 0.815935648817057,
+              "spearman": 0.8109438732206352
+            },
+            "versus_prior_ppr": {
+              "delta_mae": -0.06412958253038474,
+              "ci95": [
+                -0.250971471231405,
+                0.1214750208247013
+              ]
+            }
+          },
+          "prior_ppr_plus_usage": {
+            "holdout": {
+              "n": 132,
+              "mae": 2.3477233934470068,
+              "rmse": 3.0386792545436943,
+              "pearson": 0.8096216285145339,
+              "spearman": 0.808199164997484
+            },
+            "versus_prior_ppr": {
+              "delta_mae": -0.009648906023418573,
+              "ci95": [
+                -0.08884724631096755,
+                0.06793979775725056
+              ]
+            }
+          },
+          "prior_ppr_plus_usage_efficiency": {
+            "holdout": {
+              "n": 132,
+              "mae": 2.368508467686236,
+              "rmse": 3.048835552884143,
+              "pearson": 0.8088681513150358,
+              "spearman": 0.8057805865536996
+            },
+            "versus_prior_ppr": {
+              "delta_mae": 0.011136168215810581,
+              "ci95": [
+                -0.07739574537742573,
+                0.10343048371922121
+              ]
+            }
+          }
+        }
+      }
+    },
+    "TE": {
+      "annual_n": 538,
+      "train_pairs": 237,
+      "test_pairs": 86,
+      "same_season_rank_correlations": {
+        "targets_per_game": {
+          "routes_per_game": 0.9626825402061461,
+          "route_share": 0.959842356504342,
+          "target_share": 0.9938947462952655,
+          "tprr": 0.6308849861715866,
+          "air_yard_share": 0.8903133474291519,
+          "yard_share": 0.9684316710109395,
+          "yprr": 0.6399064673670505,
+          "redzone_targets_per_game": 0.851840046043979,
+          "endzone_targets_per_game": 0.7397038776730384,
+          "targets_per_game": 1.0,
+          "prior_ppr": 0.9671041237931279
+        },
+        "prior_ppr": {
+          "routes_per_game": 0.9334210510825673,
+          "route_share": 0.9357741934593841,
+          "target_share": 0.9651643061658979,
+          "tprr": 0.6066613145301898,
+          "air_yard_share": 0.865786824248641,
+          "yard_share": 0.9678133575482566,
+          "yprr": 0.698426908741168,
+          "redzone_targets_per_game": 0.8622069421888997,
+          "endzone_targets_per_game": 0.7658149678104511,
+          "targets_per_game": 0.9671041237931279,
+          "prior_ppr": 1.0
+        }
+      },
+      "next_season_forecasts": {
+        "future_targets": {
+          "prior_ppr": {
+            "holdout": {
+              "n": 86,
+              "mae": 0.9629839704708458,
+              "rmse": 1.3013318323774177,
+              "pearson": 0.7801255390404584,
+              "spearman": 0.7771596163248675
+            },
+            "versus_prior_ppr": {
+              "delta_mae": 0.0,
+              "ci95": [
+                0.0,
+                0.0
+              ]
+            }
+          },
+          "routes_per_game": {
+            "holdout": {
+              "n": 86,
+              "mae": 0.8450284613195039,
+              "rmse": 1.1441820079844593,
+              "pearson": 0.8306619714453848,
+              "spearman": 0.8271703965776154
+            },
+            "versus_prior_ppr": {
+              "delta_mae": -0.11795550915134183,
+              "ci95": [
+                -0.280918029922684,
+                0.025896710175941594
+              ]
+            }
+          },
+          "route_share": {
+            "holdout": {
+              "n": 86,
+              "mae": 0.8301464290282417,
+              "rmse": 1.1190969698418112,
+              "pearson": 0.8400333409294318,
+              "spearman": 0.8371114387320286
+            },
+            "versus_prior_ppr": {
+              "delta_mae": -0.13283754144260404,
+              "ci95": [
+                -0.28476629994234004,
+                0.010357531568629228
+              ]
+            }
+          },
+          "target_share": {
+            "holdout": {
+              "n": 86,
+              "mae": 0.8689580715751006,
+              "rmse": 1.1288360266201574,
+              "pearson": 0.8392317056931221,
+              "spearman": 0.8260705459365282
+            },
+            "versus_prior_ppr": {
+              "delta_mae": -0.0940258988957453,
+              "ci95": [
+                -0.19836877216343407,
+                0.007736304770389376
+              ]
+            }
+          },
+          "tprr": {
+            "holdout": {
+              "n": 86,
+              "mae": 1.5232251340859617,
+              "rmse": 1.8731220087403495,
+              "pearson": 0.4319428158876525,
+              "spearman": 0.4578985115775002
+            },
+            "versus_prior_ppr": {
+              "delta_mae": 0.5602411636151159,
+              "ci95": [
+                0.3294096833299677,
+                0.7960753610746909
+              ]
+            }
+          },
+          "yard_share": {
+            "holdout": {
+              "n": 86,
+              "mae": 0.9009155674118348,
+              "rmse": 1.1333144954120478,
+              "pearson": 0.8366030177280702,
+              "spearman": 0.79899780039586
+            },
+            "versus_prior_ppr": {
+              "delta_mae": -0.06206840305901096,
+              "ci95": [
+                -0.1719913754362845,
+                0.028993048712412334
+              ]
+            }
+          },
+          "yprr": {
+            "holdout": {
+              "n": 86,
+              "mae": 1.4029257764389795,
+              "rmse": 1.7892287356458194,
+              "pearson": 0.4892298798252549,
+              "spearman": 0.5615673860236486
+            },
+            "versus_prior_ppr": {
+              "delta_mae": 0.43994180596813387,
+              "ci95": [
+                0.21438458741157448,
+                0.6709189558644997
+              ]
+            }
+          },
+          "targets_per_game": {
+            "holdout": {
+              "n": 86,
+              "mae": 0.8838925957233544,
+              "rmse": 1.143832319651745,
+              "pearson": 0.8324617025892544,
+              "spearman": 0.8302847302585862
+            },
+            "versus_prior_ppr": {
+              "delta_mae": -0.07909137474749134,
+              "ci95": [
+                -0.19297209401278326,
+                0.02496438547169471
+              ]
+            }
+          },
+          "volume_relevance": {
+            "holdout": {
+              "n": 86,
+              "mae": 0.8694788743499423,
+              "rmse": 1.1329314015930672,
+              "pearson": 0.8374314000313409,
+              "spearman": 0.8311797395238628
+            },
+            "versus_prior_ppr": {
+              "delta_mae": -0.09350509612090342,
+              "ci95": [
+                -0.20277482786050724,
+                0.009864778735697636
+              ]
+            }
+          },
+          "volume_relevance_routes": {
+            "holdout": {
+              "n": 86,
+              "mae": 0.8363215316827585,
+              "rmse": 1.0952308111845945,
+              "pearson": 0.8477574553499811,
+              "spearman": 0.8400637850377423
+            },
+            "versus_prior_ppr": {
+              "delta_mae": -0.12666243878808753,
+              "ci95": [
+                -0.23705051493098797,
+                -0.025219316343347172
+              ]
+            }
+          },
+          "volume_relevance_quality": {
+            "holdout": {
+              "n": 86,
+              "mae": 0.865890111530157,
+              "rmse": 1.1382002930995303,
+              "pearson": 0.8353779285186503,
+              "spearman": 0.8312229947128099
+            },
+            "versus_prior_ppr": {
+              "delta_mae": -0.09709385894068863,
+              "ci95": [
+                -0.2007775574653992,
+                -0.0004692598733091652
+              ]
+            }
+          },
+          "all_opportunity": {
+            "holdout": {
+              "n": 86,
+              "mae": 0.8421781234900246,
+              "rmse": 1.1036160161949036,
+              "pearson": 0.8450592152688661,
+              "spearman": 0.836478405823789
+            },
+            "versus_prior_ppr": {
+              "delta_mae": -0.12080584698082127,
+              "ci95": [
+                -0.22437242084295544,
+                -0.027465324951700405
+              ]
+            }
+          },
+          "prior_ppr_plus_usage": {
+            "holdout": {
+              "n": 86,
+              "mae": 0.8664387784031806,
+              "rmse": 1.1512200278782394,
+              "pearson": 0.8313852599302289,
+              "spearman": 0.8255713048466045
+            },
+            "versus_prior_ppr": {
+              "delta_mae": -0.09654519206766486,
+              "ci95": [
+                -0.16579946959684141,
+                -0.03224223247768688
+              ]
+            }
+          },
+          "prior_ppr_plus_usage_efficiency": {
+            "holdout": {
+              "n": 86,
+              "mae": 0.8613761570741808,
+              "rmse": 1.137603797533198,
+              "pearson": 0.8360064256906273,
+              "spearman": 0.8276942267496029
+            },
+            "versus_prior_ppr": {
+              "delta_mae": -0.1016078133966651,
+              "ci95": [
+                -0.17385008381546274,
+                -0.039286960099457265
+              ]
+            }
+          }
+        },
+        "future_ppr": {
+          "prior_ppr": {
+            "holdout": {
+              "n": 86,
+              "mae": 1.997886125188083,
+              "rmse": 2.643765691735391,
+              "pearson": 0.777915295617299,
+              "spearman": 0.769494726109061
+            },
+            "versus_prior_ppr": {
+              "delta_mae": 0.0,
+              "ci95": [
+                0.0,
+                0.0
+              ]
+            }
+          },
+          "routes_per_game": {
+            "holdout": {
+              "n": 86,
+              "mae": 1.9395888916595803,
+              "rmse": 2.650535659834001,
+              "pearson": 0.7861131659137516,
+              "spearman": 0.7954340944021423
+            },
+            "versus_prior_ppr": {
+              "delta_mae": -0.058297233528502065,
+              "ci95": [
+                -0.3799089331190061,
+                0.23542953963703894
+              ]
+            }
+          },
+          "route_share": {
+            "holdout": {
+              "n": 86,
+              "mae": 1.8665523372183122,
+              "rmse": 2.533627514137236,
+              "pearson": 0.8073493958475012,
+              "spearman": 0.8110920608737188
+            },
+            "versus_prior_ppr": {
+              "delta_mae": -0.13133378796977072,
+              "ci95": [
+                -0.44402443268476655,
+                0.1690710173356294
+              ]
+            }
+          },
+          "target_share": {
+            "holdout": {
+              "n": 86,
+              "mae": 1.8828578238145657,
+              "rmse": 2.4724730501376566,
+              "pearson": 0.8118968898142419,
+              "spearman": 0.8049825790215186
+            },
+            "versus_prior_ppr": {
+              "delta_mae": -0.11502830137351708,
+              "ci95": [
+                -0.32563664000499004,
+                0.08816887440121904
+              ]
+            }
+          },
+          "tprr": {
+            "holdout": {
+              "n": 86,
+              "mae": 3.1041448094128175,
+              "rmse": 3.8107283721667913,
+              "pearson": 0.42705845407861653,
+              "spearman": 0.46166625199611505
+            },
+            "versus_prior_ppr": {
+              "delta_mae": 1.1062586842247346,
+              "ci95": [
+                0.6682610345782035,
+                1.5662553966492188
+              ]
+            }
+          },
+          "yard_share": {
+            "holdout": {
+              "n": 86,
+              "mae": 1.8330980302154996,
+              "rmse": 2.3690605483669978,
+              "pearson": 0.8287870608282388,
+              "spearman": 0.7825933126043096
+            },
+            "versus_prior_ppr": {
+              "delta_mae": -0.16478809497258323,
+              "ci95": [
+                -0.3737282330842331,
+                0.019479521550030906
+              ]
+            }
+          },
+          "yprr": {
+            "holdout": {
+              "n": 86,
+              "mae": 2.8613445312519756,
+              "rmse": 3.5937168362750325,
+              "pearson": 0.5221918797667937,
+              "spearman": 0.5639292088396067
+            },
+            "versus_prior_ppr": {
+              "delta_mae": 0.8634584060638926,
+              "ci95": [
+                0.4583601434166728,
+                1.288378903256297
+              ]
+            }
+          },
+          "targets_per_game": {
+            "holdout": {
+              "n": 86,
+              "mae": 1.9370749822143443,
+              "rmse": 2.552763222742288,
+              "pearson": 0.7972816167797891,
+              "spearman": 0.8020679203574791
+            },
+            "versus_prior_ppr": {
+              "delta_mae": -0.06081114297373788,
+              "ci95": [
+                -0.28172533917049575,
+                0.15103368821574353
+              ]
+            }
+          },
+          "volume_relevance": {
+            "holdout": {
+              "n": 86,
+              "mae": 1.888429127140711,
+              "rmse": 2.4889887618162274,
+              "pearson": 0.8076076659877696,
+              "spearman": 0.8078774657791676
+            },
+            "versus_prior_ppr": {
+              "delta_mae": -0.10945699804737112,
+              "ci95": [
+                -0.32062414407101114,
+                0.08799821979737876
+              ]
+            }
+          },
+          "volume_relevance_routes": {
+            "holdout": {
+              "n": 86,
+              "mae": 1.8554138875618127,
+              "rmse": 2.4411737167451637,
+              "pearson": 0.8165307337080886,
+              "spearman": 0.8181273795901248
+            },
+            "versus_prior_ppr": {
+              "delta_mae": -0.14247223762627015,
+              "ci95": [
+                -0.3614738741048222,
+                0.05868521887991751
+              ]
+            }
+          },
+          "volume_relevance_quality": {
+            "holdout": {
+              "n": 86,
+              "mae": 1.8869233399062573,
+              "rmse": 2.490475193916651,
+              "pearson": 0.8071529326561355,
+              "spearman": 0.8018006940820972
+            },
+            "versus_prior_ppr": {
+              "delta_mae": -0.11096278528182581,
+              "ci95": [
+                -0.31416816838804834,
+                0.08119043264837152
+              ]
+            }
+          },
+          "all_opportunity": {
+            "holdout": {
+              "n": 86,
+              "mae": 1.8584017559741242,
+              "rmse": 2.444600156233763,
+              "pearson": 0.8157606098855943,
+              "spearman": 0.8074253788004698
+            },
+            "versus_prior_ppr": {
+              "delta_mae": -0.13948436921395835,
+              "ci95": [
+                -0.34719755908639743,
+                0.05255103100661147
+              ]
+            }
+          },
+          "prior_ppr_plus_usage": {
+            "holdout": {
+              "n": 86,
+              "mae": 1.9310472314181337,
+              "rmse": 2.525566331324305,
+              "pearson": 0.7997605388196191,
+              "spearman": 0.7850493260030516
+            },
+            "versus_prior_ppr": {
+              "delta_mae": -0.06683889376994884,
+              "ci95": [
+                -0.13730383686318476,
+                0.004750216756210229
+              ]
+            }
+          },
+          "prior_ppr_plus_usage_efficiency": {
+            "holdout": {
+              "n": 86,
+              "mae": 1.909613148227789,
+              "rmse": 2.4837276867875615,
+              "pearson": 0.8071339118330205,
+              "spearman": 0.7856155694310756
+            },
+            "versus_prior_ppr": {
+              "delta_mae": -0.08827297696029368,
+              "ci95": [
+                -0.16807314824104,
+                -0.012874121783551839
+              ]
+            }
+          }
+        }
+      }
+    }
+  },
+  "limitations": [
+    "Targets per game = routes per game \u00d7 targets per route by definition; same-season association is not a test of sustainability.",
+    "Yard share and YPRR contain realized receiving yards, a direct component of contemporaneous fantasy scoring; use lagged values for future forecasts.",
+    "Annual future-year forecasts cannot establish optimal weekly weights. Current-year rows do not include targets yet to occur.",
+    "FP i20 targets identify red-zone location; end-zone targets describe destination. Both can overlap. Air-yard share is depth allocation, not catch probability or quarterback accuracy.",
+    "Players require eligible rows in both years; source name-position identity, survivorship, correlated features and one previously inspected test season limit inference.",
+    "Paired bootstrap intervals are conditional on 2025 players; exploratory model comparisons are not independent confirmations."
+  ]
+}

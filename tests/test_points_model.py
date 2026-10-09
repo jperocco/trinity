@@ -26,3 +26,16 @@ class PointsModelTests(unittest.TestCase):
         self.assertEqual(project({'target_share':.2},model),(20,9))
         self.assertGreater(project({'target_share':.3},model)[1],9)
         self.assertLess(project({'target_share':.3},model)[1],10)
+
+    def test_shared_position_scale_preserves_point_order(self):
+        import json
+        config=json.loads((Path(__file__).resolve().parents[1]/'models/trinity_points_v02.json').read_text())
+        wr,te=config['positions']['WR'],config['positions']['TE']
+        self.assertEqual(wr['score_anchor_ppr'],te['score_anchor_ppr'])
+        def inputs(model,points):
+            return {'targets_per_game':(points-model['intercept'])/model['coefficients']['targets_per_game'],'target_share':0.}
+        wr_points,wr_score=project(inputs(wr,10),wr)
+        te_points,te_score=project(inputs(te,10),te)
+        self.assertAlmostEqual(wr_points,te_points)
+        self.assertAlmostEqual(wr_score,te_score)
+        self.assertGreater(project(inputs(wr,12),wr)[1],te_score)

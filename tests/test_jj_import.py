@@ -1,5 +1,5 @@
 import unittest
-from scripts.import_jj import convert
+from scripts.import_jj import convert, retain_zero_target
 from tests.test_data import game
 
 class JJImportTests(unittest.TestCase):
@@ -26,4 +26,18 @@ class JJImportTests(unittest.TestCase):
         row, reasons = convert(self.row(team_air_yards=None))
         self.assertIsNone(row)
         self.assertIn('missing_team_receiving_air_yards', reasons)
+
+    def test_explicit_zero_target_game_retained_without_ppr_imputation(self):
+        row = self.row(targets=0, player_id=None, receiving_air_yards=None,
+                       team_air_yards=None, fantasy_points_ppr=None)
+        normalized = retain_zero_target(row, 200)
+        self.assertEqual(normalized['receiving_air_yards'], 0)
+        self.assertEqual(normalized['team_air_yards'], 200)
+        self.assertTrue(normalized['player_id'].startswith('jj-local:'))
+        self.assertIsNone(normalized['fantasy_points_ppr'])
+        self.assertIn('missing_fantasy_points_ppr', convert(normalized)[1])
+
+    def test_positive_targets_do_not_get_zero_air_yards(self):
+        row = self.row(targets=1, receiving_air_yards=None)
+        self.assertIsNone(retain_zero_target(row, 200)['receiving_air_yards'])
 

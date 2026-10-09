@@ -1,0 +1,766 @@
+{
+  "kind": "exploratory annual complete-case backtest",
+  "source": "Fantasy Points supplied exports",
+  "qualification": "At least 6 source-defined G in both years; finite features and FP/G; unique exact name+position",
+  "identity": "Provisional exact same-provider Name+POS; not certified stable player IDs",
+  "split": {
+    "train_outcomes": [
+      2022,
+      2023
+    ],
+    "validation_outcome": 2024,
+    "holdout_outcome": 2025
+  },
+  "audit": {
+    "2021": {
+      "rows": 388,
+      "duplicate_rows": 0,
+      "invalid_share_rows": 1,
+      "missing_rows": 42,
+      "short_sample_rows": 82,
+      "eligible_rows": 298
+    },
+    "2022": {
+      "rows": 378,
+      "duplicate_rows": 2,
+      "invalid_share_rows": 2,
+      "missing_rows": 44,
+      "short_sample_rows": 74,
+      "eligible_rows": 287
+    },
+    "2023": {
+      "rows": 368,
+      "duplicate_rows": 0,
+      "invalid_share_rows": 0,
+      "missing_rows": 49,
+      "short_sample_rows": 64,
+      "eligible_rows": 296
+    },
+    "2024": {
+      "rows": 381,
+      "duplicate_rows": 0,
+      "invalid_share_rows": 0,
+      "missing_rows": 49,
+      "short_sample_rows": 70,
+      "eligible_rows": 294
+    },
+    "2025": {
+      "rows": 376,
+      "duplicate_rows": 0,
+      "invalid_share_rows": 0,
+      "missing_rows": 33,
+      "short_sample_rows": 61,
+      "eligible_rows": 306
+    }
+  },
+  "matched_pairs_by_outcome_year": {
+    "2022": 204,
+    "2023": 207,
+    "2024": 216,
+    "2025": 218
+  },
+  "unmatched_eligible_prior_by_year": {
+    "2021": 94,
+    "2022": 80,
+    "2023": 80,
+    "2024": 76
+  },
+  "results": {
+    "ALL": {
+      "train_n": 411,
+      "validation_n": 216,
+      "test_n": 218,
+      "persistence": {
+        "n": 218,
+        "mae": 2.4293577981651375,
+        "rmse": 3.2440206110274086,
+        "pearson": 0.8051791927120641,
+        "spearman": 0.8065172918038881
+      },
+      "models": {
+        "prior_ppr": {
+          "alpha": 10,
+          "validation_mae": 2.4917214256854607,
+          "holdout": {
+            "n": 218,
+            "mae": 2.212647964925676,
+            "rmse": 2.9372188081162656,
+            "pearson": 0.8051791927120651,
+            "spearman": 0.8065172918038881
+          },
+          "versus_persistence": {
+            "delta_mae": -0.21670983323946158,
+            "ci95": [
+              -0.3403790574502614,
+              -0.09043811782354258
+            ]
+          },
+          "coefficients_per_source_unit": {
+            "FP/G": 0.8155550666144789
+          },
+          "versus_calibrated_prior_ppr": {
+            "delta_mae": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ]
+          },
+          "versus_target_only": {
+            "delta_mae": 0.04780865551810132,
+            "ci95": [
+              -0.10152452816377892,
+              0.19268218455862934
+            ]
+          }
+        },
+        "route_only": {
+          "alpha": 10,
+          "validation_mae": 2.737679629364187,
+          "holdout": {
+            "n": 218,
+            "mae": 2.4314198814050227,
+            "rmse": 3.273157883828816,
+            "pearson": 0.7470707713998038,
+            "spearman": 0.789403420269528
+          },
+          "versus_persistence": {
+            "delta_mae": 0.0020620832398851132,
+            "ci95": [
+              -0.2875707924437698,
+              0.29186794250827286
+            ]
+          },
+          "coefficients_per_source_unit": {
+            "RTE %": 0.13618795122199848
+          },
+          "versus_calibrated_prior_ppr": {
+            "delta_mae": 0.21877191647934668,
+            "ci95": [
+              -0.029594904289630956,
+              0.4572670767653632
+            ]
+          },
+          "versus_target_only": {
+            "delta_mae": 0.266580571997448,
+            "ci95": [
+              0.065174317683564,
+              0.46808990207400536
+            ]
+          }
+        },
+        "target_only": {
+          "alpha": 10,
+          "validation_mae": 2.479218359475717,
+          "holdout": {
+            "n": 218,
+            "mae": 2.1648393094075744,
+            "rmse": 2.831467592268798,
+            "pearson": 0.8202979327045569,
+            "spearman": 0.829187860118535
+          },
+          "versus_persistence": {
+            "delta_mae": -0.2645184887575629,
+            "ci95": [
+              -0.4453931003918085,
+              -0.07977717324559395
+            ]
+          },
+          "coefficients_per_source_unit": {
+            "TGT %": 0.5277191770521136
+          },
+          "versus_calibrated_prior_ppr": {
+            "delta_mae": -0.04780865551810132,
+            "ci95": [
+              -0.1926821845586294,
+              0.10152452816377892
+            ]
+          },
+          "versus_target_only": {
+            "delta_mae": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ]
+          }
+        },
+        "air_only": {
+          "alpha": 0.01,
+          "validation_mae": 2.999482683600085,
+          "holdout": {
+            "n": 218,
+            "mae": 2.60507670359008,
+            "rmse": 3.370639374271348,
+            "pearson": 0.7389527442452102,
+            "spearman": 0.7802873155582407
+          },
+          "versus_persistence": {
+            "delta_mae": 0.17571890542494228,
+            "ci95": [
+              -0.1482665115250953,
+              0.497442609408217
+            ]
+          },
+          "coefficients_per_source_unit": {
+            "AY Share": 0.24938117830374235
+          },
+          "versus_calibrated_prior_ppr": {
+            "delta_mae": 0.39242873866440386,
+            "ci95": [
+              0.1334262888301135,
+              0.6585740871484317
+            ]
+          },
+          "versus_target_only": {
+            "delta_mae": 0.44023739418250524,
+            "ci95": [
+              0.21546139257094835,
+              0.6614688295774814
+            ]
+          }
+        },
+        "trinity": {
+          "alpha": 10,
+          "validation_mae": 2.478943299276429,
+          "holdout": {
+            "n": 218,
+            "mae": 2.1703173839545227,
+            "rmse": 2.831191475495522,
+            "pearson": 0.8202377881757489,
+            "spearman": 0.8287013673988314
+          },
+          "versus_persistence": {
+            "delta_mae": -0.25904041421061486,
+            "ci95": [
+              -0.44135868265957107,
+              -0.0723882208266564
+            ]
+          },
+          "coefficients_per_source_unit": {
+            "RTE %": -0.009724613854105585,
+            "TGT %": 0.5314274837457825,
+            "AY Share": 0.01837895015710959
+          },
+          "versus_calibrated_prior_ppr": {
+            "delta_mae": -0.042330580971153296,
+            "ci95": [
+              -0.18932831849971749,
+              0.10430123301612676
+            ]
+          },
+          "versus_target_only": {
+            "delta_mae": 0.005478074546948034,
+            "ci95": [
+              -0.010915076638919908,
+              0.021158581518217413
+            ]
+          }
+        },
+        "trinity_plus_prior_ppr": {
+          "alpha": 100,
+          "validation_mae": 2.4710273856595477,
+          "holdout": {
+            "n": 218,
+            "mae": 2.1588547050410316,
+            "rmse": 2.822967858704588,
+            "pearson": 0.8199980184763187,
+            "spearman": 0.8266319249446199
+          },
+          "versus_persistence": {
+            "delta_mae": -0.270503093124106,
+            "ci95": [
+              -0.424911459269716,
+              -0.11464638113538354
+            ]
+          },
+          "coefficients_per_source_unit": {
+            "RTE %": 0.011651407198440081,
+            "TGT %": 0.1678731666321174,
+            "AY Share": 0.027055747012709127,
+            "FP/G": 0.4156218559709795
+          },
+          "versus_calibrated_prior_ppr": {
+            "delta_mae": -0.053793259884644416,
+            "ci95": [
+              -0.1331521119491664,
+              0.024664107449433013
+            ]
+          },
+          "versus_target_only": {
+            "delta_mae": -0.005984604366543082,
+            "ci95": [
+              -0.09263803452772429,
+              0.07828559995392427
+            ]
+          }
+        }
+      }
+    },
+    "WR": {
+      "train_n": 258,
+      "validation_n": 132,
+      "test_n": 132,
+      "persistence": {
+        "n": 132,
+        "mae": 2.6606060606060606,
+        "rmse": 3.504347948685254,
+        "pearson": 0.7987262156843657,
+        "spearman": 0.8005547440762496
+      },
+      "models": {
+        "prior_ppr": {
+          "alpha": 10,
+          "validation_mae": 2.8681149901708736,
+          "holdout": {
+            "n": 132,
+            "mae": 2.357372299470425,
+            "rmse": 3.112187352361656,
+            "pearson": 0.798726215684366,
+            "spearman": 0.8005547440762496
+          },
+          "versus_persistence": {
+            "delta_mae": -0.30323376113563544,
+            "ci95": [
+              -0.49148532910129156,
+              -0.1131037365182819
+            ]
+          },
+          "coefficients_per_source_unit": {
+            "FP/G": 0.8037327062530413
+          },
+          "versus_calibrated_prior_ppr": {
+            "delta_mae": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ]
+          },
+          "versus_target_only": {
+            "delta_mae": -0.022163364339439277,
+            "ci95": [
+              -0.22838810143759725,
+              0.1734839697044395
+            ]
+          }
+        },
+        "route_only": {
+          "alpha": 10,
+          "validation_mae": 3.219171514227125,
+          "holdout": {
+            "n": 132,
+            "mae": 2.8163997499368483,
+            "rmse": 3.7035799200444512,
+            "pearson": 0.6934639686339631,
+            "spearman": 0.7385869552551527
+          },
+          "versus_persistence": {
+            "delta_mae": 0.15579368933078785,
+            "ci95": [
+              -0.24950137346078624,
+              0.5788924949716345
+            ]
+          },
+          "coefficients_per_source_unit": {
+            "RTE %": 0.13985530790106396
+          },
+          "versus_calibrated_prior_ppr": {
+            "delta_mae": 0.45902745046642335,
+            "ci95": [
+              0.11982734231859556,
+              0.8065315273289173
+            ]
+          },
+          "versus_target_only": {
+            "delta_mae": 0.436864086126984,
+            "ci95": [
+              0.15330329474815416,
+              0.7406804491499901
+            ]
+          }
+        },
+        "target_only": {
+          "alpha": 10,
+          "validation_mae": 2.8573971205776365,
+          "holdout": {
+            "n": 132,
+            "mae": 2.3795356638098646,
+            "rmse": 3.0558889854368885,
+            "pearson": 0.8075189566338515,
+            "spearman": 0.8154344905655224
+          },
+          "versus_persistence": {
+            "delta_mae": -0.2810703967961962,
+            "ci95": [
+              -0.5373831439185255,
+              -0.01812662742478974
+            ]
+          },
+          "coefficients_per_source_unit": {
+            "TGT %": 0.5351330482244215
+          },
+          "versus_calibrated_prior_ppr": {
+            "delta_mae": 0.022163364339439277,
+            "ci95": [
+              -0.1734839697044399,
+              0.22838810143759714
+            ]
+          },
+          "versus_target_only": {
+            "delta_mae": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ]
+          }
+        },
+        "air_only": {
+          "alpha": 0.01,
+          "validation_mae": 3.203617291739841,
+          "holdout": {
+            "n": 132,
+            "mae": 2.7329687814783203,
+            "rmse": 3.532902042250724,
+            "pearson": 0.7291488295365829,
+            "spearman": 0.7788034547488714
+          },
+          "versus_persistence": {
+            "delta_mae": 0.07236272087225959,
+            "ci95": [
+              -0.357892096572689,
+              0.5126948272129964
+            ]
+          },
+          "coefficients_per_source_unit": {
+            "AY Share": 0.2617046353144631
+          },
+          "versus_calibrated_prior_ppr": {
+            "delta_mae": 0.375596482007895,
+            "ci95": [
+              0.032525343060003875,
+              0.7256243458112569
+            ]
+          },
+          "versus_target_only": {
+            "delta_mae": 0.35343311766845575,
+            "ci95": [
+              0.06415434990411499,
+              0.6436027409426582
+            ]
+          }
+        },
+        "trinity": {
+          "alpha": 10,
+          "validation_mae": 2.859728145236434,
+          "holdout": {
+            "n": 132,
+            "mae": 2.3734714955684937,
+            "rmse": 3.0416226390073584,
+            "pearson": 0.8092387071994874,
+            "spearman": 0.814549564061315
+          },
+          "versus_persistence": {
+            "delta_mae": -0.28713456503756674,
+            "ci95": [
+              -0.5512438955531519,
+              -0.021463372935317842
+            ]
+          },
+          "coefficients_per_source_unit": {
+            "RTE %": -0.016698115241409416,
+            "TGT %": 0.5455150036574983,
+            "AY Share": 0.026668397503766067
+          },
+          "versus_calibrated_prior_ppr": {
+            "delta_mae": 0.016099196098068615,
+            "ci95": [
+              -0.18735890327734828,
+              0.22647573354949113
+            ]
+          },
+          "versus_target_only": {
+            "delta_mae": -0.006064168241370655,
+            "ci95": [
+              -0.04059296535150006,
+              0.027390603111129702
+            ]
+          }
+        },
+        "trinity_plus_prior_ppr": {
+          "alpha": 10,
+          "validation_mae": 2.8555710226711635,
+          "holdout": {
+            "n": 132,
+            "mae": 2.33589726545271,
+            "rmse": 3.03740841573057,
+            "pearson": 0.810467886899146,
+            "spearman": 0.8107690676588947
+          },
+          "versus_persistence": {
+            "delta_mae": -0.3247087951533502,
+            "ci95": [
+              -0.5121359873550682,
+              -0.13564293501423946
+            ]
+          },
+          "coefficients_per_source_unit": {
+            "RTE %": -0.018905673037856917,
+            "TGT %": 0.18878132155867525,
+            "AY Share": 0.018123064265395502,
+            "FP/G": 0.5916546175811953
+          },
+          "versus_calibrated_prior_ppr": {
+            "delta_mae": -0.021475034017714764,
+            "ci95": [
+              -0.09257865699690399,
+              0.049629230888891776
+            ]
+          },
+          "versus_target_only": {
+            "delta_mae": -0.04363839835715404,
+            "ci95": [
+              -0.20174532697485192,
+              0.10588538244144764
+            ]
+          }
+        }
+      }
+    },
+    "TE": {
+      "train_n": 153,
+      "validation_n": 84,
+      "test_n": 86,
+      "persistence": {
+        "n": 86,
+        "mae": 2.074418604651163,
+        "rmse": 2.7977150144940746,
+        "pearson": 0.7779152956172994,
+        "spearman": 0.769494726109061
+      },
+      "models": {
+        "prior_ppr": {
+          "alpha": 10,
+          "validation_mae": 1.8909357544925405,
+          "holdout": {
+            "n": 86,
+            "mae": 1.997886125188083,
+            "rmse": 2.643765691735391,
+            "pearson": 0.777915295617299,
+            "spearman": 0.769494726109061
+          },
+          "versus_persistence": {
+            "delta_mae": -0.07653247946308019,
+            "ci95": [
+              -0.23867909066484383,
+              0.0824820505304102
+            ]
+          },
+          "coefficients_per_source_unit": {
+            "FP/G": 0.7909226010917918
+          },
+          "versus_calibrated_prior_ppr": {
+            "delta_mae": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ]
+          },
+          "versus_target_only": {
+            "delta_mae": 0.13617516648178682,
+            "ci95": [
+              -0.06996622102791103,
+              0.34471044670944023
+            ]
+          }
+        },
+        "route_only": {
+          "alpha": 0.01,
+          "validation_mae": 1.9608941538623585,
+          "holdout": {
+            "n": 86,
+            "mae": 1.850605124177781,
+            "rmse": 2.5122631302379625,
+            "pearson": 0.8073493958475011,
+            "spearman": 0.8110920608737188
+          },
+          "versus_persistence": {
+            "delta_mae": -0.22381348047338187,
+            "ci95": [
+              -0.6235678343708121,
+              0.15247192294073808
+            ]
+          },
+          "coefficients_per_source_unit": {
+            "RTE %": 0.12560731910910025
+          },
+          "versus_calibrated_prior_ppr": {
+            "delta_mae": -0.14728100101030178,
+            "ci95": [
+              -0.4586850967295549,
+              0.1520796109735173
+            ]
+          },
+          "versus_target_only": {
+            "delta_mae": -0.011105834528514878,
+            "ci95": [
+              -0.25238158376672265,
+              0.22727024056328582
+            ]
+          }
+        },
+        "target_only": {
+          "alpha": 0.01,
+          "validation_mae": 1.8862970273231119,
+          "holdout": {
+            "n": 86,
+            "mae": 1.861710958706296,
+            "rmse": 2.461582016266204,
+            "pearson": 0.8118968898142419,
+            "spearman": 0.8049825790215186
+          },
+          "versus_persistence": {
+            "delta_mae": -0.21270764594486694,
+            "ci95": [
+              -0.4926791900759895,
+              0.04357803714803154
+            ]
+          },
+          "coefficients_per_source_unit": {
+            "TGT %": 0.49953403370597826
+          },
+          "versus_calibrated_prior_ppr": {
+            "delta_mae": -0.13617516648178682,
+            "ci95": [
+              -0.34471044670944045,
+              0.06996622102791096
+            ]
+          },
+          "versus_target_only": {
+            "delta_mae": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ]
+          }
+        },
+        "air_only": {
+          "alpha": 0.01,
+          "validation_mae": 2.7015327894713317,
+          "holdout": {
+            "n": 86,
+            "mae": 2.3944345082777585,
+            "rmse": 3.03732444510975,
+            "pearson": 0.8125816201425295,
+            "spearman": 0.7654826277601373
+          },
+          "versus_persistence": {
+            "delta_mae": 0.3200159036265959,
+            "ci95": [
+              -0.1920756470233784,
+              0.8092192945742437
+            ]
+          },
+          "coefficients_per_source_unit": {
+            "AY Share": 0.2477064230321811
+          },
+          "versus_calibrated_prior_ppr": {
+            "delta_mae": 0.396548383089676,
+            "ci95": [
+              0.007257195123892849,
+              0.7699044749965493
+            ]
+          },
+          "versus_target_only": {
+            "delta_mae": 0.532723549571463,
+            "ci95": [
+              0.19507383555195726,
+              0.8622602540006565
+            ]
+          }
+        },
+        "trinity": {
+          "alpha": 0.01,
+          "validation_mae": 1.8899417730964219,
+          "holdout": {
+            "n": 86,
+            "mae": 1.8379313874772116,
+            "rmse": 2.4252690558613152,
+            "pearson": 0.8184872272787697,
+            "spearman": 0.8124271957480158
+          },
+          "versus_persistence": {
+            "delta_mae": -0.23648721717395102,
+            "ci95": [
+              -0.5253417689314201,
+              0.027118821921431512
+            ]
+          },
+          "coefficients_per_source_unit": {
+            "RTE %": 0.021917083190588816,
+            "TGT %": 0.420688019201713,
+            "AY Share": -0.0002890834643202145
+          },
+          "versus_calibrated_prior_ppr": {
+            "delta_mae": -0.1599547377108708,
+            "ci95": [
+              -0.37341502944965305,
+              0.0442225829245898
+            ]
+          },
+          "versus_target_only": {
+            "delta_mae": -0.023779571229084015,
+            "ci95": [
+              -0.06321646602651396,
+              0.016109304643370907
+            ]
+          }
+        },
+        "trinity_plus_prior_ppr": {
+          "alpha": 10,
+          "validation_mae": 1.865295553117601,
+          "holdout": {
+            "n": 86,
+            "mae": 1.9234469767592692,
+            "rmse": 2.517858350187498,
+            "pearson": 0.8011583209463747,
+            "spearman": 0.7875502344768246
+          },
+          "versus_persistence": {
+            "delta_mae": -0.15097162789189345,
+            "ci95": [
+              -0.3252764364709404,
+              0.010336660940157446
+            ]
+          },
+          "coefficients_per_source_unit": {
+            "RTE %": 0.014217192936924715,
+            "TGT %": 0.11306868332426896,
+            "AY Share": 0.0013557308328824857,
+            "FP/G": 0.5509896483338164
+          },
+          "versus_calibrated_prior_ppr": {
+            "delta_mae": -0.07443914842881326,
+            "ci95": [
+              -0.14535663449462366,
+              -0.003274603269484942
+            ]
+          },
+          "versus_target_only": {
+            "delta_mae": 0.06173601805297357,
+            "ci95": [
+              -0.08322035955314099,
+              0.20704067706737628
+            ]
+          }
+        }
+      }
+    }
+  },
+  "limitations": [
+    "Survivorship: excludes players without an eligible next-season row; does not predict career exits.",
+    "Annual exports: no within-season forecasting or schedule/zero-stat ledger validation.",
+    "G, FP/G and shares retain provider semantics; FP/G scoring not independently reconciled.",
+    "Shares rounded; exact denominators unavailable. Negative AY shares retained; >100 excluded and flagged.",
+    "Duplicate name-position rows excluded rather than combined using invented denominators.",
+    "One final holdout season; bootstrap CI is conditional on that season, not across-season uncertainty.",
+    "All-player model has no position control; separate WR and TE models reported."
+  ]
+}

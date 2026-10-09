@@ -1,0 +1,11 @@
+{
+  "version": "0.1",
+  "status": "provisional, frozen for forward monitoring",
+  "selection_origins": [1, 2],
+  "already_inspected_test_origin": 3,
+  "season": 2026,
+  "positions": {
+    "WR": {"weights": {"route_share": 0.70, "target_share": 0.05, "air_yard_share": 0.25}},
+    "TE": {"weights": {"route_share": 0.80, "target_share": 0.20, "air_yard_share": 0.0}}
+  }
+}

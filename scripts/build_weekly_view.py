@@ -14,10 +14,16 @@ def build_rows(data, models):
     numerators=['routes','targets','receiving_air_yards']
     denominators=['team_route_opportunities','team_targets','team_receiving_air_yards']
     data=data[(data[denominators]>0).all(axis=1)].copy()
+    cutoffs=sorted(int(x) for x in data.week.unique())
     rows=[]
     for identity,group in data.groupby('identity'):
         records={int(row.week):row for row in group.itertuples()}
-        for week,row in records.items():
+        for week in cutoffs:
+            accumulated=[r for observed,r in records.items() if observed<=week]
+            if not accumulated:continue
+            row=records.get(week)
+            observed=row is not None
+            if not observed:row=max(accumulated,key=lambda r:r.week)
             weights=models[row.position]['weights']
             w=[weights[k] for k in ['route_share','target_share','air_yard_share']]
             history=[]
@@ -25,23 +31,33 @@ def build_rows(data, models):
                 if prior not in records:break
                 history.append(records[prior])
             current=[getattr(row,n)/getattr(row,d) for n,d in zip(numerators,denominators)]
+            if not history:history=[row]
             shares=[sum(getattr(r,n) for r in history)/sum(getattr(r,d) for r in history) for n,d in zip(numerators,denominators)]
             previous=records.get(week-1)
             previous_score=None if previous is None else 100*sum(weight*getattr(previous,n)/getattr(previous,d) for weight,n,d in zip(w,numerators,denominators))
             weekly_score=100*sum(weight*s for weight,s in zip(w,current))
+            cumulative=[sum(getattr(r,n) for r in accumulated)/sum(getattr(r,d) for r in accumulated) for n,d in zip(numerators,denominators)]
             rows.append(dict(identity=identity,player=row.player,team=row.team,position=row.position,season=int(row.season),week=week,
+                has_observation=observed,last_observed_week=max(r.week for r in accumulated),
                 score=weekly_score,delta=None if previous_score is None else weekly_score-previous_score,
                 rs=current[0]*100,ts=current[1]*100,ays=current[2]*100,ppr=float(row.fantasy_points_ppr),
                 rolling_score=100*sum(weight*s for weight,s in zip(w,shares)),rolling_games=len(history),
                 rolling_rs=shares[0]*100,rolling_ts=shares[1]*100,rolling_ays=shares[2]*100,
-                rolling_ppr=sum(r.fantasy_points_ppr for r in history)/len(history)))
+                rolling_ppr=sum(r.fantasy_points_ppr for r in history)/len(history) if history else None,
+                cumulative_score=100*sum(weight*s for weight,s in zip(w,cumulative)),cumulative_games=len(accumulated),
+                cumulative_rs=cumulative[0]*100,cumulative_ts=cumulative[1]*100,cumulative_ays=cumulative[2]*100,
+                cumulative_ppr=sum(r.fantasy_points_ppr for r in accumulated)/len(accumulated),
+                cumulative_ppr_total=sum(r.fantasy_points_ppr for r in accumulated)))
+            if not observed:
+                for field in ['score','delta','rs','ts','ays','ppr','rolling_score','rolling_rs','rolling_ts','rolling_ays']:
+                    rows[-1][field]=None
     result=pd.DataFrame(rows)
-    for prefix,score_col,ppr_col in [('', 'score','ppr'),('rolling_','rolling_score','rolling_ppr')]:
+    for prefix,score_col,ppr_col in [('', 'score','ppr'),('rolling_','rolling_score','rolling_ppr'),('cumulative_','cumulative_score','cumulative_ppr')]:
         groups=result.groupby(['season','week','position'])
         usage_rank=groups[score_col].rank(pct=True,method='average')
         production_rank=groups[ppr_col].rank(pct=True,method='average')
         # Rolling labels require the complete three-calendar-week window.
-        complete=pd.Series(True,index=result.index) if not prefix else result.rolling_games==3
+        complete=result.has_observation if not prefix else result.rolling_games==3 if prefix=='rolling_' else pd.Series(True,index=result.index)
         result[prefix+'signal']='Equilibrado'
         result.loc[complete & (usage_rank>=.75) & (production_rank<=.25),prefix+'signal']='Usage alta / PPR baixo'
         result.loc[complete & (usage_rank<=.25) & (production_rank>=.75),prefix+'signal']='PPR alto / usage baixa'

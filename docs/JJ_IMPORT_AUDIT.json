@@ -1,0 +1,56 @@
+{
+  "source_sha256": "d5d1bd671689660573a97fd6a5598d324fd00714aea0c992e38fb5fccf205eb2",
+  "archived_wr_te_rows": 948,
+  "eligible_rows": 638,
+  "excluded_rows": 310,
+  "exclusion_reasons": {
+    "missing_player_id": 112,
+    "missing_receiving_air_yards": 112,
+    "missing_team_receiving_air_yards": 308,
+    "air_yards_not_verified": 308,
+    "routes_not_confirmed_pff": 3,
+    "missing_routes": 3,
+    "missing_team_route_opportunities": 3,
+    "missing_targets": 2,
+    "missing_fantasy_points_ppr": 49
+  },
+  "eligible_by_week": {
+    "1": 214,
+    "2": 208,
+    "3": 216
+  },
+  "canonical_audit": {
+    "rows": 638,
+    "errors": [],
+    "flags": [
+      "row 9: unusual air-yard denominator/share; retained",
+      "row 16: unusual air-yard denominator/share; retained",
+      "row 74: unusual air-yard denominator/share; retained",
+      "row 201: unusual air-yard denominator/share; retained",
+      "row 235: unusual air-yard denominator/share; retained",
+      "row 240: unusual air-yard denominator/share; retained",
+      "row 246: unusual air-yard denominator/share; retained",
+      "row 247: unusual air-yard denominator/share; retained",
+      "row 269: unusual air-yard denominator/share; retained",
+      "row 277: unusual air-yard denominator/share; retained",
+      "row 285: unusual air-yard denominator/share; retained",
+      "row 348: unusual air-yard denominator/share; retained",
+      "row 369: unusual air-yard denominator/share; retained",
+      "row 373: unusual air-yard denominator/share; retained",
+      "row 394: unusual air-yard denominator/share; retained",
+      "row 411: unusual air-yard denominator/share; retained",
+      "row 593: unusual air-yard denominator/share; retained",
+      "row 595: unusual air-yard denominator/share; retained",
+      "row 609: unusual air-yard denominator/share; retained",
+      "row 632: unusual air-yard denominator/share; retained",
+      "row 637: unusual air-yard denominator/share; retained"
+    ],
+    "passed": true
+  },
+  "limitations": [
+    "Snapshot uploaded October 5; may not contain later archive corrections.",
+    "Exclusion reasons overlap. Excluded rows are not zero-filled.",
+    "Eligible sample is incomplete and unsuitable for training a calibrated score.",
+    "Database and derived player records stay local; public report contains counts only."
+  ]
+}

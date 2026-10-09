@@ -26,10 +26,10 @@ Shares are fractions, e.g. 30% = 0.30:
 WR annual-equivalent FP/G = max(0, 0.348620892 + 0.935185093 × targets/G + 22.163256935 × target_share)
 TE annual-equivalent FP/G = max(0, 0.722112895 + 0.611940181 × targets/G + 29.238673447 × target_share)
 score = 10 × (1 − 10^(−annual_equivalent_FP/G / anchor))
-anchor WR = 16.7; anchor TE = 12.3
+anchor WR = 15.3; anchor TE = 15.3
 ```
 
-The fixed historical position-specific 95th percentile of eligible annual FP/G maps to score 9. Larger point estimates remain distinguishable below 10. The score is not a percentile, is not the DD proprietary formula, and is not comparable to an uncalibrated probability. Use the PPR/G reference for the absolute points estimate, and the position-specific score as a presentation scale. No manual ranking targets or screenshot scores enter the fit.
+In v0.2.1, the fixed pooled WR+TE 95th percentile of eligible annual FP/G (15.3) maps to score 9 for both positions. Larger point estimates remain distinguishable below 10. The score is not a percentile, is not the DD proprietary formula, and is not comparable to an uncalibrated probability. Use the PPR/G reference for the absolute points estimate, and the shared score as a presentation scale. No manual ranking targets or screenshot scores enter the fit.
 
 ## Explorer integration
 
@@ -45,6 +45,14 @@ python scripts/build_weekly_view.py
 python -m unittest discover -s tests
 ```
 
-`models/trinity_points_v02.json` contains the portable coefficients, intercepts and fixed score anchors. `docs/POINTS_V02_EVALUATION.json` includes all validation/test comparisons and conditional bootstrap intervals. 31 tests pass, including numeric equivalence between fitted and exported equations, no missing-input imputation, fixed score anchors, historical-window cutoff integrity and ratios of sums. DOM checks cover the added point columns, team WR+TE mode, weekly selection and player details.
+`models/trinity_points_v02.json` contains the portable coefficients, intercepts and fixed score anchors. `docs/POINTS_V02_EVALUATION.json` includes all validation/test comparisons and conditional bootstrap intervals. 33 tests pass, including numeric equivalence between fitted and exported equations, no missing-input imputation, fixed score anchors, historical-window cutoff integrity and ratios of sums. DOM checks cover the added point columns, team WR+TE mode, weekly selection and player details.
 
 Next-week validation must use growing JJ history and an explicitly temporal split. Annual-equivalent estimates are transfer experiments until weekly calibration is demonstrated. Repeated players, survivorship, source name matching and the small number of seasons remain limitations.
+
+## v0.2.1 comparison correction
+
+Predictive coefficients, selected features, intercepts and FP/G estimates are unchanged. Only the score anchor is now shared across positions; identical point estimates have identical scores, so a combined WR+TE score ranking preserves the point ranking.
+
+The explorer displays TS jogos (targets divided by team targets in eligible observed player games) and TS período (targets divided by all available team-game targets in the selected calendar interval). Team totals are counted once per team-game; they include games without that player’s row and never include future weeks. The current snapshot covers 128 team-games. These are distinct measures of active role and full-period participation. Missing individual records still do not become zero-scoring games. Full-period share uses the available recorded team games, not an inferred schedule.
+
+The frozen equation still uses TS jogos. TS período is a separate comparison field; it has not silently replaced a trained feature. That input-definition choice remains a modeling question for later validation. Private source records are not exported to GitHub.

@@ -1,0 +1,67 @@
+{
+  "source_sha256": "f0fe533d062baae16d582bb28c4e3d33f82923b514a8b663232fbed7b236e515",
+  "air_denominator_recovery_enabled": true,
+  "recovered_team_game_candidates": 32,
+  "archived_wr_te_rows": 963,
+  "eligible_rows": 850,
+  "excluded_rows": 113,
+  "exclusion_reasons": {
+    "missing_player_id": 112,
+    "missing_receiving_air_yards": 112,
+    "missing_team_receiving_air_yards": 112,
+    "air_yards_not_verified": 112,
+    "missing_fantasy_points_ppr": 25,
+    "routes_not_confirmed_pff": 1,
+    "missing_routes": 1,
+    "missing_team_route_opportunities": 1
+  },
+  "eligible_by_week": {
+    "1": 215,
+    "2": 208,
+    "3": 216,
+    "4": 211
+  },
+  "canonical_audit": {
+    "rows": 850,
+    "errors": [],
+    "flags": [
+      "row 9: unusual air-yard denominator/share; retained",
+      "row 16: unusual air-yard denominator/share; retained",
+      "row 63: unusual air-yard denominator/share; retained",
+      "row 209: unusual air-yard denominator/share; retained",
+      "row 214: unusual air-yard denominator/share; retained",
+      "row 220: unusual air-yard denominator/share; retained",
+      "row 221: unusual air-yard denominator/share; retained",
+      "row 243: unusual air-yard denominator/share; retained",
+      "row 251: unusual air-yard denominator/share; retained",
+      "row 259: unusual air-yard denominator/share; retained",
+      "row 322: unusual air-yard denominator/share; retained",
+      "row 343: unusual air-yard denominator/share; retained",
+      "row 347: unusual air-yard denominator/share; retained",
+      "row 368: unusual air-yard denominator/share; retained",
+      "row 385: unusual air-yard denominator/share; retained",
+      "row 560: unusual air-yard denominator/share; retained",
+      "row 562: unusual air-yard denominator/share; retained",
+      "row 576: unusual air-yard denominator/share; retained",
+      "row 599: unusual air-yard denominator/share; retained",
+      "row 604: unusual air-yard denominator/share; retained",
+      "row 633: unusual air-yard denominator/share; retained",
+      "row 643: unusual air-yard denominator/share; retained",
+      "row 679: unusual air-yard denominator/share; retained",
+      "row 690: unusual air-yard denominator/share; retained",
+      "row 740: unusual air-yard denominator/share; retained",
+      "row 769: unusual air-yard denominator/share; retained",
+      "row 787: unusual air-yard denominator/share; retained",
+      "row 791: unusual air-yard denominator/share; retained",
+      "row 792: unusual air-yard denominator/share; retained",
+      "row 819: unusual air-yard denominator/share; retained"
+    ],
+    "passed": true
+  },
+  "limitations": [
+    "Uploaded snapshot; freshness is recorded by its SHA256, not inferred from filename.",
+    "Exclusion reasons overlap. Excluded rows are not zero-filled.",
+    "Eligible sample is incomplete and unsuitable for training a calibrated score.",
+    "Database and derived player records stay local; public report contains counts only."
+  ]
+}

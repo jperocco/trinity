@@ -5,8 +5,10 @@ Projeto independente do JJ Stats. Escopo inicial: WR e TE, temporada regular. Pr
 ## Estado confirmado — 2026-10-09
 - Repositório originalmente vazio; acesso de escrita confirmado.
 - Especificação inicial e protocolo de validação definidos abaixo.
-- Nenhum dataset histórico importado; nenhum peso treinado; nenhum score validado.
-- Principal dependência: fonte verificável de rotas por jogador e denominador compatível.
+- Histórico público 2021–2025 baixado e auditado. Nenhum peso treinado; nenhum score validado.
+- Pipeline canônico de auditoria/agregação implementado, com sete testes aprovados.
+- Exportador semanal PFF preparado; detalhes em docs/ACQUISITION.md.
+- Principal dependência: acesso aos CSVs PFF históricos e à exportação JJ Stats/PFF 2026, com denominador compatível.
 - Próxima execução: auditar cobertura dos arquivos históricos de targets/air yards/PPR e selecionar fonte de rotas. Não publicar score com proxy de rotas.
 
 ## Sequência e entregáveis
@@ -48,8 +50,8 @@ Para o papel NFL, denominadores contam oportunidades do time nos jogos disputado
 ## Fontes e lacunas
 - nflverse player stats / play-by-play: candidato para targets, air yards, pontos, contexto e IDs. Cobertura real 2021–2025 ainda precisa ser auditada nos arquivos.
 - nflverse participation: útil para presença em campo e contexto. O campo route descreve a rota do recebedor principal do play, não routes run de todos os jogadores. Não resolve Route Share.
-- Rotas históricas: fornecedor ainda não selecionado. Exigir cobertura WR/TE, definição dos pass plays, jogos sem targets e permissão de uso no produto. Avaliar exportação licenciada ou dados existentes com procedência verificada; não presumir acesso pago.
-- 2026: cobertura corrente e compatibilidade precisam de validação própria.
+- Rotas históricas: PFF selecionado como fonte primária; extração real ainda depende de acesso/exportação. Exigir cobertura WR/TE, definição dos pass plays, jogos sem targets e permissão de uso no produto. Avaliar exportação licenciada ou dados existentes com procedência verificada; não presumir acesso pago.
+- 2026: usar exportação JJ Stats, fonte primária PFF; cobertura e compatibilidade ainda precisam de auditoria.
 
 Documentação consultada:
 https://nflreadr.nflverse.com/reference/load_player_stats.html

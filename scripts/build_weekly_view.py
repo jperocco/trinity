@@ -14,6 +14,9 @@ def build_rows(data, models, points_models=None):
         raise ValueError('Duplicate player-team-position-week')
     numerators=['routes','targets','receiving_air_yards']
     denominators=['team_route_opportunities','team_targets','team_receiving_air_yards']
+    # Team totals are counted once per archived team-game, including games in
+    # which an individual player has no eligible row. Missing players are not zeros.
+    team_games=data.groupby(['season','game_id','team','week'],as_index=False).team_targets.first()
     data=data[(data[denominators]>0).all(axis=1)].copy()
     cutoffs=sorted(int(x) for x in data.week.unique())
     rows=[]
@@ -54,6 +57,13 @@ def build_rows(data, models, points_models=None):
                     rows[-1][field]=None
             output=rows[-1]
             for prefix,period in [('',[row] if observed else []),('rolling_',history if observed else []),('cumulative_',accumulated)]:
+                first_week=week if not prefix else max(1,week-2) if prefix=='rolling_' else 1
+                team_period=team_games[(team_games.season==row.season)&(team_games.team==row.team)&
+                    (team_games.week>=first_week)&(team_games.week<=week)]
+                total_team_targets=float(team_period.team_targets.sum())
+                output[prefix+'team_targets_period']=total_team_targets
+                output[prefix+'team_games_period']=len(team_period)
+                output[prefix+'ts_period']=100*sum(r.targets for r in period)/total_team_targets if period and total_team_targets>0 else None
                 output[prefix+'targets_per_game']=sum(r.targets for r in period)/len(period) if period else None
                 output[prefix+'routes_per_game']=sum(r.routes for r in period)/len(period) if period else None
                 if points_models:

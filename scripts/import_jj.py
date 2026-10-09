@@ -1,0 +1,76 @@
+"""Read a JJ Stats SQLite snapshot without modifying it; export audited WR/TE games."""
+import argparse
+import csv
+import hashlib
+import json
+import sqlite3
+import sys
+from collections import Counter
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+from trinity import REQUIRED, audit
+
+def convert(row):
+    reasons = []
+    if row['route_is_estimate'] or row['route_source'] != 'PFF public':
+        reasons.append('routes_not_confirmed_pff')
+    mapping = dict(routes='routes_run', team_route_opportunities='team_routes',
+                   team_receiving_air_yards='team_air_yards')
+    result = {c: row[mapping.get(c,c)] for c in REQUIRED if c not in ('played','source','routes_source','routes_definition')}
+    result.update(played='1', source='JJ Stats snapshot', routes_source='PFF public',
+                  routes_definition='JJ archived team_routes; verify against PFF pass-play convention')
+    result.update(player=row['player'], route_source_url=row['route_source_url'])
+    for field in REQUIRED:
+        if result[field] is None or str(result[field]).strip() == '':
+            reasons.append('missing_' + field)
+    if row['air_yards_verified'] != 1:
+        reasons.append('air_yards_not_verified')
+    if reasons:
+        return None, reasons
+    result = {k: str(v) if v is not None else '' for k,v in result.items()}
+    return result, []
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('database', type=Path)
+    parser.add_argument('--output', type=Path, default=Path('data/raw/jj/canonical_2026.csv'))
+    parser.add_argument('--report', type=Path, default=Path('docs/JJ_IMPORT_AUDIT.json'))
+    args = parser.parse_args()
+    con = sqlite3.connect(args.database.resolve().as_uri() + '?mode=ro', uri=True)
+    con.row_factory = sqlite3.Row
+    rows = con.execute("SELECT p.* FROM player_games p JOIN games_archive g USING(game_id) WHERE p.position IN ('WR','TE') AND p.season=2026 AND upper(g.status)='FINAL'").fetchall()
+    con.close()
+    accepted, rejected, reasons = [], [], Counter()
+    for row in rows:
+        converted, excluded = convert(row)
+        if excluded:
+            reasons.update(excluded)
+            rejected.append({'game_id':row['game_id'], 'player':row['player'], 'reasons':excluded})
+        else:
+            accepted.append(converted)
+    report = audit(accepted)
+    summary = dict(source_sha256=hashlib.sha256(args.database.read_bytes()).hexdigest(),
+                   archived_wr_te_rows=len(rows), eligible_rows=len(accepted), excluded_rows=len(rejected),
+                   exclusion_reasons=dict(reasons), eligible_by_week=dict(Counter(r['week'] for r in accepted)),
+                   canonical_audit=report,
+                   limitations=['Snapshot uploaded October 5; may not contain later archive corrections.',
+                     'Exclusion reasons overlap. Excluded rows are not zero-filled.',
+                     'Eligible sample is incomplete and unsuitable for training a calibrated score.',
+                     'Database and derived player records stay local; public report contains counts only.'])
+    args.report.parent.mkdir(parents=True, exist_ok=True)
+    args.report.write_text(json.dumps(summary, indent=2), encoding='utf-8')
+    if not report['passed']:
+        print('FAIL: canonical audit; see report. No CSV exported.')
+        return 1
+    args.output.parent.mkdir(parents=True, exist_ok=True)
+    with args.output.open('w', newline='', encoding='utf-8') as f:
+        writer = csv.DictWriter(f, fieldnames=REQUIRED+['player','route_source_url'])
+        writer.writeheader()
+        writer.writerows(accepted)
+    args.output.with_suffix('.excluded.json').write_text(json.dumps(rejected, indent=2), encoding='utf-8')
+    print(f'PASS: {len(accepted)} eligible / {len(rows)} archived WR/TE rows')
+    return 0
+
+if __name__ == '__main__':
+    raise SystemExit(main())

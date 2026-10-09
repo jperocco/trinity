@@ -1,0 +1,229 @@
+{
+  "model_metadata": {
+    "version": "0.2",
+    "status": "Experimental annual-trained points reference applied to JJ; not a validated next-week PPR forecast",
+    "training_source": "Supplied FP 2021\u20132025 only",
+    "alpha": 10,
+    "score_definition": "10 \u00d7 (1 \u2212 10^(\u2212nonnegative annual-equivalent FP/G / fixed position historical p95 FP/G)); anchor maps to 9, monotonic below 10; not percentile or original DD score",
+    "selection": "2024 validation MAE after training outcomes 2022\u20132023; evaluation 2025 already inspected previously; final refit uses all 2022\u20132025 outcome pairs",
+    "exclusions": "Quality with red-zone/end-zone inputs tested in annual research only: JJ lacks end-zone counts and red-zone counts are incomplete (636/963). No zeros substituted.",
+    "positions": {
+      "WR": {
+        "features": [
+          "targets_per_game",
+          "target_share"
+        ],
+        "coefficients": {
+          "targets_per_game": 0.9351850925568226,
+          "target_share": 22.163256935106503
+        },
+        "intercept": 0.348620891558995,
+        "score_anchor_ppr": 16.7,
+        "selected_block": "volume_relevance",
+        "training_pairs": 522
+      },
+      "TE": {
+        "features": [
+          "targets_per_game",
+          "target_share"
+        ],
+        "coefficients": {
+          "targets_per_game": 0.6119401805934889,
+          "target_share": 29.238673446777224
+        },
+        "intercept": 0.7221128948040851,
+        "score_anchor_ppr": 12.3,
+        "selected_block": "volume_relevance",
+        "training_pairs": 323
+      }
+    }
+  },
+  "evaluation": {
+    "WR": {
+      "train_n": 258,
+      "validation_n": 132,
+      "test_n": 132,
+      "selected": "volume_relevance",
+      "candidates": {
+        "volume_relevance": {
+          "mae_validation": 2.896797279266984,
+          "test": {
+            "n": 132,
+            "mae": 2.2896695723520595,
+            "rmse": 3.0232011310937175,
+            "pearson": 0.8085944693570626,
+            "spearman": 0.8122040386881086
+          },
+          "versus_prior_ppr": {
+            "delta_mae": -0.0677027271183658,
+            "ci95": [
+              -0.25415337939687166,
+              0.12876200724615672
+            ]
+          }
+        },
+        "plus_routes": {
+          "mae_validation": 2.9195753334634182,
+          "test": {
+            "n": 132,
+            "mae": 2.2940614225591967,
+            "rmse": 3.0069760079782752,
+            "pearson": 0.8112532615506857,
+            "spearman": 0.8117083214234712
+          },
+          "versus_prior_ppr": {
+            "delta_mae": -0.06331087691122828,
+            "ci95": [
+              -0.25525683425514395,
+              0.13184045181581328
+            ]
+          }
+        },
+        "plus_air": {
+          "mae_validation": 2.91944904803975,
+          "test": {
+            "n": 132,
+            "mae": 2.2929975635559985,
+            "rmse": 2.999609273158942,
+            "pearson": 0.8120495918141172,
+            "spearman": 0.8142547427407674
+          },
+          "versus_prior_ppr": {
+            "delta_mae": -0.06437473591442694,
+            "ci95": [
+              -0.25663249568947805,
+              0.12896330583658638
+            ]
+          }
+        },
+        "quality_research": {
+          "mae_validation": 2.9401215553670506,
+          "test": {
+            "n": 132,
+            "mae": 2.292325888694795,
+            "rmse": 2.976302784537729,
+            "pearson": 0.8159470437895276,
+            "spearman": 0.81154917009114
+          },
+          "versus_prior_ppr": {
+            "delta_mae": -0.0650464107756304,
+            "ci95": [
+              -0.25164668123443446,
+              0.12106665863684714
+            ]
+          }
+        },
+        "prior_ppr": {
+          "mae_validation": 2.8681149901708736,
+          "test": {
+            "n": 132,
+            "mae": 2.357372299470425,
+            "rmse": 3.112187352361656,
+            "pearson": 0.798726215684366,
+            "spearman": 0.8005547440762496
+          },
+          "versus_prior_ppr": {
+            "delta_mae": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ]
+          }
+        }
+      }
+    },
+    "TE": {
+      "train_n": 153,
+      "validation_n": 84,
+      "test_n": 86,
+      "selected": "volume_relevance",
+      "candidates": {
+        "volume_relevance": {
+          "mae_validation": 1.9164227534945697,
+          "test": {
+            "n": 86,
+            "mae": 1.888429127140711,
+            "rmse": 2.4889887618162274,
+            "pearson": 0.8076076659877696,
+            "spearman": 0.8078774657791676
+          },
+          "versus_prior_ppr": {
+            "delta_mae": -0.10945699804737112,
+            "ci95": [
+              -0.32062414407101114,
+              0.08799821979737876
+            ]
+          }
+        },
+        "plus_routes": {
+          "mae_validation": 1.9189658534363194,
+          "test": {
+            "n": 86,
+            "mae": 1.8554138875618127,
+            "rmse": 2.4411737167451637,
+            "pearson": 0.8165307337080886,
+            "spearman": 0.8181273795901248
+          },
+          "versus_prior_ppr": {
+            "delta_mae": -0.14247223762627015,
+            "ci95": [
+              -0.3614738741048222,
+              0.05868521887991751
+            ]
+          }
+        },
+        "plus_air": {
+          "mae_validation": 1.9209620163102685,
+          "test": {
+            "n": 86,
+            "mae": 1.8541000132801493,
+            "rmse": 2.43822961748952,
+            "pearson": 0.8172341553006464,
+            "spearman": 0.8164758362583879
+          },
+          "versus_prior_ppr": {
+            "delta_mae": -0.14378611190793283,
+            "ci95": [
+              -0.3614082811061794,
+              0.057433743534303736
+            ]
+          }
+        },
+        "quality_research": {
+          "mae_validation": 1.903898644050128,
+          "test": {
+            "n": 86,
+            "mae": 1.8584388024718033,
+            "rmse": 2.444474300879776,
+            "pearson": 0.815783346063881,
+            "spearman": 0.8076896257335477
+          },
+          "versus_prior_ppr": {
+            "delta_mae": -0.13944732271627935,
+            "ci95": [
+              -0.34721444893895054,
+              0.052440830768021085
+            ]
+          }
+        },
+        "prior_ppr": {
+          "mae_validation": 1.8909357544925405,
+          "test": {
+            "n": 86,
+            "mae": 1.997886125188083,
+            "rmse": 2.643765691735391,
+            "pearson": 0.777915295617299,
+            "spearman": 0.769494726109061
+          },
+          "versus_prior_ppr": {
+            "delta_mae": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ]
+          }
+        }
+      }
+    }
+  }
+}

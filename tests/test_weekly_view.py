@@ -12,7 +12,7 @@ class WeeklyViewTests(unittest.TestCase):
     models={'WR':{'weights':{'route_share':1.,'target_share':0.,'air_yard_share':0.}}}
 
     def row(self,week,routes,denominator):
-        return dict(player='Test',team='ABC',position='WR',season=2026,week=week,
+        return dict(player='Test',team='ABC',position='WR',season=2026,week=week,game_id=f'2026_{week}_ABC_X',
             routes=routes,team_route_opportunities=denominator,targets=1,team_targets=10,
             receiving_air_yards=-2,team_receiving_air_yards=100,fantasy_points_ppr=5)
 
@@ -44,3 +44,14 @@ class WeeklyViewTests(unittest.TestCase):
         self.assertIsNone(row['score'])
         first=next(r for r in rows if r['player']=='Test' and r['week']==1)
         self.assertEqual(first['cumulative_score'],100)
+
+    def test_period_share_counts_team_games_without_player_once(self):
+        other=dict(self.row(2,10,50),player='Other',targets=0,team_targets=30)
+        rows=build_rows(pd.DataFrame([self.row(1,10,10),other,dict(other,player='Third')]),self.models)
+        row=next(r for r in rows if r['player']=='Test' and r['week']==2)
+        self.assertEqual(row['cumulative_ts'],10)
+        self.assertEqual(row['cumulative_ts_period'],2.5)
+        self.assertEqual(row['cumulative_team_targets_period'],40)
+        self.assertEqual(row['cumulative_team_games_period'],2)
+        first=next(r for r in rows if r['player']=='Test' and r['week']==1)
+        self.assertEqual(first['cumulative_ts_period'],10)

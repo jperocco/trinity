@@ -23,7 +23,7 @@ MODELS = {
 }
 
 
-def load_seasons(directory):
+def load_seasons(directory, crosswalk=None):
     frames, audit = {}, {}
     for year in range(2021, 2026):
         frame = pd.read_csv(directory / f'receiving_advanced_{year}.csv')
@@ -32,6 +32,13 @@ def load_seasons(directory):
         frame = frame[frame.POS.isin(['WR', 'TE'])].copy()
         # Exact same-provider name + position is provisional identity, not a stable ID.
         frame['identity'] = frame.Name.str.strip() + '|' + frame.POS
+        unresolved = pd.Series(False, index=frame.index)
+        if crosswalk is not None:
+            mapping = {(r['name'],r['position']):r['player_id'] for r in crosswalk
+                       if r['season']==year and r['status']=='matched'}
+            stable = pd.Series([mapping.get((n,p)) for n,p in zip(frame.Name,frame.POS)], index=frame.index)
+            unresolved = stable.isna()
+            frame.loc[~unresolved,'identity'] = stable[~unresolved] + '|' + frame.loc[~unresolved,'POS']
         duplicate = frame.duplicated('identity', keep=False)
         invalid = ((frame['RTE %'] < 0) | (frame['RTE %'] > 100)
                    | (frame['TGT %'] < 0) | (frame['TGT %'] > 100)
@@ -42,8 +49,10 @@ def load_seasons(directory):
         audit[str(year)] = dict(rows=len(frame), duplicate_rows=int(duplicate.sum()),
                                invalid_share_rows=int(invalid.sum()),
                                missing_rows=int(missing.sum()), short_sample_rows=int(short.sum()),
-                               eligible_rows=int((~(duplicate | invalid | missing | short)).sum()))
-        frames[year] = frame.loc[~(duplicate | invalid | missing | short)].copy()
+                               unresolved_identity_rows=int(unresolved.sum()),
+                               unresolved_otherwise_eligible=int((unresolved & ~(duplicate | invalid | missing | short)).sum()),
+                               eligible_rows=int((~(duplicate | invalid | missing | short | unresolved)).sum()))
+        frames[year] = frame.loc[~(duplicate | invalid | missing | short | unresolved)].copy()
     return frames, audit
 
 
@@ -117,12 +126,14 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--input-dir', type=Path, default=Path('data/history/fantasypoints'))
     parser.add_argument('--report', type=Path, default=Path('docs/ANNUAL_BACKTEST.json'))
+    parser.add_argument('--crosswalk', type=Path, help='Optional audited same-provider name to nflverse ID crosswalk')
     args = parser.parse_args()
-    frames, audit = load_seasons(args.input_dir)
+    crosswalk = json.loads(args.crosswalk.read_text()) if args.crosswalk else None
+    frames, audit = load_seasons(args.input_dir, crosswalk)
     pairs = transitions(frames)
     report = dict(kind='exploratory annual complete-case backtest', source='Fantasy Points supplied exports',
                   qualification='At least 6 source-defined G in both years; finite features and FP/G; unique exact name+position',
-                  identity='Provisional exact same-provider Name+POS; not certified stable player IDs',
+                  identity='nflverse player_id + FP position via audited crosswalk' if crosswalk else 'Provisional exact same-provider Name+POS; not certified stable player IDs',
                   split={'train_outcomes': [2022, 2023], 'validation_outcome': 2024, 'holdout_outcome': 2025},
                   audit=audit, matched_pairs_by_outcome_year=pairs.outcome_year.value_counts().sort_index().to_dict(),
                   unmatched_eligible_prior_by_year={str(y):len(frames[y])-int((pairs.outcome_year == y+1).sum()) for y in range(2021,2025)},

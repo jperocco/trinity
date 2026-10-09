@@ -1,0 +1,542 @@
+{
+  "version": "0.1",
+  "source": "Supplied Fantasy Points 2021\u20132025 only",
+  "objective": "Minimize same-season squared FP/G error with an unconstrained intercept and nonnegative share coefficients; normalize coefficients to sum 1.",
+  "score_definition": "100 * (w_route * route_share + w_target * target_share + w_air * air_yard_share); shares are ratios, not percent numbers.",
+  "interpretation": "Opportunity index in weighted percentage points, not a percentile or a probability. Unclipped, so unusual source shares can place it outside 0\u2013100.",
+  "audit": {
+    "2021": {
+      "rows": 388,
+      "duplicate_rows": 0,
+      "invalid_share_rows": 1,
+      "missing_rows": 42,
+      "short_sample_rows": 82,
+      "unresolved_identity_rows": 0,
+      "unresolved_otherwise_eligible": 0,
+      "eligible_rows": 298
+    },
+    "2022": {
+      "rows": 378,
+      "duplicate_rows": 2,
+      "invalid_share_rows": 2,
+      "missing_rows": 44,
+      "short_sample_rows": 74,
+      "unresolved_identity_rows": 0,
+      "unresolved_otherwise_eligible": 0,
+      "eligible_rows": 287
+    },
+    "2023": {
+      "rows": 368,
+      "duplicate_rows": 0,
+      "invalid_share_rows": 0,
+      "missing_rows": 49,
+      "short_sample_rows": 64,
+      "unresolved_identity_rows": 0,
+      "unresolved_otherwise_eligible": 0,
+      "eligible_rows": 296
+    },
+    "2024": {
+      "rows": 381,
+      "duplicate_rows": 0,
+      "invalid_share_rows": 0,
+      "missing_rows": 49,
+      "short_sample_rows": 70,
+      "unresolved_identity_rows": 0,
+      "unresolved_otherwise_eligible": 0,
+      "eligible_rows": 294
+    },
+    "2025": {
+      "rows": 376,
+      "duplicate_rows": 0,
+      "invalid_share_rows": 0,
+      "missing_rows": 33,
+      "short_sample_rows": 61,
+      "unresolved_identity_rows": 0,
+      "unresolved_otherwise_eligible": 0,
+      "eligible_rows": 306
+    }
+  },
+  "positions": {
+    "WR": {
+      "deployment": {
+        "weights": {
+          "route_share": 0.0,
+          "target_share": 1.0,
+          "air_yard_share": 0.0
+        },
+        "intercept": -0.4041841749860451,
+        "amplitude": 63.6919036685421,
+        "n": 943
+      },
+      "rolling_season_checks": [
+        {
+          "test_season": 2022,
+          "model": {
+            "weights": {
+              "route_share": 0.0,
+              "target_share": 1.0,
+              "air_yard_share": 0.0
+            },
+            "intercept": -0.49102721035643615,
+            "amplitude": 66.79973472474073,
+            "n": 189
+          },
+          "same_season_holdout": {
+            "n": 182,
+            "mae": 1.2274222799373777,
+            "rmse": 1.7232562447442,
+            "pearson": 0.9466950559997307,
+            "spearman": 0.9600536546902307
+          },
+          "comparison_target_only_spearman": 0.9600536546902306
+        },
+        {
+          "test_season": 2023,
+          "model": {
+            "weights": {
+              "route_share": 0.0,
+              "target_share": 1.0,
+              "air_yard_share": 0.0
+            },
+            "intercept": -0.39208714659546295,
+            "amplitude": 65.07197446433257,
+            "n": 371
+          },
+          "same_season_holdout": {
+            "n": 190,
+            "mae": 1.108398027385052,
+            "rmse": 1.5164367281288602,
+            "pearson": 0.9607825114305366,
+            "spearman": 0.9611587127631863
+          },
+          "comparison_target_only_spearman": 0.9611587127631863
+        },
+        {
+          "test_season": 2024,
+          "model": {
+            "weights": {
+              "route_share": 0.0,
+              "target_share": 1.0,
+              "air_yard_share": 0.0
+            },
+            "intercept": -0.4224631423147738,
+            "amplitude": 64.98065091560922,
+            "n": 561
+          },
+          "same_season_holdout": {
+            "n": 186,
+            "mae": 1.0978760320461978,
+            "rmse": 1.5183511637837228,
+            "pearson": 0.9617626393263341,
+            "spearman": 0.9737808916005932
+          },
+          "comparison_target_only_spearman": 0.9737808916005931
+        },
+        {
+          "test_season": 2025,
+          "model": {
+            "weights": {
+              "route_share": 0.0,
+              "target_share": 1.0,
+              "air_yard_share": 0.0
+            },
+            "intercept": -0.4352061361760926,
+            "amplitude": 64.6360635798873,
+            "n": 747
+          },
+          "same_season_holdout": {
+            "n": 196,
+            "mae": 1.1276615937663104,
+            "rmse": 1.5153268444881407,
+            "pearson": 0.9575394817976055,
+            "spearman": 0.9649851469357523
+          },
+          "comparison_target_only_spearman": 0.9649851469357523
+        }
+      ],
+      "leave_one_season_out_weights": {
+        "2021": {
+          "route_share": 0.0,
+          "target_share": 0.9932282244492743,
+          "air_yard_share": 0.0067717755507257235
+        },
+        "2022": {
+          "route_share": 0.0,
+          "target_share": 1.0,
+          "air_yard_share": 0.0
+        },
+        "2023": {
+          "route_share": 0.0,
+          "target_share": 1.0,
+          "air_yard_share": 0.0
+        },
+        "2024": {
+          "route_share": 0.0,
+          "target_share": 1.0,
+          "air_yard_share": 0.0
+        },
+        "2025": {
+          "route_share": 0.0,
+          "target_share": 1.0,
+          "air_yard_share": 0.0
+        }
+      },
+      "leave_one_season_out_range": {
+        "route_share": [
+          0.0,
+          0.0
+        ],
+        "target_share": [
+          0.9932282244492743,
+          1.0
+        ],
+        "air_yard_share": [
+          0.0,
+          0.0067717755507257235
+        ]
+      }
+    },
+    "TE": {
+      "deployment": {
+        "weights": {
+          "route_share": 0.01826335023892254,
+          "target_share": 0.9594139224128702,
+          "air_yard_share": 0.02232272734820729
+        },
+        "intercept": -0.08284606243571346,
+        "amplitude": 58.02678087415634,
+        "n": 538
+      },
+      "rolling_season_checks": [
+        {
+          "test_season": 2022,
+          "model": {
+            "weights": {
+              "route_share": 0.00547761802831398,
+              "target_share": 0.9601656780428852,
+              "air_yard_share": 0.03435670392880085
+            },
+            "intercept": -0.060249009601314185,
+            "amplitude": 62.72867433602357,
+            "n": 109
+          },
+          "same_season_holdout": {
+            "n": 105,
+            "mae": 0.9081667809835099,
+            "rmse": 1.5327366345586755,
+            "pearson": 0.9182502173165557,
+            "spearman": 0.9344104562951415
+          },
+          "comparison_target_only_spearman": 0.9338583463219619
+        },
+        {
+          "test_season": 2023,
+          "model": {
+            "weights": {
+              "route_share": 0.07716139914736503,
+              "target_share": 0.8956668170578773,
+              "air_yard_share": 0.02717178379475772
+            },
+            "intercept": -0.1805818112991302,
+            "amplitude": 49.487177455596935,
+            "n": 214
+          },
+          "same_season_holdout": {
+            "n": 106,
+            "mae": 0.6675168232250585,
+            "rmse": 0.9721386793288538,
+            "pearson": 0.9674718827714663,
+            "spearman": 0.9721696894798464
+          },
+          "comparison_target_only_spearman": 0.9737166501570957
+        },
+        {
+          "test_season": 2024,
+          "model": {
+            "weights": {
+              "route_share": 0.039449213751005664,
+              "target_share": 0.941160786412793,
+              "air_yard_share": 0.019389999836201294
+            },
+            "intercept": -0.07980756253995658,
+            "amplitude": 54.09400887726224,
+            "n": 320
+          },
+          "same_season_holdout": {
+            "n": 108,
+            "mae": 0.7475125741401051,
+            "rmse": 1.156655001091587,
+            "pearson": 0.958845624676456,
+            "spearman": 0.9626589396637564
+          },
+          "comparison_target_only_spearman": 0.964617797927017
+        },
+        {
+          "test_season": 2025,
+          "model": {
+            "weights": {
+              "route_share": 0.027943033511299033,
+              "target_share": 0.9522580045439412,
+              "air_yard_share": 0.019798961944759847
+            },
+            "intercept": -0.08309715591777511,
+            "amplitude": 55.99132539724708,
+            "n": 428
+          },
+          "same_season_holdout": {
+            "n": 110,
+            "mae": 0.751588880441414,
+            "rmse": 1.0788971078333107,
+            "pearson": 0.966616469947225,
+            "spearman": 0.9710710764192731
+          },
+          "comparison_target_only_spearman": 0.9711004125668159
+        }
+      ],
+      "leave_one_season_out_weights": {
+        "2021": {
+          "route_share": 0.017602373825010176,
+          "target_share": 0.9681528811270531,
+          "air_yard_share": 0.014244745047936788
+        },
+        "2022": {
+          "route_share": 0.0,
+          "target_share": 0.9495132238974907,
+          "air_yard_share": 0.05048677610250928
+        },
+        "2023": {
+          "route_share": 0.02921330671548855,
+          "target_share": 0.9451604486879196,
+          "air_yard_share": 0.02562624459659178
+        },
+        "2024": {
+          "route_share": 0.023466394756518193,
+          "target_share": 0.9558239346758598,
+          "air_yard_share": 0.02070967056762209
+        },
+        "2025": {
+          "route_share": 0.027943033511299033,
+          "target_share": 0.9522580045439412,
+          "air_yard_share": 0.019798961944759847
+        }
+      },
+      "leave_one_season_out_range": {
+        "route_share": [
+          0.0,
+          0.02921330671548855
+        ],
+        "target_share": [
+          0.9451604486879196,
+          0.9681528811270531
+        ],
+        "air_yard_share": [
+          0.014244745047936788,
+          0.05048677610250928
+        ]
+      }
+    }
+  },
+  "limitations": [
+    "Annual descriptive fit; no claim of optimal future-week forecasting weights.",
+    "Rolling annual checks test generalization to another season, using shares and production from that same season.",
+    "Weights have equal percentage-point input units; their percentages are not causal importance or variance explained.",
+    "Collinear shares can produce zero coefficients; no minimum positive weight is forced.",
+    "Deployment fit uses all eligible 2021\u20132025 rows. Earlier 2025 analyses mean this is exploratory, not a new untouched holdout.",
+    "FP and JJ are used separately; cross-provider IDs, statistics and denominators are not combined."
+  ],
+  "jj_weekly": {
+    "source": "JJ Stats canonical inclusive uploaded 2026 snapshot only",
+    "input_rows": 937,
+    "scored_rows": 937,
+    "weeks": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "initial_forward_checks": [
+      {
+        "position": "TE",
+        "lookback": 1,
+        "n": 234,
+        "next_week_spearman": {
+          "score": 0.4987160522511989,
+          "route_share": 0.5594298060117507,
+          "target_share": 0.48061631971706087,
+          "air_yard_share": 0.4107029603348306,
+          "prior_ppr": 0.42893660196199873
+        },
+        "by_origin_week": {
+          "1": {
+            "n": 88,
+            "score_spearman": 0.4984205822465606
+          },
+          "2": {
+            "n": 73,
+            "score_spearman": 0.4192060590139009
+          },
+          "3": {
+            "n": 73,
+            "score_spearman": 0.6508466787880623
+          }
+        }
+      },
+      {
+        "position": "TE",
+        "lookback": 2,
+        "n": 138,
+        "next_week_spearman": {
+          "score": 0.5207653012768911,
+          "route_share": 0.518803509245748,
+          "target_share": 0.5225206264561253,
+          "air_yard_share": 0.46523506312938884,
+          "prior_ppr": 0.4775086798024033
+        },
+        "by_origin_week": {
+          "2": {
+            "n": 70,
+            "score_spearman": 0.42824381176828086
+          },
+          "3": {
+            "n": 68,
+            "score_spearman": 0.6112157999470109
+          }
+        }
+      },
+      {
+        "position": "TE",
+        "lookback": 3,
+        "n": 66,
+        "next_week_spearman": {
+          "score": 0.6356880644840996,
+          "route_share": 0.6533188394661354,
+          "target_share": 0.626232549336488,
+          "air_yard_share": 0.6410573100208448,
+          "prior_ppr": 0.5712817690330091
+        },
+        "by_origin_week": {
+          "3": {
+            "n": 66,
+            "score_spearman": 0.6356880644840996
+          }
+        }
+      },
+      {
+        "position": "WR",
+        "lookback": 1,
+        "n": 365,
+        "next_week_spearman": {
+          "score": 0.40309351855976266,
+          "route_share": 0.47717809228963404,
+          "target_share": 0.40309351855976266,
+          "air_yard_share": 0.37150813105585306,
+          "prior_ppr": 0.35410339381938166
+        },
+        "by_origin_week": {
+          "1": {
+            "n": 125,
+            "score_spearman": 0.43790572912300935
+          },
+          "2": {
+            "n": 122,
+            "score_spearman": 0.4192192549289264
+          },
+          "3": {
+            "n": 118,
+            "score_spearman": 0.33833254254636397
+          }
+        }
+      },
+      {
+        "position": "WR",
+        "lookback": 2,
+        "n": 217,
+        "next_week_spearman": {
+          "score": 0.4883359309265757,
+          "route_share": 0.47372884524024944,
+          "target_share": 0.4883359309265757,
+          "air_yard_share": 0.4398272552861851,
+          "prior_ppr": 0.47219486132747
+        },
+        "by_origin_week": {
+          "2": {
+            "n": 109,
+            "score_spearman": 0.5455621606476787
+          },
+          "3": {
+            "n": 108,
+            "score_spearman": 0.4316759463770522
+          }
+        }
+      },
+      {
+        "position": "WR",
+        "lookback": 3,
+        "n": 98,
+        "next_week_spearman": {
+          "score": 0.40388294591427093,
+          "route_share": 0.42328473377488673,
+          "target_share": 0.40388294591427093,
+          "air_yard_share": 0.4167496113559898,
+          "prior_ppr": 0.39400286340080154
+        },
+        "by_origin_week": {
+          "3": {
+            "n": 98,
+            "score_spearman": 0.40388294591427093
+          }
+        }
+      }
+    ],
+    "weekly_candidates": {
+      "WR": {
+        "weights": {
+          "route_share": 0.7,
+          "target_share": 0.05,
+          "air_yard_share": 0.25
+        },
+        "train_origins": [
+          1,
+          2
+        ],
+        "test_origin": 3,
+        "train_n": 247,
+        "test_n": 118,
+        "train_spearman": 0.5316787069534656,
+        "test_spearman": 0.3953187271767863,
+        "test_baselines": {
+          "score": 0.33833254254636397,
+          "route_share": 0.4106029077787098,
+          "target_share": 0.33833254254636397,
+          "air_yard_share": 0.27235643178808655,
+          "prior_ppr": 0.35453490126418824
+        }
+      },
+      "TE": {
+        "weights": {
+          "route_share": 0.8,
+          "target_share": 0.2,
+          "air_yard_share": 0.0
+        },
+        "train_origins": [
+          1,
+          2
+        ],
+        "test_origin": 3,
+        "train_n": 161,
+        "test_n": 73,
+        "train_spearman": 0.51195029651445,
+        "test_spearman": 0.6808503046750142,
+        "test_baselines": {
+          "score": 0.6508466787880623,
+          "route_share": 0.6720714426836127,
+          "target_share": 0.6372989634516146,
+          "air_yard_share": 0.5919619146365971,
+          "prior_ppr": 0.48062227093080123
+        }
+      }
+    },
+    "weekly_candidate_method": "Exploratory 5-percentage-point simplex grid maximizing next-week rank correlation on origins 1 and 2, tested on origin 3. This split was chosen after inspecting annual-weight weekly summaries; not a pristine holdout. No tuning on origin-3 outcomes within grid search. Candidate score stays separate from annual score. Only three transitions; no ideal-weight claim.",
+    "note": "Weights fixed from annual FP calibration; no fitting on JJ outcomes. Consecutive observed calendar weeks required; missing games are not zero-filled. Windows use ratios of summed numerators/denominators. Repeated players and overlapping windows make observations dependent; no significance claim. JJ player-game outputs stay local."
+  }
+}

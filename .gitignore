@@ -1,0 +1,9 @@
+data/raw/
+data/processed/
+*.sqlite
+*.db
+.env
+.env.*
+__pycache__/
+*.pyc
+.venv/

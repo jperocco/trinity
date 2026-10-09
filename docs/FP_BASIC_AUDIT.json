@@ -1,0 +1,53 @@
+{
+  "source": "Fantasy Points user CSV",
+  "sha256": "4768d899cef123a82b195375f412a2ab3883e67ebe61fa059574d75e1db430f9",
+  "rows": 348,
+  "seasons": {
+    "2025": 348
+  },
+  "positions": {
+    "WR": 223,
+    "TE": 125
+  },
+  "columns": [
+    "Rank",
+    "Name",
+    "Team",
+    "POS",
+    "G",
+    "Season",
+    "TGT",
+    "TGT %",
+    "REC",
+    "YDS",
+    "TM YDS %",
+    "YPR",
+    "YPT",
+    "RecYDS/G",
+    "CR %",
+    "TD",
+    "TM TD %",
+    "i10",
+    "i20 TGT",
+    "FUM",
+    "FP/G",
+    "FP",
+    "PPR",
+    "NON-PPR"
+  ],
+  "missing_required_trinity_fields": [
+    "routes",
+    "team_route_opportunities",
+    "receiving_air_yards",
+    "team_receiving_air_yards",
+    "week",
+    "stable_player_id"
+  ],
+  "notes": [
+    "Season aggregate 2025; cannot build weekly forward windows.",
+    "TM YDS % is receiving-yard share, not air-yard share.",
+    "TGT % is rounded; exact team targets cannot be safely reconstructed from this export.",
+    "FP/G scoring convention and G denominator require source verification.",
+    "Original CSV stays private; only coverage report published."
+  ]
+}

@@ -1,0 +1,336 @@
+{
+  "source": "JJ canonical inclusive 2026 only; source archive unchanged",
+  "model_version": "0.2.1",
+  "method": "Frozen FP annual-trained equation, no JJ fitting or weight selection. Cutoffs 1,2,3 predict observed PPR in calendar weeks 2,3,4. Consolidated inputs use only records at or before cutoff. Identical adjacent-observation sample for all comparisons. MAE compares annual-equivalent points reference with weekly PPR; 0\u201310 score itself is not in PPR units. Targets evaluated by rank correlation only, not a points conversion.",
+  "positions": {
+    "WR": {
+      "pairs": 365,
+      "players": 148,
+      "eligible_origin_rows": 430,
+      "origins_without_next_observation": 65,
+      "summary": {
+        "score_consolidated": {
+          "n": 365,
+          "mae": 5.1941572756860275,
+          "rmse": 7.156721930492034,
+          "pearson": 0.4769310011309871,
+          "spearman": 0.490079464083687
+        },
+        "score_last_week": {
+          "n": 365,
+          "mae": 5.763537990978357,
+          "rmse": 7.77063055044348,
+          "pearson": 0.38149834993006737,
+          "spearman": 0.39902288488829274
+        },
+        "ppr_consolidated": {
+          "n": 365,
+          "mae": 5.708675799088219,
+          "rmse": 8.022126080369027,
+          "pearson": 0.42984855874616545,
+          "spearman": 0.43105016420835496
+        },
+        "ppr_last_week": {
+          "n": 365,
+          "mae": 6.48986301369863,
+          "rmse": 8.87457850050603,
+          "pearson": 0.36890882946861686,
+          "spearman": 0.354144824143979
+        }
+      },
+      "target_rank_correlations": {
+        "targets_consolidated": 0.47998911646974063,
+        "targets_last_week": 0.3818649797687857
+      },
+      "score_vs_ppr_consolidated": {
+        "delta_mae": -0.5145185234021916,
+        "ci95": [
+          -0.8773498193412856,
+          -0.16982933238092204
+        ],
+        "player_clusters": 148
+      },
+      "folds": {
+        "1": {
+          "n": 125,
+          "forecasts": {
+            "score_consolidated": {
+              "n": 125,
+              "mae": 5.320059768338402,
+              "rmse": 7.468736257500879,
+              "pearson": 0.4641575769967511,
+              "spearman": 0.43934620626961285
+            },
+            "score_last_week": {
+              "n": 125,
+              "mae": 5.320059768338402,
+              "rmse": 7.468736257500879,
+              "pearson": 0.4641575769967511,
+              "spearman": 0.43934620626961285
+            },
+            "ppr_consolidated": {
+              "n": 125,
+              "mae": 6.0104,
+              "rmse": 8.622514714397418,
+              "pearson": 0.40848301690583944,
+              "spearman": 0.3587470371096874
+            },
+            "ppr_last_week": {
+              "n": 125,
+              "mae": 6.0104,
+              "rmse": 8.622514714397418,
+              "pearson": 0.40848301690583944,
+              "spearman": 0.3587470371096874
+            }
+          },
+          "target_rank_correlations": {
+            "targets_consolidated": 0.42166785177580723,
+            "targets_last_week": 0.42166785177580723
+          }
+        },
+        "2": {
+          "n": 122,
+          "forecasts": {
+            "score_consolidated": {
+              "n": 122,
+              "mae": 4.942872349884428,
+              "rmse": 6.426684223806238,
+              "pearson": 0.5364841283270408,
+              "spearman": 0.5309007179620117
+            },
+            "score_last_week": {
+              "n": 122,
+              "mae": 5.4706300926,
+              "rmse": 6.995193978376557,
+              "pearson": 0.4476587051994677,
+              "spearman": 0.4113753686758677
+            },
+            "ppr_consolidated": {
+              "n": 122,
+              "mae": 5.3881147540983605,
+              "rmse": 7.260511712535753,
+              "pearson": 0.4921920178203752,
+              "spearman": 0.4760339653196585
+            },
+            "ppr_last_week": {
+              "n": 122,
+              "mae": 6.662950819672131,
+              "rmse": 8.532955976970584,
+              "pearson": 0.4256232728062433,
+              "spearman": 0.3296704231456762
+            }
+          },
+          "target_rank_correlations": {
+            "targets_consolidated": 0.5254403926769294,
+            "targets_last_week": 0.39260535757104975
+          }
+        },
+        "3": {
+          "n": 118,
+          "forecasts": {
+            "score_consolidated": {
+              "n": 118,
+              "mae": 5.320589049976271,
+              "rmse": 7.525766188962447,
+              "pearson": 0.4371234477467116,
+              "spearman": 0.5109135628692516
+            },
+            "score_last_week": {
+              "n": 118,
+              "mae": 6.536161223454236,
+              "rmse": 8.780341291373867,
+              "pearson": 0.2415959765293908,
+              "spearman": 0.3329660733642977
+            },
+            "ppr_consolidated": {
+              "n": 118,
+              "mae": 5.720480225993221,
+              "rmse": 8.111872080114145,
+              "pearson": 0.39935269648524485,
+              "spearman": 0.4604529249963835
+            },
+            "ppr_last_week": {
+              "n": 118,
+              "mae": 6.818813559322034,
+              "rmse": 9.464594684526796,
+              "pearson": 0.27054944667043274,
+              "spearman": 0.3544915586127355
+            }
+          },
+          "target_rank_correlations": {
+            "targets_consolidated": 0.502341761171856,
+            "targets_last_week": 0.32022350733115273
+          }
+        }
+      }
+    },
+    "TE": {
+      "pairs": 234,
+      "players": 96,
+      "eligible_origin_rows": 272,
+      "origins_without_next_observation": 38,
+      "summary": {
+        "score_consolidated": {
+          "n": 234,
+          "mae": 4.004392638084188,
+          "rmse": 5.5818285695971355,
+          "pearson": 0.5104830676061317,
+          "spearman": 0.5344534652530756
+        },
+        "score_last_week": {
+          "n": 234,
+          "mae": 4.16428558058718,
+          "rmse": 5.862558537100929,
+          "pearson": 0.45875209291561453,
+          "spearman": 0.48285091497181476
+        },
+        "ppr_consolidated": {
+          "n": 234,
+          "mae": 4.420655270656411,
+          "rmse": 6.478466046620497,
+          "pearson": 0.43394746485796304,
+          "spearman": 0.4968360174338657
+        },
+        "ppr_last_week": {
+          "n": 234,
+          "mae": 4.968376068376068,
+          "rmse": 7.212909841116023,
+          "pearson": 0.3856369018341901,
+          "spearman": 0.4290291236460848
+        }
+      },
+      "target_rank_correlations": {
+        "targets_consolidated": 0.5370072061685394,
+        "targets_last_week": 0.48017658144842745
+      },
+      "score_vs_ppr_consolidated": {
+        "delta_mae": -0.4162626325722222,
+        "ci95": [
+          -0.7355670350246175,
+          -0.1272844364486853
+        ],
+        "player_clusters": 96
+      },
+      "folds": {
+        "1": {
+          "n": 88,
+          "forecasts": {
+            "score_consolidated": {
+              "n": 88,
+              "mae": 4.015080814501136,
+              "rmse": 5.589101727899697,
+              "pearson": 0.49568994039789305,
+              "spearman": 0.4589910900514093
+            },
+            "score_last_week": {
+              "n": 88,
+              "mae": 4.015080814501136,
+              "rmse": 5.589101727899697,
+              "pearson": 0.49568994039789305,
+              "spearman": 0.4589910900514093
+            },
+            "ppr_consolidated": {
+              "n": 88,
+              "mae": 4.711363636363637,
+              "rmse": 7.084233454394599,
+              "pearson": 0.3534074917904612,
+              "spearman": 0.4163710024225025
+            },
+            "ppr_last_week": {
+              "n": 88,
+              "mae": 4.711363636363637,
+              "rmse": 7.084233454394599,
+              "pearson": 0.3534074917904612,
+              "spearman": 0.4163710024225025
+            }
+          },
+          "target_rank_correlations": {
+            "targets_consolidated": 0.44186923572310277,
+            "targets_last_week": 0.44186923572310277
+          }
+        },
+        "2": {
+          "n": 73,
+          "forecasts": {
+            "score_consolidated": {
+              "n": 73,
+              "mae": 4.546210704423288,
+              "rmse": 6.354392361172368,
+              "pearson": 0.38854875330803723,
+              "spearman": 0.49770150533823454
+            },
+            "score_last_week": {
+              "n": 73,
+              "mae": 4.812003571153425,
+              "rmse": 6.898076491671971,
+              "pearson": 0.3098893141923132,
+              "spearman": 0.42134707608043204
+            },
+            "ppr_consolidated": {
+              "n": 73,
+              "mae": 4.715753424657533,
+              "rmse": 6.682206489000757,
+              "pearson": 0.40431644208764894,
+              "spearman": 0.4789462116178958
+            },
+            "ppr_last_week": {
+              "n": 73,
+              "mae": 5.352054794520548,
+              "rmse": 7.632527723634864,
+              "pearson": 0.362704775168402,
+              "spearman": 0.42814964881667783
+            }
+          },
+          "target_rank_correlations": {
+            "targets_consolidated": 0.5170158637227993,
+            "targets_last_week": 0.438737376114261
+          }
+        },
+        "3": {
+          "n": 73,
+          "forecasts": {
+            "score_consolidated": {
+              "n": 73,
+              "mae": 3.4496901946945204,
+              "rmse": 4.673047758526662,
+              "pearson": 0.6601421507735271,
+              "spearman": 0.6673185658574614
+            },
+            "score_last_week": {
+              "n": 73,
+              "mae": 3.6964308696863015,
+              "rmse": 4.993067832633629,
+              "pearson": 0.6060383248028911,
+              "spearman": 0.6385497631405282
+            },
+            "ppr_consolidated": {
+              "n": 73,
+              "mae": 3.775114155254794,
+              "rmse": 5.420805584155224,
+              "pearson": 0.580359231132647,
+              "spearman": 0.6214775087415815
+            },
+            "ppr_last_week": {
+              "n": 73,
+              "mae": 4.894520547945205,
+              "rmse": 6.929241196671093,
+              "pearson": 0.4540073192379912,
+              "spearman": 0.48092902268540666
+            }
+          },
+          "target_rank_correlations": {
+            "targets_consolidated": 0.6707928397753733,
+            "targets_last_week": 0.6187309104672404
+          }
+        }
+      }
+    }
+  },
+  "limitations": [
+    "Only three prediction origins, conditional on players with observed rows in both adjacent weeks; missing rows are not zeros.",
+    "Annual-trained model has not been calibrated for weekly outcomes. Current JJ archive is retrospective, not a real-time historical snapshot.",
+    "Player-cluster bootstrap does not capture team/game dependence or season-to-season uncertainty.",
+    "Pooled rank correlations mix prediction weeks; per-origin results are also reported.",
+    "This is exploratory: JJ weeks have been inspected in prior work. No coefficients or UI changed."
+  ]
+}

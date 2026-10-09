@@ -17,3 +17,7 @@ Three-week windows require consecutive observed calendar weeks. Shares use ratio
 Signal rules compare within the available position-week cohort before search filters: usage percentile at least 75% with PPR percentile at most 25%, or the inverse. Tied observations use average percentile rank. These labels describe the snapshot and are not a forecast of a bounce-back or decline. Score and PPR in the history chart have different units and share a numeric axis; that distinction is explicitly labeled.
 
 Frozen provisional weights: WR 70/5/25 and TE 80/20/0 for routes/targets/air yards. Scores are weighted percentage points, not percentiles or PPR projections. The weekly candidate has not demonstrated a robust advantage over route-only. Keep the route and target shares visible beside it.
+
+## Consolidated view
+
+The default view now consolidates week 1 through the selected cutoff. Compute shares from all available numerator and denominator sums for the player/team/position in that interval; compute score from those consolidated shares, and PPR/G from observed eligible games only. Include players lacking a final-week record, display the number of observed games and last observed week, and never infer zero PPR for missing rows. Historical cutoffs cannot access later-week data. The delta remains explicitly weekly, not a delta between unequal cumulative periods. Cohort signals use the same position/cutoff and available consolidated records. Individual charts contain actual observed weeks only.

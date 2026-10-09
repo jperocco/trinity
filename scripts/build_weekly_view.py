@@ -4,9 +4,10 @@ import json
 from pathlib import Path
 
 import pandas as pd
+from train_points_model import project
 
 
-def build_rows(data, models):
+def build_rows(data, models, points_models=None):
     data=data.copy()
     data['identity']=data.player.astype(str)+'|'+data.team+'|'+data.position+'|'+data.season.astype(str)
     if data.duplicated(['identity','week']).any():
@@ -51,6 +52,27 @@ def build_rows(data, models):
             if not observed:
                 for field in ['score','delta','rs','ts','ays','ppr','rolling_score','rolling_rs','rolling_ts','rolling_ays']:
                     rows[-1][field]=None
+            output=rows[-1]
+            for prefix,period in [('',[row] if observed else []),('rolling_',history if observed else []),('cumulative_',accumulated)]:
+                output[prefix+'targets_per_game']=sum(r.targets for r in period)/len(period) if period else None
+                output[prefix+'routes_per_game']=sum(r.routes for r in period)/len(period) if period else None
+                if points_models:
+                    output[prefix+'legacy_score']=output[prefix+'score']
+                    if period:
+                        features=dict(targets_per_game=output[prefix+'targets_per_game'],target_share=output[prefix+'ts']/100,
+                            routes_per_game=output[prefix+'routes_per_game'],route_share=output[prefix+'rs']/100,air_yard_share=output[prefix+'ays']/100)
+                        points,new_score=project(features,points_models[row.position])
+                        output[prefix+'points_reference']=points
+                        output[prefix+'score']=new_score
+                    else:output[prefix+'points_reference']=None
+            if points_models:
+                output['legacy_delta']=output['delta']
+                if observed and previous is not None:
+                    features=dict(targets_per_game=previous.targets,target_share=previous.targets/previous.team_targets,
+                        routes_per_game=previous.routes,route_share=previous.routes/previous.team_route_opportunities,
+                        air_yard_share=previous.receiving_air_yards/previous.team_receiving_air_yards)
+                    _,old_score=project(features,points_models[row.position])
+                    output['delta']=output['score']-old_score
     result=pd.DataFrame(rows)
     for prefix,score_col,ppr_col in [('', 'score','ppr'),('rolling_','rolling_score','rolling_ppr'),('cumulative_','cumulative_score','cumulative_ppr')]:
         groups=result.groupby(['season','week','position'])
@@ -65,8 +87,8 @@ def build_rows(data, models):
     return json.loads(result.to_json(orient='records'))
 
 
-def render(rows,models,template):
-    payload=json.dumps(dict(rows=rows,models=models),ensure_ascii=False,allow_nan=False).replace('<','\\u003c')
+def render(rows,models,template,points_model=None):
+    payload=json.dumps(dict(rows=rows,models=models,points_model=points_model),ensure_ascii=False,allow_nan=False).replace('<','\\u003c')
     return template.replace('__PAYLOAD__',payload)
 
 
@@ -74,13 +96,15 @@ def main():
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--jj-csv',type=Path,default=Path('data/raw/jj/canonical_inclusive_2026.csv'))
     parser.add_argument('--model',type=Path,default=Path('models/trinity_weekly_v01.json'))
+    parser.add_argument('--points-model',type=Path,default=Path('models/trinity_points_v02.json'))
     parser.add_argument('--output',type=Path,default=Path('data/processed/Trinity_Weekly.html'))
     args=parser.parse_args()
     models=json.loads(args.model.read_text())['positions']
-    rows=build_rows(pd.read_csv(args.jj_csv),models)
+    points_model=json.loads(args.points_model.read_text())
+    rows=build_rows(pd.read_csv(args.jj_csv),models,points_model['positions'])
     template=(Path(__file__).resolve().parents[1]/'templates/weekly.html').read_text()
     args.output.parent.mkdir(parents=True,exist_ok=True)
-    args.output.write_text(render(rows,models,template))
+    args.output.write_text(render(rows,models,template,points_model))
     print(f'{len(rows)} player-game rows -> {args.output}')
 
 

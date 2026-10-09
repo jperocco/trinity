@@ -1,9 +1,11 @@
 {
-  "version": "0.2",
+  "version": "0.2.1",
   "status": "Experimental annual-trained points reference applied to JJ; not a validated next-week PPR forecast",
   "training_source": "Supplied FP 2021\u20132025 only",
   "alpha": 10,
-  "score_definition": "10 \u00d7 (1 \u2212 10^(\u2212nonnegative annual-equivalent FP/G / fixed position historical p95 FP/G)); anchor maps to 9, monotonic below 10; not percentile or original DD score",
+  "score_definition": "10 \u00d7 (1 \u2212 10^(\u2212nonnegative annual-equivalent FP/G / pooled WR+TE historical p95 FP/G)); shared anchor maps to 9 and preserves points ordering across positions; not percentile or original DD score",
+  "common_score_anchor_ppr": 15.3,
+  "target_share_input": "Targets divided by team targets in eligible observed player games; full-period team share displayed separately, not silently substituted into frozen prediction equation",
   "selection": "2024 validation MAE after training outcomes 2022\u20132023; evaluation 2025 already inspected previously; final refit uses all 2022\u20132025 outcome pairs",
   "exclusions": "Quality with red-zone/end-zone inputs tested in annual research only: JJ lacks end-zone counts and red-zone counts are incomplete (636/963). No zeros substituted.",
   "positions": {
@@ -17,7 +19,7 @@
         "target_share": 22.163256935106503
       },
       "intercept": 0.348620891558995,
-      "score_anchor_ppr": 16.7,
+      "score_anchor_ppr": 15.3,
       "selected_block": "volume_relevance",
       "training_pairs": 522
     },
@@ -31,7 +33,7 @@
         "target_share": 29.238673446777224
       },
       "intercept": 0.7221128948040851,
-      "score_anchor_ppr": 12.3,
+      "score_anchor_ppr": 15.3,
       "selected_block": "volume_relevance",
       "training_pairs": 323
     }

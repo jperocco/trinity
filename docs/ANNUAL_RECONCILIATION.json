@@ -1,0 +1,1142 @@
+{
+  "method": "Unique normalized exact name+position; unique suffix-variant fallback; no fuzzy matches",
+  "caveats": [
+    "nflverse stat rows are not a complete games-played ledger.",
+    "Cross-provider match is not proof of provider route/share semantics.",
+    "Receiving count and fantasy scoring differences are recorded, not corrected."
+  ],
+  "years": {
+    "2021": {
+      "source_rows": 388,
+      "identity_matched_rows": 353,
+      "unmatched_names": [
+        {
+          "Name": "Deonte Harris",
+          "POS": "WR"
+        },
+        {
+          "Name": "Gabriel Davis",
+          "POS": "WR"
+        },
+        {
+          "Name": "Robby Anderson",
+          "POS": "WR"
+        },
+        {
+          "Name": "Taysom Hill",
+          "POS": "TE"
+        },
+        {
+          "Name": "Joe Fortson",
+          "POS": "TE"
+        },
+        {
+          "Name": "Dillon Stoner",
+          "POS": "WR"
+        },
+        {
+          "Name": "Matt LaCosse",
+          "POS": "TE"
+        },
+        {
+          "Name": "Tony Poljan",
+          "POS": "TE"
+        },
+        {
+          "Name": "Miller Forristall",
+          "POS": "TE"
+        },
+        {
+          "Name": "Michael Bandy",
+          "POS": "WR"
+        },
+        {
+          "Name": "Sammis Reyes",
+          "POS": "TE"
+        },
+        {
+          "Name": "J.P. Holtz",
+          "POS": "TE"
+        },
+        {
+          "Name": "Josh Hammond",
+          "POS": "WR"
+        },
+        {
+          "Name": "Noah Togiai",
+          "POS": "TE"
+        },
+        {
+          "Name": "David Wells",
+          "POS": "TE"
+        },
+        {
+          "Name": "Dan Chisena",
+          "POS": "WR"
+        },
+        {
+          "Name": "Jalen Camp",
+          "POS": "WR"
+        },
+        {
+          "Name": "Tory Carter",
+          "POS": "TE"
+        },
+        {
+          "Name": "Kahale Warring",
+          "POS": "TE"
+        },
+        {
+          "Name": "Matt Bushman",
+          "POS": "TE"
+        },
+        {
+          "Name": "Jared Pinkney",
+          "POS": "TE"
+        },
+        {
+          "Name": "JoJo Natson",
+          "POS": "WR"
+        },
+        {
+          "Name": "Nick Bowers",
+          "POS": "TE"
+        },
+        {
+          "Name": "Cody Thompson",
+          "POS": "WR"
+        },
+        {
+          "Name": "Landen Akers",
+          "POS": "WR"
+        },
+        {
+          "Name": "Tyler Mabry",
+          "POS": "TE"
+        },
+        {
+          "Name": "Ross Travis",
+          "POS": "TE"
+        },
+        {
+          "Name": "Devin Asiasi",
+          "POS": "TE"
+        },
+        {
+          "Name": "Temarrick Hemingway",
+          "POS": "TE"
+        },
+        {
+          "Name": "Andrew Beck",
+          "POS": "TE"
+        },
+        {
+          "Name": "DeMichael Harris",
+          "POS": "WR"
+        },
+        {
+          "Name": "Jordan Veasy",
+          "POS": "WR"
+        },
+        {
+          "Name": "Jacob Harris",
+          "POS": "TE"
+        },
+        {
+          "Name": "Antonio Gandy-Golden",
+          "POS": "WR"
+        },
+        {
+          "Name": "Isaiah Hodgins",
+          "POS": "WR"
+        }
+      ],
+      "ambiguous_keys": [],
+      "duplicate_source_rows": 0,
+      "comparison_rows": 353,
+      "match_methods": {
+        "normalized_exact": 353,
+        "unmatched": 35
+      },
+      "receiving_counts_exact": {
+        "receptions": 353,
+        "yards": 353,
+        "touchdowns": 353,
+        "targets": 157,
+        "air_yards": 21
+      },
+      "receiving_count_mismatches": [],
+      "source_games_less_than_stat_rows_detail": [],
+      "total_ppr_within_0051": 290,
+      "median_absolute_total_ppr_delta": 0.0,
+      "max_absolute_total_ppr_delta": 12.0,
+      "source_games_equal_stat_rows": 129,
+      "source_games_greater_than_stat_rows": 224,
+      "source_games_less_than_stat_rows": 0,
+      "source_ppg_rounding_consistent": 341,
+      "source_ppg_missing": 12,
+      "largest_ppr_differences": [
+        {
+          "Name": "Jamal Agnew",
+          "POS": "WR",
+          "G": 10,
+          "FP": 70.0,
+          "nfl_fp": 82.0,
+          "fp_delta": -12.0,
+          "nfl_stat_rows": 9
+        },
+        {
+          "Name": "Andre Roberts",
+          "POS": "WR",
+          "G": 16,
+          "FP": 4.4,
+          "nfl_fp": 12.4,
+          "fp_delta": -8.0,
+          "nfl_stat_rows": 5
+        },
+        {
+          "Name": "Jakeem Grant",
+          "POS": "WR",
+          "G": 15,
+          "FP": 36.5,
+          "nfl_fp": 43.5,
+          "fp_delta": -7.0,
+          "nfl_stat_rows": 7
+        },
+        {
+          "Name": "DeAndre Carter",
+          "POS": "WR",
+          "G": 17,
+          "FP": 80.5,
+          "nfl_fp": 86.5,
+          "fp_delta": -6.0,
+          "nfl_stat_rows": 15
+        },
+        {
+          "Name": "Braxton Berrios",
+          "POS": "WR",
+          "G": 16,
+          "FP": 116.1,
+          "nfl_fp": 121.1,
+          "fp_delta": -5.0,
+          "nfl_stat_rows": 15
+        }
+      ]
+    },
+    "2022": {
+      "source_rows": 378,
+      "identity_matched_rows": 341,
+      "unmatched_names": [
+        {
+          "Name": "Robby Anderson",
+          "POS": "WR"
+        },
+        {
+          "Name": "Lawrence Cager",
+          "POS": "WR"
+        },
+        {
+          "Name": "Joe Fortson",
+          "POS": "TE"
+        },
+        {
+          "Name": "Taysom Hill",
+          "POS": "TE"
+        },
+        {
+          "Name": "Andrew Beck",
+          "POS": "TE"
+        },
+        {
+          "Name": "Britain Covey",
+          "POS": "WR"
+        },
+        {
+          "Name": "Kwamie Lassiter",
+          "POS": "WR"
+        },
+        {
+          "Name": "Hunter Long",
+          "POS": "TE"
+        },
+        {
+          "Name": "Matt Slater",
+          "POS": "WR"
+        },
+        {
+          "Name": "Tyler Johnson",
+          "POS": "WR"
+        },
+        {
+          "Name": "Javon Wims",
+          "POS": "WR"
+        },
+        {
+          "Name": "Tyree Jackson",
+          "POS": "TE"
+        },
+        {
+          "Name": "Jared Bernhardt",
+          "POS": "WR"
+        },
+        {
+          "Name": "Tay Martin",
+          "POS": "WR"
+        },
+        {
+          "Name": "J.P. Holtz",
+          "POS": "TE"
+        },
+        {
+          "Name": "Nick Boyle",
+          "POS": "TE"
+        },
+        {
+          "Name": "Jacob Hollister",
+          "POS": "TE"
+        },
+        {
+          "Name": "Scotty Washington",
+          "POS": "TE"
+        },
+        {
+          "Name": "Dez Fitzpatrick",
+          "POS": "WR"
+        },
+        {
+          "Name": "Trinity Benson",
+          "POS": "WR"
+        },
+        {
+          "Name": "Kirk Merritt",
+          "POS": "WR"
+        },
+        {
+          "Name": "Kyric Mcgowan",
+          "POS": "WR"
+        },
+        {
+          "Name": "Kaylon Geiger",
+          "POS": "WR"
+        },
+        {
+          "Name": "Cornell Powell",
+          "POS": "WR"
+        },
+        {
+          "Name": "Johnny Johnson",
+          "POS": "WR"
+        },
+        {
+          "Name": "Kevin Rader",
+          "POS": "TE"
+        },
+        {
+          "Name": "Jesse James",
+          "POS": "TE"
+        },
+        {
+          "Name": "Stanley Berryhill",
+          "POS": "WR"
+        },
+        {
+          "Name": "Ethan Fernea",
+          "POS": "WR"
+        },
+        {
+          "Name": "Preston Williams",
+          "POS": "WR"
+        },
+        {
+          "Name": "Marcus Kemp",
+          "POS": "WR"
+        },
+        {
+          "Name": "Willie Snead",
+          "POS": "WR"
+        },
+        {
+          "Name": "Kenny Yeboah",
+          "POS": "TE"
+        },
+        {
+          "Name": "Lucas Krull",
+          "POS": "TE"
+        },
+        {
+          "Name": "Garrett Griffin",
+          "POS": "TE"
+        },
+        {
+          "Name": "Rashard Higgins",
+          "POS": "WR"
+        },
+        {
+          "Name": "Nikola Kalinic",
+          "POS": "TE"
+        }
+      ],
+      "ambiguous_keys": [],
+      "duplicate_source_rows": 2,
+      "comparison_rows": 339,
+      "match_methods": {
+        "normalized_exact": 341,
+        "unmatched": 37
+      },
+      "receiving_counts_exact": {
+        "receptions": 338,
+        "yards": 338,
+        "touchdowns": 339,
+        "targets": 142,
+        "air_yards": 21
+      },
+      "receiving_count_mismatches": [
+        {
+          "Name": "Rashid Shaheed",
+          "POS": "WR",
+          "G": 12,
+          "REC": 27,
+          "nfl_rec": 28,
+          "YDS": 487,
+          "nfl_yards": 488,
+          "TD": 2,
+          "nfl_td": 2
+        }
+      ],
+      "source_games_less_than_stat_rows_detail": [],
+      "total_ppr_within_0051": 266,
+      "median_absolute_total_ppr_delta": 0.0,
+      "max_absolute_total_ppr_delta": 6.0,
+      "source_games_equal_stat_rows": 124,
+      "source_games_greater_than_stat_rows": 215,
+      "source_games_less_than_stat_rows": 0,
+      "source_ppg_rounding_consistent": 327,
+      "source_ppg_missing": 12,
+      "largest_ppr_differences": [
+        {
+          "Name": "Devin Duvernay",
+          "POS": "WR",
+          "G": 14,
+          "FP": 110.1,
+          "nfl_fp": 116.1,
+          "fp_delta": -6.0,
+          "nfl_stat_rows": 14
+        },
+        {
+          "Name": "Donovan Peoples-Jones",
+          "POS": "WR",
+          "G": 17,
+          "FP": 162.1,
+          "nfl_fp": 167.1,
+          "fp_delta": -5.0,
+          "nfl_stat_rows": 17
+        },
+        {
+          "Name": "Kalif Raymond",
+          "POS": "WR",
+          "G": 17,
+          "FP": 111.2,
+          "nfl_fp": 116.2,
+          "fp_delta": -5.0,
+          "nfl_stat_rows": 16
+        },
+        {
+          "Name": "Drake London",
+          "POS": "WR",
+          "G": 17,
+          "FP": 181.6,
+          "nfl_fp": 178.6,
+          "fp_delta": 3.0,
+          "nfl_stat_rows": 17
+        },
+        {
+          "Name": "Richie James",
+          "POS": "WR",
+          "G": 16,
+          "FP": 135.5,
+          "nfl_fp": 138.5,
+          "fp_delta": -3.0,
+          "nfl_stat_rows": 14
+        }
+      ]
+    },
+    "2023": {
+      "source_rows": 368,
+      "identity_matched_rows": 325,
+      "unmatched_names": [
+        {
+          "Name": "Chigoziem Okonkwo",
+          "POS": "TE"
+        },
+        {
+          "Name": "Velus Jones",
+          "POS": "WR"
+        },
+        {
+          "Name": "Tre'Quan Smith",
+          "POS": "WR"
+        },
+        {
+          "Name": "Josh Pederson",
+          "POS": "TE"
+        },
+        {
+          "Name": "Brady Russell",
+          "POS": "TE"
+        },
+        {
+          "Name": "Michael Bandy",
+          "POS": "WR"
+        },
+        {
+          "Name": "Tre' McKitty",
+          "POS": "TE"
+        },
+        {
+          "Name": "Hunter Long",
+          "POS": "TE"
+        },
+        {
+          "Name": "Ryan Miller",
+          "POS": "WR"
+        },
+        {
+          "Name": "Stephen Anderson",
+          "POS": "TE"
+        },
+        {
+          "Name": "Noah Togiai",
+          "POS": "TE"
+        },
+        {
+          "Name": "Marquez Callaway",
+          "POS": "WR"
+        },
+        {
+          "Name": "Tyler Kroft",
+          "POS": "TE"
+        },
+        {
+          "Name": "Mitchell Tinsley",
+          "POS": "WR"
+        },
+        {
+          "Name": "Kirk Merritt",
+          "POS": "WR"
+        },
+        {
+          "Name": "Stanley Morgan",
+          "POS": "WR"
+        },
+        {
+          "Name": "Tyree Jackson",
+          "POS": "TE"
+        },
+        {
+          "Name": "Darrell Daniels",
+          "POS": "TE"
+        },
+        {
+          "Name": "Travis Vokolek",
+          "POS": "TE"
+        },
+        {
+          "Name": "N'Keal Harry",
+          "POS": "WR"
+        },
+        {
+          "Name": "Parker Hesse",
+          "POS": "TE"
+        },
+        {
+          "Name": "Tay Martin",
+          "POS": "WR"
+        },
+        {
+          "Name": "Dalton Keene",
+          "POS": "TE"
+        },
+        {
+          "Name": "Ethan Fernea",
+          "POS": "WR"
+        },
+        {
+          "Name": "Brayden Willis",
+          "POS": "TE"
+        },
+        {
+          "Name": "Matt Bushman",
+          "POS": "TE"
+        },
+        {
+          "Name": "Henry Pearson",
+          "POS": "TE"
+        },
+        {
+          "Name": "Johnny Johnson",
+          "POS": "WR"
+        },
+        {
+          "Name": "Dylan Drummond",
+          "POS": "WR"
+        },
+        {
+          "Name": "David Sills",
+          "POS": "WR"
+        },
+        {
+          "Name": "Chris Blair",
+          "POS": "WR"
+        },
+        {
+          "Name": "Lucky Jackson",
+          "POS": "WR"
+        },
+        {
+          "Name": "Kristian Wilkerson",
+          "POS": "WR"
+        },
+        {
+          "Name": "Andrew Beck",
+          "POS": "TE"
+        },
+        {
+          "Name": "Andre Baccellia",
+          "POS": "WR"
+        },
+        {
+          "Name": "D'Wayne Eskridge",
+          "POS": "WR"
+        },
+        {
+          "Name": "Dareke Young",
+          "POS": "WR"
+        },
+        {
+          "Name": "Jacob Harris",
+          "POS": "WR"
+        },
+        {
+          "Name": "Zach Gentry",
+          "POS": "TE"
+        },
+        {
+          "Name": "Tanner Conner",
+          "POS": "WR"
+        },
+        {
+          "Name": "Andy Isabella",
+          "POS": "WR"
+        },
+        {
+          "Name": "Blake Whiteheart",
+          "POS": "TE"
+        },
+        {
+          "Name": "Matt Sokol",
+          "POS": "TE"
+        }
+      ],
+      "ambiguous_keys": [],
+      "duplicate_source_rows": 0,
+      "comparison_rows": 325,
+      "match_methods": {
+        "normalized_exact": 318,
+        "unmatched": 43,
+        "unique_suffix_variant": 7
+      },
+      "receiving_counts_exact": {
+        "receptions": 324,
+        "yards": 324,
+        "touchdowns": 324,
+        "targets": 149,
+        "air_yards": 20
+      },
+      "receiving_count_mismatches": [
+        {
+          "Name": "Taysom Hill",
+          "POS": "TE",
+          "G": 10,
+          "REC": 23,
+          "nfl_rec": 33,
+          "YDS": 200,
+          "nfl_yards": 291,
+          "TD": 1,
+          "nfl_td": 2
+        }
+      ],
+      "source_games_less_than_stat_rows_detail": [
+        {
+          "Name": "Taysom Hill",
+          "POS": "TE",
+          "G": 10,
+          "nfl_stat_rows": 16
+        }
+      ],
+      "total_ppr_within_0051": 250,
+      "median_absolute_total_ppr_delta": 0.0,
+      "max_absolute_total_ppr_delta": 62.02000000000001,
+      "source_games_equal_stat_rows": 108,
+      "source_games_greater_than_stat_rows": 216,
+      "source_games_less_than_stat_rows": 1,
+      "source_ppg_rounding_consistent": 316,
+      "source_ppg_missing": 9,
+      "largest_ppr_differences": [
+        {
+          "Name": "Taysom Hill",
+          "POS": "TE",
+          "G": 10,
+          "FP": 81.5,
+          "nfl_fp": 143.52,
+          "fp_delta": -62.02000000000001,
+          "nfl_stat_rows": 16
+        },
+        {
+          "Name": "Marvin Mims",
+          "POS": "WR",
+          "G": 16,
+          "FP": 66.7,
+          "nfl_fp": 74.7,
+          "fp_delta": -8.0,
+          "nfl_stat_rows": 15
+        },
+        {
+          "Name": "Xavier Gipson",
+          "POS": "WR",
+          "G": 17,
+          "FP": 54.7,
+          "nfl_fp": 62.7,
+          "fp_delta": -8.0,
+          "nfl_stat_rows": 14
+        },
+        {
+          "Name": "Derius Davis",
+          "POS": "WR",
+          "G": 17,
+          "FP": 30.7,
+          "nfl_fp": 37.7,
+          "fp_delta": -7.0000000000000036,
+          "nfl_stat_rows": 14
+        },
+        {
+          "Name": "Rashid Shaheed",
+          "POS": "WR",
+          "G": 15,
+          "FP": 150.6,
+          "nfl_fp": 157.6,
+          "fp_delta": -7.0,
+          "nfl_stat_rows": 15
+        }
+      ]
+    },
+    "2024": {
+      "source_rows": 381,
+      "identity_matched_rows": 342,
+      "unmatched_names": [
+        {
+          "Name": "Chig Okonkwo",
+          "POS": "TE"
+        },
+        {
+          "Name": "Devin Thompkins",
+          "POS": "WR"
+        },
+        {
+          "Name": "Tanner Conner",
+          "POS": "TE"
+        },
+        {
+          "Name": "Velus Jones",
+          "POS": "WR"
+        },
+        {
+          "Name": "Teagan Quitoriano",
+          "POS": "TE"
+        },
+        {
+          "Name": "Jack Westover",
+          "POS": "TE"
+        },
+        {
+          "Name": "Brady Russell",
+          "POS": "TE"
+        },
+        {
+          "Name": "Roman Wilson",
+          "POS": "WR"
+        },
+        {
+          "Name": "Anthony Firkser",
+          "POS": "TE"
+        },
+        {
+          "Name": "Equanimeous St. Brown",
+          "POS": "WR"
+        },
+        {
+          "Name": "Jared Wayne",
+          "POS": "WR"
+        },
+        {
+          "Name": "Justin Shorter",
+          "POS": "TE"
+        },
+        {
+          "Name": "Brenden Rice",
+          "POS": "WR"
+        },
+        {
+          "Name": "Robert Tonyan",
+          "POS": "TE"
+        },
+        {
+          "Name": "Marquez Callaway",
+          "POS": "WR"
+        },
+        {
+          "Name": "Zach Pascal",
+          "POS": "WR"
+        },
+        {
+          "Name": "Dez Fitzpatrick",
+          "POS": "WR"
+        },
+        {
+          "Name": "Kaden Davis",
+          "POS": "WR"
+        },
+        {
+          "Name": "Elijah Cooks",
+          "POS": "WR"
+        },
+        {
+          "Name": "Jake Tonges",
+          "POS": "TE"
+        },
+        {
+          "Name": "Tyreik McAllister",
+          "POS": "WR"
+        },
+        {
+          "Name": "Deonte Harty",
+          "POS": "WR"
+        },
+        {
+          "Name": "Alex Erickson",
+          "POS": "WR"
+        },
+        {
+          "Name": "Laquon Treadwell",
+          "POS": "WR"
+        },
+        {
+          "Name": "Parker Hesse",
+          "POS": "TE"
+        },
+        {
+          "Name": "Jalen Moreno-Cropper",
+          "POS": "WR"
+        },
+        {
+          "Name": "Joshua Cephus",
+          "POS": "WR"
+        },
+        {
+          "Name": "Cody Thompson",
+          "POS": "WR"
+        },
+        {
+          "Name": "Irv Smith",
+          "POS": "TE"
+        },
+        {
+          "Name": "Tanner McLachlan",
+          "POS": "TE"
+        },
+        {
+          "Name": "Jalen Virgil",
+          "POS": "WR"
+        },
+        {
+          "Name": "Nick Muse",
+          "POS": "TE"
+        },
+        {
+          "Name": "C.J. Uzomah",
+          "POS": "TE"
+        },
+        {
+          "Name": "Montrell Washington",
+          "POS": "WR"
+        },
+        {
+          "Name": "James Mitchell",
+          "POS": "TE"
+        },
+        {
+          "Name": "Ko Kieft",
+          "POS": "TE"
+        },
+        {
+          "Name": "Colson Yankoff",
+          "POS": "TE"
+        },
+        {
+          "Name": "Chris Moore",
+          "POS": "WR"
+        },
+        {
+          "Name": "Trishton Jackson",
+          "POS": "WR"
+        }
+      ],
+      "ambiguous_keys": [],
+      "duplicate_source_rows": 0,
+      "comparison_rows": 342,
+      "match_methods": {
+        "normalized_exact": 341,
+        "unmatched": 39,
+        "unique_suffix_variant": 1
+      },
+      "receiving_counts_exact": {
+        "receptions": 342,
+        "yards": 339,
+        "touchdowns": 342,
+        "targets": 164,
+        "air_yards": 32
+      },
+      "receiving_count_mismatches": [
+        {
+          "Name": "Ladd McConkey",
+          "POS": "WR",
+          "G": 16,
+          "REC": 82,
+          "nfl_rec": 82,
+          "YDS": 1155,
+          "nfl_yards": 1149,
+          "TD": 7,
+          "nfl_td": 7
+        },
+        {
+          "Name": "Pat Freiermuth",
+          "POS": "TE",
+          "G": 17,
+          "REC": 65,
+          "nfl_rec": 65,
+          "YDS": 655,
+          "nfl_yards": 653,
+          "TD": 7,
+          "nfl_td": 7
+        },
+        {
+          "Name": "Eric Saubert",
+          "POS": "TE",
+          "G": 17,
+          "REC": 11,
+          "nfl_rec": 11,
+          "YDS": 100,
+          "nfl_yards": 97,
+          "TD": 1,
+          "nfl_td": 1
+        }
+      ],
+      "source_games_less_than_stat_rows_detail": [],
+      "total_ppr_within_0051": 268,
+      "median_absolute_total_ppr_delta": 0.0,
+      "max_absolute_total_ppr_delta": 11.0,
+      "source_games_equal_stat_rows": 119,
+      "source_games_greater_than_stat_rows": 223,
+      "source_games_less_than_stat_rows": 0,
+      "source_ppg_rounding_consistent": 327,
+      "source_ppg_missing": 15,
+      "largest_ppr_differences": [
+        {
+          "Name": "KaVontae Turpin",
+          "POS": "WR",
+          "G": 17,
+          "FP": 93.2,
+          "nfl_fp": 104.2,
+          "fp_delta": -11.0,
+          "nfl_stat_rows": 15
+        },
+        {
+          "Name": "Laviska Shenault",
+          "POS": "WR",
+          "G": 12,
+          "FP": 6.7,
+          "nfl_fp": 14.7,
+          "fp_delta": -7.999999999999999,
+          "nfl_stat_rows": 6
+        },
+        {
+          "Name": "Calvin Austin",
+          "POS": "WR",
+          "G": 17,
+          "FP": 113.8,
+          "nfl_fp": 120.8,
+          "fp_delta": -7.0,
+          "nfl_stat_rows": 17
+        },
+        {
+          "Name": "Rashid Shaheed",
+          "POS": "WR",
+          "G": 6,
+          "FP": 74.8,
+          "nfl_fp": 81.8,
+          "fp_delta": -7.0,
+          "nfl_stat_rows": 6
+        },
+        {
+          "Name": "Charlie Jones",
+          "POS": "WR",
+          "G": 8,
+          "FP": 0.5,
+          "nfl_fp": 7.5,
+          "fp_delta": -7.0,
+          "nfl_stat_rows": 2
+        }
+      ]
+    },
+    "2025": {
+      "source_rows": 376,
+      "identity_matched_rows": 362,
+      "unmatched_names": [
+        {
+          "Name": "Travis Hunter",
+          "POS": "WR"
+        },
+        {
+          "Name": "Connor Heyward",
+          "POS": "TE"
+        },
+        {
+          "Name": "CJ Dippre",
+          "POS": "TE"
+        },
+        {
+          "Name": "Maurice Alexander",
+          "POS": "WR"
+        },
+        {
+          "Name": "Jalen Cropper",
+          "POS": "WR"
+        },
+        {
+          "Name": "Jimmy Holiday",
+          "POS": "WR"
+        },
+        {
+          "Name": "Stephen Carlson",
+          "POS": "TE"
+        },
+        {
+          "Name": "Brandon Smith",
+          "POS": "WR"
+        },
+        {
+          "Name": "Treyton Welch",
+          "POS": "TE"
+        },
+        {
+          "Name": "Russell Gage",
+          "POS": "WR"
+        },
+        {
+          "Name": "Ja'Corey Brooks",
+          "POS": "WR"
+        },
+        {
+          "Name": "Zach Horton",
+          "POS": "TE"
+        },
+        {
+          "Name": "Sean McKeon",
+          "POS": "TE"
+        },
+        {
+          "Name": "Nick Vannett",
+          "POS": "TE"
+        }
+      ],
+      "ambiguous_keys": [],
+      "duplicate_source_rows": 0,
+      "comparison_rows": 362,
+      "match_methods": {
+        "normalized_exact": 345,
+        "unique_suffix_variant": 17,
+        "unmatched": 14
+      },
+      "receiving_counts_exact": {
+        "receptions": 362,
+        "yards": 362,
+        "touchdowns": 362,
+        "targets": 177,
+        "air_yards": 49
+      },
+      "receiving_count_mismatches": [],
+      "source_games_less_than_stat_rows_detail": [
+        {
+          "Name": "Bo Melton",
+          "POS": "WR",
+          "G": 9,
+          "nfl_stat_rows": 13
+        }
+      ],
+      "total_ppr_within_0051": 299,
+      "median_absolute_total_ppr_delta": 0.0,
+      "max_absolute_total_ppr_delta": 13.0,
+      "source_games_equal_stat_rows": 173,
+      "source_games_greater_than_stat_rows": 188,
+      "source_games_less_than_stat_rows": 1,
+      "source_ppg_rounding_consistent": 341,
+      "source_ppg_missing": 21,
+      "largest_ppr_differences": [
+        {
+          "Name": "Chimere Dike",
+          "POS": "WR",
+          "G": 17,
+          "FP": 115.1,
+          "nfl_fp": 128.1,
+          "fp_delta": -13.0,
+          "nfl_stat_rows": 17
+        },
+        {
+          "Name": "Jaylin Lane",
+          "POS": "WR",
+          "G": 15,
+          "FP": 38.2,
+          "nfl_fp": 51.2,
+          "fp_delta": -13.0,
+          "nfl_stat_rows": 15
+        },
+        {
+          "Name": "Isaiah Williams",
+          "POS": "WR",
+          "G": 15,
+          "FP": 47.7,
+          "nfl_fp": 60.7,
+          "fp_delta": -13.0,
+          "nfl_stat_rows": 15
+        },
+        {
+          "Name": "Parker Washington",
+          "POS": "WR",
+          "G": 16,
+          "FP": 172.7,
+          "nfl_fp": 184.7,
+          "fp_delta": -12.0,
+          "nfl_stat_rows": 16
+        },
+        {
+          "Name": "Rashid Shaheed",
+          "POS": "WR",
+          "G": 18,
+          "FP": 145.6,
+          "nfl_fp": 156.6,
+          "fp_delta": -11.0,
+          "nfl_stat_rows": 18
+        }
+      ]
+    }
+  }
+}

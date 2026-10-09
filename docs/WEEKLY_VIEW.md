@@ -21,3 +21,7 @@ Frozen provisional weights: WR 70/5/25 and TE 80/20/0 for routes/targets/air yar
 ## Consolidated view
 
 The default view now consolidates week 1 through the selected cutoff. Compute shares from all available numerator and denominator sums for the player/team/position in that interval; compute score from those consolidated shares, and PPR/G from observed eligible games only. Include players lacking a final-week record, display the number of observed games and last observed week, and never infer zero PPR for missing rows. Historical cutoffs cannot access later-week data. The delta remains explicitly weekly, not a delta between unequal cumulative periods. Cohort signals use the same position/cutoff and available consolidated records. Individual charts contain actual observed weeks only.
+
+## Shared points scale and target-share definitions
+
+The v0.2.1 main score uses a common 15.3 FP/G reference for both positions, preserving point-estimate ranking when WR and TE appear together. TS jogos and TS período appear side by side; the detail view lists available team games and team targets for the selected period. Predictive coefficients and the TS jogos model input remain frozen.

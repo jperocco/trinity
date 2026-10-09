@@ -1,0 +1,619 @@
+{
+  "source": "Supplied FP 2021\u20132025 only; exact same-provider name and position; no external joins",
+  "method": "Same complete-case sample for every model, six-plus games in both seasons. StandardScaler + Ridge alpha=10 fixed, fitted only on outcome years before each test year. Outcomes 2023, 2024, 2025; features always from previous season. Predictions clipped at zero. Prior-PPR comparator is a fitted one-feature ridge, not raw persistence.",
+  "blocks": {
+    "core": [
+      "targets_per_game",
+      "target_share"
+    ],
+    "efficiency": [
+      "targets_per_game",
+      "target_share",
+      "yprr",
+      "yard_share"
+    ],
+    "quality": [
+      "targets_per_game",
+      "target_share",
+      "air_yard_share",
+      "redzone_targets_per_game",
+      "endzone_targets_per_game"
+    ],
+    "full": [
+      "targets_per_game",
+      "target_share",
+      "yprr",
+      "yard_share",
+      "air_yard_share",
+      "redzone_targets_per_game",
+      "endzone_targets_per_game",
+      "routes_per_game",
+      "route_share"
+    ],
+    "prior_ppr": [
+      "prior_ppr"
+    ]
+  },
+  "audit": {
+    "2021": {
+      "rows": 388,
+      "duplicate_rows": 0,
+      "invalid_share_rows": 1,
+      "missing_rows": 42,
+      "short_sample_rows": 82,
+      "unresolved_identity_rows": 0,
+      "unresolved_otherwise_eligible": 0,
+      "eligible_rows": 298
+    },
+    "2022": {
+      "rows": 378,
+      "duplicate_rows": 2,
+      "invalid_share_rows": 2,
+      "missing_rows": 44,
+      "short_sample_rows": 74,
+      "unresolved_identity_rows": 0,
+      "unresolved_otherwise_eligible": 0,
+      "eligible_rows": 287
+    },
+    "2023": {
+      "rows": 368,
+      "duplicate_rows": 0,
+      "invalid_share_rows": 0,
+      "missing_rows": 49,
+      "short_sample_rows": 64,
+      "unresolved_identity_rows": 0,
+      "unresolved_otherwise_eligible": 0,
+      "eligible_rows": 296
+    },
+    "2024": {
+      "rows": 381,
+      "duplicate_rows": 0,
+      "invalid_share_rows": 0,
+      "missing_rows": 49,
+      "short_sample_rows": 70,
+      "unresolved_identity_rows": 0,
+      "unresolved_otherwise_eligible": 0,
+      "eligible_rows": 294
+    },
+    "2025": {
+      "rows": 376,
+      "duplicate_rows": 0,
+      "invalid_share_rows": 0,
+      "missing_rows": 33,
+      "short_sample_rows": 61,
+      "unresolved_identity_rows": 0,
+      "unresolved_otherwise_eligible": 0,
+      "eligible_rows": 306
+    }
+  },
+  "positions": {
+    "WR": {
+      "annual_n": 943,
+      "folds": {
+        "2023": {
+          "train_n": 128,
+          "test_n": 130,
+          "models": {
+            "core": {
+              "n": 130,
+              "mae": 2.720557044347871,
+              "rmse": 3.487617583378891,
+              "pearson": 0.8090610953215097,
+              "spearman": 0.7881824057435666
+            },
+            "efficiency": {
+              "n": 130,
+              "mae": 2.699279476961603,
+              "rmse": 3.4049386491825175,
+              "pearson": 0.8237288943364084,
+              "spearman": 0.8064933848785372
+            },
+            "quality": {
+              "n": 130,
+              "mae": 2.834867427645756,
+              "rmse": 3.6089270339797532,
+              "pearson": 0.7879895183706279,
+              "spearman": 0.7741014764774099
+            },
+            "full": {
+              "n": 130,
+              "mae": 2.7709183509456414,
+              "rmse": 3.4646368235467215,
+              "pearson": 0.8126901313356876,
+              "spearman": 0.7983600085458364
+            },
+            "prior_ppr": {
+              "n": 130,
+              "mae": 2.7152950543500807,
+              "rmse": 3.3949328071710942,
+              "pearson": 0.8261364031962531,
+              "spearman": 0.7910604742452254
+            }
+          }
+        },
+        "2024": {
+          "train_n": 258,
+          "test_n": 132,
+          "models": {
+            "core": {
+              "n": 132,
+              "mae": 2.896797279266984,
+              "rmse": 3.671902906751444,
+              "pearson": 0.7602092735562245,
+              "spearman": 0.7679848079453215
+            },
+            "efficiency": {
+              "n": 132,
+              "mae": 2.930108505165523,
+              "rmse": 3.672256877732158,
+              "pearson": 0.7629378493347689,
+              "spearman": 0.7681861087858392
+            },
+            "quality": {
+              "n": 132,
+              "mae": 2.895781717320966,
+              "rmse": 3.6830969149593793,
+              "pearson": 0.7595816690957061,
+              "spearman": 0.7647589128847999
+            },
+            "full": {
+              "n": 132,
+              "mae": 2.9217407875863546,
+              "rmse": 3.7258122195267336,
+              "pearson": 0.7580869649894892,
+              "spearman": 0.7575012820085798
+            },
+            "prior_ppr": {
+              "n": 132,
+              "mae": 2.8681149901708736,
+              "rmse": 3.6032340952103366,
+              "pearson": 0.7719825373586475,
+              "spearman": 0.7878067142026604
+            }
+          }
+        },
+        "2025": {
+          "train_n": 390,
+          "test_n": 132,
+          "models": {
+            "core": {
+              "n": 132,
+              "mae": 2.2896695723520595,
+              "rmse": 3.0232011310937175,
+              "pearson": 0.8085944693570626,
+              "spearman": 0.8122040386881086
+            },
+            "efficiency": {
+              "n": 132,
+              "mae": 2.342351212294742,
+              "rmse": 3.0230080585419143,
+              "pearson": 0.8105924746671033,
+              "spearman": 0.8069676989505947
+            },
+            "quality": {
+              "n": 132,
+              "mae": 2.2798892199947627,
+              "rmse": 2.9944420758931383,
+              "pearson": 0.8129193271554304,
+              "spearman": 0.8138973045025814
+            },
+            "full": {
+              "n": 132,
+              "mae": 2.339102091561535,
+              "rmse": 2.99245100608454,
+              "pearson": 0.8156922548377394,
+              "spearman": 0.805237906600833
+            },
+            "prior_ppr": {
+              "n": 132,
+              "mae": 2.357372299470425,
+              "rmse": 3.112187352361656,
+              "pearson": 0.798726215684366,
+              "spearman": 0.8005547440762496
+            }
+          }
+        }
+      },
+      "summary": {
+        "core": {
+          "pooled": {
+            "n": 394,
+            "mae": 2.635243756799333,
+            "rmse": 3.4047731685489677,
+            "pearson": 0.7846156616564247,
+            "spearman": 0.7790323662300918
+          },
+          "versus_core": {
+            "delta_mae": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "player_clusters": 202
+          },
+          "versus_prior_ppr": {
+            "delta_mae": -0.011336647510723122,
+            "ci95": [
+              -0.13149077578449744,
+              0.10572600781540152
+            ],
+            "player_clusters": 202
+          },
+          "folds_better_than_core": 0
+        },
+        "efficiency": {
+          "pooled": {
+            "n": 394,
+            "mae": 2.6570330322582825,
+            "rmse": 3.37711892947881,
+            "pearson": 0.790536548356431,
+            "spearman": 0.7812880420367287
+          },
+          "versus_core": {
+            "delta_mae": 0.021789275458949854,
+            "ci95": [
+              -0.08277438200606599,
+              0.12425789309153948
+            ],
+            "player_clusters": 202
+          },
+          "versus_prior_ppr": {
+            "delta_mae": 0.010452627948226725,
+            "ci95": [
+              -0.09034789936972812,
+              0.10912461306015092
+            ],
+            "player_clusters": 202
+          },
+          "folds_better_than_core": 1
+        },
+        "quality": {
+          "pooled": {
+            "n": 394,
+            "mae": 2.6693434754305194,
+            "rmse": 3.441820675015007,
+            "pearson": 0.7792499488938245,
+            "spearman": 0.7740059876750441
+          },
+          "versus_core": {
+            "delta_mae": 0.034099718631186514,
+            "ci95": [
+              -0.007527835986567873,
+              0.07602765410020196
+            ],
+            "player_clusters": 202
+          },
+          "versus_prior_ppr": {
+            "delta_mae": 0.022763071120463378,
+            "ci95": [
+              -0.09814803855189523,
+              0.1411278970830092
+            ],
+            "player_clusters": 202
+          },
+          "folds_better_than_core": 2
+        },
+        "full": {
+          "pooled": {
+            "n": 394,
+            "mae": 2.676778288503692,
+            "rmse": 3.4075506351235187,
+            "pearson": 0.7870336557530772,
+            "spearman": 0.7764689339662743
+          },
+          "versus_core": {
+            "delta_mae": 0.04153453170435983,
+            "ci95": [
+              -0.06372385762206816,
+              0.14646832598882736
+            ],
+            "player_clusters": 202
+          },
+          "versus_prior_ppr": {
+            "delta_mae": 0.0301978841936367,
+            "ci95": [
+              -0.06572018283595182,
+              0.12619691998328672
+            ],
+            "player_clusters": 202
+          },
+          "folds_better_than_core": 0
+        },
+        "prior_ppr": {
+          "pooled": {
+            "n": 394,
+            "mae": 2.6465804043100554,
+            "rmse": 3.3760250331142045,
+            "pearson": 0.7885466370217291,
+            "spearman": 0.7836500620039872
+          },
+          "versus_core": {
+            "delta_mae": 0.011336647510723122,
+            "ci95": [
+              -0.10572600781540155,
+              0.13149077578449736
+            ],
+            "player_clusters": 202
+          },
+          "versus_prior_ppr": {
+            "delta_mae": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "player_clusters": 202
+          },
+          "folds_better_than_core": 2
+        }
+      }
+    },
+    "TE": {
+      "annual_n": 538,
+      "folds": {
+        "2023": {
+          "train_n": 76,
+          "test_n": 77,
+          "models": {
+            "core": {
+              "n": 77,
+              "mae": 1.8728556552270206,
+              "rmse": 2.4285975647489906,
+              "pearson": 0.7941131094768206,
+              "spearman": 0.7812578397427565
+            },
+            "efficiency": {
+              "n": 77,
+              "mae": 1.826476784534818,
+              "rmse": 2.398810305208005,
+              "pearson": 0.7991766962441236,
+              "spearman": 0.7830935145171545
+            },
+            "quality": {
+              "n": 77,
+              "mae": 1.8851324949814128,
+              "rmse": 2.4499675666184926,
+              "pearson": 0.7863681552121501,
+              "spearman": 0.7796617196435214
+            },
+            "full": {
+              "n": 77,
+              "mae": 1.8293475515604498,
+              "rmse": 2.417063142222261,
+              "pearson": 0.7933287860559322,
+              "spearman": 0.784237446141699
+            },
+            "prior_ppr": {
+              "n": 77,
+              "mae": 1.8274554110155523,
+              "rmse": 2.360343569138811,
+              "pearson": 0.8117728989479546,
+              "spearman": 0.7960042614196842
+            }
+          }
+        },
+        "2024": {
+          "train_n": 153,
+          "test_n": 84,
+          "models": {
+            "core": {
+              "n": 84,
+              "mae": 1.9164227534945697,
+              "rmse": 2.604708083848324,
+              "pearson": 0.7734869551642943,
+              "spearman": 0.7362219278773645
+            },
+            "efficiency": {
+              "n": 84,
+              "mae": 1.9058317272448366,
+              "rmse": 2.5434458082305236,
+              "pearson": 0.7861024855803657,
+              "spearman": 0.7385452552608976
+            },
+            "quality": {
+              "n": 84,
+              "mae": 1.8997041956831404,
+              "rmse": 2.5982042809503247,
+              "pearson": 0.776011634889415,
+              "spearman": 0.7409354676858722
+            },
+            "full": {
+              "n": 84,
+              "mae": 1.8915822640122255,
+              "rmse": 2.537359593148678,
+              "pearson": 0.7893026760308742,
+              "spearman": 0.739547929117137
+            },
+            "prior_ppr": {
+              "n": 84,
+              "mae": 1.8909357544925405,
+              "rmse": 2.486698142570787,
+              "pearson": 0.8004701774109326,
+              "spearman": 0.7542677679386796
+            }
+          }
+        },
+        "2025": {
+          "train_n": 237,
+          "test_n": 86,
+          "models": {
+            "core": {
+              "n": 86,
+              "mae": 1.888429127140711,
+              "rmse": 2.4889887618162274,
+              "pearson": 0.8076076659877696,
+              "spearman": 0.8078774657791676
+            },
+            "efficiency": {
+              "n": 86,
+              "mae": 1.817726384942945,
+              "rmse": 2.3801792370725217,
+              "pearson": 0.8259541564421785,
+              "spearman": 0.8103604072357279
+            },
+            "quality": {
+              "n": 86,
+              "mae": 1.8869233399062573,
+              "rmse": 2.490475193916651,
+              "pearson": 0.8071529326561355,
+              "spearman": 0.8018006940820972
+            },
+            "full": {
+              "n": 86,
+              "mae": 1.8246641873386036,
+              "rmse": 2.366304359762449,
+              "pearson": 0.827923221541969,
+              "spearman": 0.8054812763642537
+            },
+            "prior_ppr": {
+              "n": 86,
+              "mae": 1.997886125188083,
+              "rmse": 2.643765691735391,
+              "pearson": 0.777915295617299,
+              "spearman": 0.769494726109061
+            }
+          }
+        }
+      },
+      "summary": {
+        "core": {
+          "pooled": {
+            "n": 247,
+            "mae": 1.8930943387859336,
+            "rmse": 2.5105659957957918,
+            "pearson": 0.7902628812772096,
+            "spearman": 0.7724436808859511
+          },
+          "versus_core": {
+            "delta_mae": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "player_clusters": 114
+          },
+          "versus_prior_ppr": {
+            "delta_mae": -0.015289777779839836,
+            "ci95": [
+              -0.11518400744961949,
+              0.08693282551279023
+            ],
+            "player_clusters": 114
+          },
+          "folds_better_than_core": 0
+        },
+        "efficiency": {
+          "pooled": {
+            "n": 247,
+            "mae": 1.850417192724051,
+            "rmse": 2.442619193640274,
+            "pearson": 0.8030990240737748,
+            "spearman": 0.7735706821334914
+          },
+          "versus_core": {
+            "delta_mae": -0.042677146061882706,
+            "ci95": [
+              -0.08816554427852365,
+              0.0020473873508952546
+            ],
+            "player_clusters": 114
+          },
+          "versus_prior_ppr": {
+            "delta_mae": -0.057966923841722556,
+            "ci95": [
+              -0.14674657581769926,
+              0.027483559426596364
+            ],
+            "player_clusters": 114
+          },
+          "folds_better_than_core": 3
+        },
+        "quality": {
+          "pooled": {
+            "n": 247,
+            "mae": 1.8907115861655492,
+            "rmse": 2.5152557191833282,
+            "pearson": 0.7892562471128189,
+            "spearman": 0.7714166889226739
+          },
+          "versus_core": {
+            "delta_mae": -0.002382752620384585,
+            "ci95": [
+              -0.034157657948435116,
+              0.02941968599217674
+            ],
+            "player_clusters": 114
+          },
+          "versus_prior_ppr": {
+            "delta_mae": -0.017672530400224425,
+            "ci95": [
+              -0.10734907943776088,
+              0.07195003467933574
+            ],
+            "player_clusters": 114
+          },
+          "folds_better_than_core": 2
+        },
+        "full": {
+          "pooled": {
+            "n": 247,
+            "mae": 1.8488817480093178,
+            "rmse": 2.4413818604554876,
+            "pearson": 0.8033615896736536,
+            "spearman": 0.7727395888018264
+          },
+          "versus_core": {
+            "delta_mae": -0.04421259077661585,
+            "ci95": [
+              -0.10536947716461309,
+              0.016477117702235373
+            ],
+            "player_clusters": 114
+          },
+          "versus_prior_ppr": {
+            "delta_mae": -0.05950236855645568,
+            "ci95": [
+              -0.1373849086241286,
+              0.0173047999090206
+            ],
+            "player_clusters": 114
+          },
+          "folds_better_than_core": 3
+        },
+        "prior_ppr": {
+          "pooled": {
+            "n": 247,
+            "mae": 1.9083841165657738,
+            "rmse": 2.504658738961175,
+            "pearson": 0.7921944554286678,
+            "spearman": 0.7689056589001728
+          },
+          "versus_core": {
+            "delta_mae": 0.015289777779839836,
+            "ci95": [
+              -0.0869328255127903,
+              0.11518400744961947
+            ],
+            "player_clusters": 114
+          },
+          "versus_prior_ppr": {
+            "delta_mae": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "player_clusters": 114
+          },
+          "folds_better_than_core": 2
+        }
+      }
+    }
+  },
+  "limitations": [
+    "Exploratory: 2025 and earlier results have already been inspected; these are not untouched holdouts.",
+    "Annual next-season predictions do not validate next-week predictions or weekly weights.",
+    "Bootstrap resamples player identities together across folds; intervals are conditional on these three seasons, not uncertainty over future seasons.",
+    "Eligibility in both years introduces survivorship; source identity is provisional.",
+    "YPRR uses source YDS/RTE, shares use source percentages, and red-zone/end-zone counts can overlap.",
+    "JJ lacks complete quality inputs; no missing values are replaced by zero."
+  ]
+}

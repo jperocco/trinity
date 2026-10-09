@@ -1,0 +1,35 @@
+{
+  "source": "Fantasy Points Advanced Receiving user export",
+  "sha256": "a192a8fd62b7449e2bf1a4e776f8d637b965021fb3cf38fa4bfef34ee6a0303b",
+  "rows": 376,
+  "seasons": {
+    "2025": 376
+  },
+  "positions": {
+    "WR": 237,
+    "TE": 139
+  },
+  "missing": {
+    "RTE": 0,
+    "RTE %": 0,
+    "AY": 0,
+    "AY Share": 0,
+    "TGT": 0,
+    "TGT %": 0,
+    "FP": 0,
+    "FP/G": 33,
+    "G": 0
+  },
+  "available_components": {
+    "route_share": "RTE %",
+    "target_share": "TGT %",
+    "air_yard_share": "AY Share"
+  },
+  "limitations": [
+    "Season-level 2025, not player-week.",
+    "Shares rounded to 0.1 percentage point; do not infer exact denominators.",
+    "No stable player identifier; cross-source matching requires validation.",
+    "Confirm regular-season filter and scoring convention from export UI.",
+    "Cannot validate future production from same-season correlation."
+  ]
+}

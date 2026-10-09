@@ -33,3 +33,14 @@ class WeeklyViewTests(unittest.TestCase):
     def test_payload_cannot_terminate_script(self):
         html=render([{'player':'</script><script>alert(1)</script>'}],{},'__PAYLOAD__')
         self.assertNotIn('</script>',html)
+
+    def test_consolidated_uses_all_past_games_without_future_or_absence_zero(self):
+        rows=build_rows(pd.DataFrame([self.row(1,10,10),self.row(3,10,50),dict(self.row(4,50,50),player='Other')]),self.models)
+        row=next(r for r in rows if r['player']=='Test' and r['week']==4)
+        self.assertFalse(row['has_observation'])
+        self.assertAlmostEqual(row['cumulative_score'],100*20/60)
+        self.assertEqual(row['cumulative_games'],2)
+        self.assertEqual(row['cumulative_ppr'],5)
+        self.assertIsNone(row['score'])
+        first=next(r for r in rows if r['player']=='Test' and r['week']==1)
+        self.assertEqual(first['cumulative_score'],100)

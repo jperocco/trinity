@@ -1,0 +1,160 @@
+{
+  "method": "Shared zero-anchored monotonic 0\u201310 formula; four feature weights, four normalization scales and four powers optimized jointly. 12 deterministic starts per fit; score-only versus score-plus-within-report-order objective. Reports equally weighted, kept as separate snapshots; no cross-report pair comparisons. Reciprocal transfer diagnostics fit one report and evaluate the other. They are not independent untouched validation.",
+  "formula": "10*(1-exp(-sum(c_j*(x_j/(x_j+s_j))**p_j)))",
+  "results": {
+    "score_only": {
+      "parameters": [
+        -0.22314380990286903,
+        0.5865781955136534,
+        -1.2757981589666065,
+        2.302585052474696,
+        0.2617624691219553,
+        1.0323581951365952,
+        0.19652380126252325,
+        1.8621562469956077,
+        -1.3146291032658513,
+        1.3862943611198904,
+        1.3862943611198904,
+        0.7332325420511216
+      ],
+      "scales": {
+        "target_share": 0.7999997931290993,
+        "yprr": 1.7978260689299044,
+        "air_yard_share": 0.279208026871728,
+        "redzone_targets_per_game": 9.999999594806509
+      },
+      "powers": {
+        "target_share": 0.268573917957465,
+        "yprr": 3.999999999999999,
+        "air_yard_share": 3.999999999999999,
+        "redzone_targets_per_game": 2.0817992462883823
+      },
+      "coefficients": {
+        "target_share": 1.2992179014060539,
+        "yprr": 2.807679089135235,
+        "air_yard_share": 1.2171642905802489,
+        "redzone_targets_per_game": 6.437602878546585
+      },
+      "normalized_component_weights": {
+        "target_share": 0.11046208119606042,
+        "yprr": 0.23871444134266617,
+        "air_yard_share": 0.10348572056274336,
+        "redzone_targets_per_game": 0.5473377568985301
+      },
+      "reports": {
+        "top12": {
+          "mae": 0.2514169130850262,
+          "max_error": 0.5413759642658107,
+          "spearman": 0.7403554346427417,
+          "ordered_pairs_correct": 0.78125
+        },
+        "middle22": {
+          "mae": 0.3367144454639528,
+          "max_error": 0.6488327288324616,
+          "spearman": 0.6150805102658136,
+          "ordered_pairs_correct": 0.7086956521739131
+        }
+      }
+    },
+    "score_and_order": {
+      "parameters": [
+        -0.22314356027385207,
+        0.5250306115249892,
+        -1.229999141228825,
+        2.302585092992713,
+        0.25935646400863993,
+        0.9482346229695684,
+        0.15150952144099064,
+        1.0964251504945817,
+        -1.3158565171860435,
+        1.3862943610468017,
+        1.3862943611139251,
+        0.48496260242366795
+      ],
+      "scales": {
+        "target_share": 0.7999999928322862,
+        "yprr": 1.6905105966944152,
+        "air_yard_share": 0.29229282869340756,
+        "redzone_targets_per_game": 9.999999999986676
+      },
+      "powers": {
+        "target_share": 0.2682444688185538,
+        "yprr": 3.9999999997076445,
+        "air_yard_share": 3.999999999976138,
+        "redzone_targets_per_game": 1.6241142697711137
+      },
+      "coefficients": {
+        "target_share": 1.2960957339735129,
+        "yprr": 2.581148933760473,
+        "air_yard_share": 1.163589380804558,
+        "redzone_targets_per_game": 2.993445755611192
+      },
+      "normalized_component_weights": {
+        "target_share": 0.16132071144747465,
+        "yprr": 0.32126699550932986,
+        "air_yard_share": 0.14482808778996714,
+        "redzone_targets_per_game": 0.3725842052532283
+      },
+      "reports": {
+        "top12": {
+          "mae": 0.25784633735777723,
+          "max_error": 0.5386621035534436,
+          "spearman": 0.7684257828756418,
+          "ordered_pairs_correct": 0.796875
+        },
+        "middle22": {
+          "mae": 0.33813885213732653,
+          "max_error": 0.663165852994406,
+          "spearman": 0.6179045713781451,
+          "ordered_pairs_correct": 0.7130434782608696
+        }
+      }
+    }
+  },
+  "transfer": {
+    "top12": {
+      "middle22": {
+        "mae": 0.629024272644456,
+        "max_error": 1.1970678613757313,
+        "spearman": 0.5038125024399501,
+        "ordered_pairs_correct": 0.6869565217391305
+      }
+    },
+    "middle22": {
+      "top12": {
+        "mae": 0.9596016903783106,
+        "max_error": 1.4414156216039782,
+        "spearman": 0.4315816040808399,
+        "ordered_pairs_correct": 0.703125
+      }
+    }
+  },
+  "dominance_conflicts": {
+    "top12": [],
+    "middle22": [
+      {
+        "dominant": "Mike Evans",
+        "dominated": "George Pickens",
+        "score_gap": 0.40000000000000036
+      },
+      {
+        "dominant": "Mike Evans",
+        "dominated": "Travis Kelce",
+        "score_gap": 0.10000000000000053
+      },
+      {
+        "dominant": "T.J. Hockenson",
+        "dominated": "Travis Kelce",
+        "score_gap": 0.1299999999999999
+      }
+    ]
+  },
+  "limitations": [
+    "34 selected rows, potentially different cutoffs, no full-universe or low-score reference.",
+    "12 fitted parameters are flexible relative to sample size; reciprocal transfer and dominance audit are essential. No claim of recovered original weights.",
+    "Reported weights depend on feature scales and powers; not directly comparable to earlier fixed-scale weights.",
+    "Displayed rounding can affect dominance; selected conflicts should be checked against visible values.",
+    "Same inputs can omit proprietary components, position normalization, thresholds or other transformations. Dominance violations rule out this monotonic four-feature family, not every possible original model.",
+    "No individual overrides, JJ/FP source joins, model promotion or panel changes."
+  ]
+}

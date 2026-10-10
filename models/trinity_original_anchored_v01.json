@@ -1,0 +1,33 @@
+{
+  "status": "Candidate approximation; not deployed",
+  "cutoff": "2026 weeks 1\u20134",
+  "transform": "saturation_log",
+  "scales": {
+    "target_share": 40.0,
+    "yprr": 4.0,
+    "air_yard_share": 50.0,
+    "redzone_targets_per_game": 3.0
+  },
+  "coefficients": {
+    "target_share": 1.1138610763585814,
+    "yprr": 0.9904953187865736,
+    "air_yard_share": 0.9700303261138122,
+    "redzone_targets_per_game": 0.0
+  },
+  "weights": {
+    "target_share": 0.36230350224205143,
+    "yprr": 0.32217655376190407,
+    "air_yard_share": 0.3155199439960445,
+    "redzone_targets_per_game": 0.0
+  },
+  "intercept": 0.0,
+  "output": "10*(1-exp(-sum(coefficient*log1p(metric/scale))))",
+  "limitations": [
+    "12 visible top-ranked players only, including one TE; cannot establish full-universe ranking or position-specific weights.",
+    "Leave-one-out measures interpolation within this selected report, not independent validation; candidate selection also uses these rows.",
+    "Displayed input rounding limits identifiability; several weight combinations can fit similarly.",
+    "Weights depend on the declared metric normalization; they are not recovered proprietary weights.",
+    "Red-zone targets missing in JJ are never filled with zero. Reference metrics used directly to isolate formula fit from source differences.",
+    "0\u201310 clipping and nonnegative intercept/coefficients are approximation assumptions."
+  ]
+}

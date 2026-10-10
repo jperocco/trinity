@@ -1,0 +1,978 @@
+{
+  "source": "ffopportunity v1.0.0 weekly, based on public nflverse play-by-play; separate from premium FP and JJ",
+  "manifest": [
+    {
+      "season": 2021,
+      "rows": 6065,
+      "sha256": "6dfbcd36e20c070491f341206144090d73025ea59591b2e9dd701d84e7326cdc",
+      "url": "https://github.com/ffverse/ffopportunity/releases/download/v1.0.0-data/ep_weekly_2021.csv"
+    },
+    {
+      "season": 2022,
+      "rows": 6038,
+      "sha256": "2b7503fd84ddab2e4abd7fa94157a0076f3ad5ce2f1a7428c35dfa64d59ee992",
+      "url": "https://github.com/ffverse/ffopportunity/releases/download/v1.0.0-data/ep_weekly_2022.csv"
+    },
+    {
+      "season": 2023,
+      "rows": 6081,
+      "sha256": "baec97dbaf969839f0e9e26c11e8af0b2995117fdda377ddfb84345f7b26afc2",
+      "url": "https://github.com/ffverse/ffopportunity/releases/download/v1.0.0-data/ep_weekly_2023.csv"
+    },
+    {
+      "season": 2024,
+      "rows": 6005,
+      "sha256": "a25d8dba60375c7bad5b6eac4c6f4abb50dab70a8d6e43257d3415846382866f",
+      "url": "https://github.com/ffverse/ffopportunity/releases/download/v1.0.0-data/ep_weekly_2024.csv"
+    },
+    {
+      "season": 2025,
+      "rows": 6054,
+      "sha256": "1c0b89cd1cd8528145a52c3f826b20ddfbe644884834c230522ab9bbfec9e59e",
+      "url": "https://github.com/ffverse/ffopportunity/releases/download/v1.0.0-data/ep_weekly_2025.csv"
+    }
+  ],
+  "method": "No refitting of upstream XFP model (documented training 2006\u20132020). Our standardized ridge alpha=10 fixed. Test seasons 2023,2024,2025, trained only on earlier seasons. Within-season features through cutoff; minimum 3 observed source games; actual adjacent-calendar-week outcome required, same player and team. Recent window is 3 calendar weeks, missing observations never zero-filled. Common complete-case sample. Outcome is receiving-only PPR, excluding rushing and return points. XFP reconstructed in same PPR units, without expected fumble penalty. Zero-target history aDOT convention =0, not a missing-field imputation.",
+  "positions": {
+    "WR": {
+      "sample_n_all_seasons": 6285,
+      "evaluated_n": 3802,
+      "evaluated_players": 255,
+      "folds": {
+        "2023": {
+          "train_n": 2483,
+          "test_n": 1324,
+          "prior_points_per_target": 1.6948525546049802,
+          "models": {
+            "target_mean": {
+              "n": 1324,
+              "mae": 2.084069659570037,
+              "rmse": 2.6843731152351604,
+              "pearson": 0.644741100111185,
+              "spearman": 0.6579778636940153
+            },
+            "target_core": {
+              "n": 1324,
+              "mae": 2.0813276750162983,
+              "rmse": 2.630809937697043,
+              "pearson": 0.6473442295254846,
+              "spearman": 0.6598422752836898
+            },
+            "target_context": {
+              "n": 1324,
+              "mae": 2.066059452908053,
+              "rmse": 2.6196429819422047,
+              "pearson": 0.6509121578232858,
+              "spearman": 0.663363009338289
+            },
+            "ppr_mean": {
+              "n": 1324,
+              "mae": 5.092855316154976,
+              "rmse": 6.853785690555852,
+              "pearson": 0.530467453073761,
+              "spearman": 0.5502992922565776
+            },
+            "ppr_last": {
+              "n": 1324,
+              "mae": 6.420317220543807,
+              "rmse": 8.817040542466188,
+              "pearson": 0.3891036420550859,
+              "spearman": 0.40855110114380705
+            },
+            "ppr_prior_fitted": {
+              "n": 1324,
+              "mae": 5.062435659077924,
+              "rmse": 6.723369376061981,
+              "pearson": 0.530467453073761,
+              "spearman": 0.5502904060574574
+            },
+            "ppr_direct_core": {
+              "n": 1324,
+              "mae": 5.097546900443999,
+              "rmse": 6.786036558095284,
+              "pearson": 0.5180220203337184,
+              "spearman": 0.5493336295220939
+            },
+            "ppr_direct_context": {
+              "n": 1324,
+              "mae": 5.089531844428193,
+              "rmse": 6.766901872291141,
+              "pearson": 0.5219796563223842,
+              "spearman": 0.5514015860097863
+            },
+            "ppr_xfp_mean": {
+              "n": 1324,
+              "mae": 5.019631867829007,
+              "rmse": 6.763211011455095,
+              "pearson": 0.5281121114476562,
+              "spearman": 0.552824342851522
+            },
+            "ppr_xfp_fitted": {
+              "n": 1324,
+              "mae": 5.043012807368809,
+              "rmse": 6.733468931188423,
+              "pearson": 0.529019044033842,
+              "spearman": 0.5537204650482481
+            },
+            "ppr_two_stage": {
+              "n": 1324,
+              "mae": 5.121852349466604,
+              "rmse": 6.778508597470143,
+              "pearson": 0.522481477918763,
+              "spearman": 0.5523163689066375
+            }
+          }
+        },
+        "2024": {
+          "train_n": 3807,
+          "test_n": 1256,
+          "prior_points_per_target": 1.6963781284871673,
+          "models": {
+            "target_mean": {
+              "n": 1256,
+              "mae": 2.153665844947692,
+              "rmse": 2.8369213663589643,
+              "pearson": 0.5910907493009901,
+              "spearman": 0.6094659864557954
+            },
+            "target_core": {
+              "n": 1256,
+              "mae": 2.139119330953232,
+              "rmse": 2.8029719827518202,
+              "pearson": 0.5952988620361459,
+              "spearman": 0.6139299458240549
+            },
+            "target_context": {
+              "n": 1256,
+              "mae": 2.125528798505353,
+              "rmse": 2.7796388262978384,
+              "pearson": 0.6035282300654244,
+              "spearman": 0.6217567094409475
+            },
+            "ppr_mean": {
+              "n": 1256,
+              "mae": 5.1803753880585095,
+              "rmse": 7.022758767645857,
+              "pearson": 0.5075229706058269,
+              "spearman": 0.5375348436291604
+            },
+            "ppr_last": {
+              "n": 1256,
+              "mae": 6.82173566878981,
+              "rmse": 9.188376675102457,
+              "pearson": 0.3592554253775583,
+              "spearman": 0.412120411037732
+            },
+            "ppr_prior_fitted": {
+              "n": 1256,
+              "mae": 5.2065176006549185,
+              "rmse": 7.009208699505169,
+              "pearson": 0.5075229706058265,
+              "spearman": 0.5375513664958474
+            },
+            "ppr_direct_core": {
+              "n": 1256,
+              "mae": 5.19033168856705,
+              "rmse": 6.995902055426279,
+              "pearson": 0.5110026244864116,
+              "spearman": 0.5484794613924862
+            },
+            "ppr_direct_context": {
+              "n": 1256,
+              "mae": 5.161480088458412,
+              "rmse": 6.96132364440818,
+              "pearson": 0.5175394394938648,
+              "spearman": 0.5552017943119179
+            },
+            "ppr_xfp_mean": {
+              "n": 1256,
+              "mae": 5.138807848425901,
+              "rmse": 6.970936418068154,
+              "pearson": 0.5144012230919253,
+              "spearman": 0.5452926315813682
+            },
+            "ppr_xfp_fitted": {
+              "n": 1256,
+              "mae": 5.178972853699984,
+              "rmse": 6.988572779654176,
+              "pearson": 0.517741593920129,
+              "spearman": 0.5493573451600418
+            },
+            "ppr_two_stage": {
+              "n": 1256,
+              "mae": 5.204367131069896,
+              "rmse": 7.000051305838362,
+              "pearson": 0.5187618028531411,
+              "spearman": 0.5563203992303433
+            }
+          }
+        },
+        "2025": {
+          "train_n": 5063,
+          "test_n": 1222,
+          "prior_points_per_target": 1.7087791858032557,
+          "models": {
+            "target_mean": {
+              "n": 1222,
+              "mae": 2.136237301069543,
+              "rmse": 2.7614038631405986,
+              "pearson": 0.5851398437861801,
+              "spearman": 0.5866214490366268
+            },
+            "target_core": {
+              "n": 1222,
+              "mae": 2.136418891488018,
+              "rmse": 2.708805842362882,
+              "pearson": 0.5895830059822457,
+              "spearman": 0.5902796804442212
+            },
+            "target_context": {
+              "n": 1222,
+              "mae": 2.1186102931524973,
+              "rmse": 2.696273646293556,
+              "pearson": 0.5946505970141049,
+              "spearman": 0.5969489306159106
+            },
+            "ppr_mean": {
+              "n": 1222,
+              "mae": 5.133067288685129,
+              "rmse": 6.762541848673364,
+              "pearson": 0.4835188342041086,
+              "spearman": 0.47613638094415706
+            },
+            "ppr_last": {
+              "n": 1222,
+              "mae": 6.457774140752864,
+              "rmse": 8.741187753319847,
+              "pearson": 0.34025316387163734,
+              "spearman": 0.3403680293014385
+            },
+            "ppr_prior_fitted": {
+              "n": 1222,
+              "mae": 5.105352891128953,
+              "rmse": 6.642075122849342,
+              "pearson": 0.48351883420410835,
+              "spearman": 0.47614806215309496
+            },
+            "ppr_direct_core": {
+              "n": 1222,
+              "mae": 5.114513001346313,
+              "rmse": 6.638798513582045,
+              "pearson": 0.48631425365976166,
+              "spearman": 0.4889910925010419
+            },
+            "ppr_direct_context": {
+              "n": 1222,
+              "mae": 5.118217201186873,
+              "rmse": 6.652341776318123,
+              "pearson": 0.48381947285710863,
+              "spearman": 0.4891101027896524
+            },
+            "ppr_xfp_mean": {
+              "n": 1222,
+              "mae": 5.114954510022166,
+              "rmse": 6.705474178553003,
+              "pearson": 0.47969163322101677,
+              "spearman": 0.4847536992089685
+            },
+            "ppr_xfp_fitted": {
+              "n": 1222,
+              "mae": 5.111751110506484,
+              "rmse": 6.649370613268081,
+              "pearson": 0.4830962672995812,
+              "spearman": 0.4901640845642859
+            },
+            "ppr_two_stage": {
+              "n": 1222,
+              "mae": 5.103137037347731,
+              "rmse": 6.63076470589917,
+              "pearson": 0.48679195571921474,
+              "spearman": 0.49299802092728395
+            }
+          }
+        }
+      },
+      "summary": {
+        "target_mean": {
+          "n": 3802,
+          "mae": 2.123828120050503,
+          "rmse": 2.760241267570272,
+          "pearson": 0.6077903289454026,
+          "spearman": 0.6203528697960154
+        },
+        "target_core": {
+          "n": 3802,
+          "mae": 2.118126145922461,
+          "rmse": 2.7136800868112667,
+          "pearson": 0.6109556935527153,
+          "spearman": 0.6232339303862395
+        },
+        "target_context": {
+          "n": 3802,
+          "mae": 2.1025956509219723,
+          "rmse": 2.6979323003251046,
+          "pearson": 0.6168761264370507,
+          "spearman": 0.6293061661547983
+        },
+        "ppr_mean": {
+          "n": 3802,
+          "mae": 5.134692307407654,
+          "rmse": 6.88110854698809,
+          "pearson": 0.5084198396157633,
+          "spearman": 0.5259306248556556,
+          "versus_fitted_ppr": {
+            "delta_mae": 0.010864808196363828,
+            "ci95": [
+              -0.02759544110519274,
+              0.04824037961662227
+            ],
+            "player_clusters": 255
+          },
+          "versus_ppr_mean": {
+            "delta_mae": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "player_clusters": 255
+          }
+        },
+        "ppr_last": {
+          "n": 3802,
+          "mae": 6.564965807469752,
+          "rmse": 8.91744886535245,
+          "pearson": 0.36571822693623424,
+          "spearman": 0.39054310118665353,
+          "versus_fitted_ppr": {
+            "delta_mae": 1.4411383082584621,
+            "ci95": [
+              1.2626187438165064,
+              1.6243184609825136
+            ],
+            "player_clusters": 255
+          },
+          "versus_ppr_mean": {
+            "delta_mae": 1.430273500062098,
+            "ci95": [
+              1.2627893767743403,
+              1.6066690604026392
+            ],
+            "player_clusters": 255
+          }
+        },
+        "ppr_prior_fitted": {
+          "n": 3802,
+          "mae": 5.123827499211291,
+          "rmse": 6.793468127273581,
+          "pearson": 0.5077926212710754,
+          "spearman": 0.5253084509877152,
+          "versus_fitted_ppr": {
+            "delta_mae": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "player_clusters": 255
+          },
+          "versus_ppr_mean": {
+            "delta_mae": -0.010864808196363828,
+            "ci95": [
+              -0.048240379616622274,
+              0.027595441105192697
+            ],
+            "player_clusters": 255
+          }
+        },
+        "ppr_direct_core": {
+          "n": 3802,
+          "mae": 5.133651652991389,
+          "rmse": 6.809586968034376,
+          "pearson": 0.5041305089242547,
+          "spearman": 0.5307756894140517,
+          "versus_fitted_ppr": {
+            "delta_mae": 0.009824153780098755,
+            "ci95": [
+              -0.04844894280017341,
+              0.0692092156192385
+            ],
+            "player_clusters": 255
+          },
+          "versus_ppr_mean": {
+            "delta_mae": -0.00104065441626508,
+            "ci95": [
+              -0.07023681346727717,
+              0.07134736875285222
+            ],
+            "player_clusters": 255
+          }
+        },
+        "ppr_direct_context": {
+          "n": 3802,
+          "mae": 5.122519877163875,
+          "rmse": 6.795482836762085,
+          "pearson": 0.5071391778483236,
+          "spearman": 0.5337146212920025,
+          "versus_fitted_ppr": {
+            "delta_mae": -0.0013076220474158473,
+            "ci95": [
+              -0.059417970897186506,
+              0.05972807154286912
+            ],
+            "player_clusters": 255
+          },
+          "versus_ppr_mean": {
+            "delta_mae": -0.012172430243779684,
+            "ci95": [
+              -0.08393714492802529,
+              0.06322861696347006
+            ],
+            "player_clusters": 255
+          }
+        },
+        "ppr_xfp_mean": {
+          "n": 3802,
+          "mae": 5.089639574401795,
+          "rmse": 6.814217136437901,
+          "pearson": 0.5073374896464841,
+          "spearman": 0.5303160575969577,
+          "versus_fitted_ppr": {
+            "delta_mae": -0.0341879248094958,
+            "ci95": [
+              -0.09709064840896339,
+              0.026463718373752255
+            ],
+            "player_clusters": 255
+          },
+          "versus_ppr_mean": {
+            "delta_mae": -0.04505273300585961,
+            "ci95": [
+              -0.10745351014028777,
+              0.017318071447343868
+            ],
+            "player_clusters": 255
+          }
+        },
+        "ppr_xfp_fitted": {
+          "n": 3802,
+          "mae": 5.110020704429882,
+          "rmse": 6.792221964483207,
+          "pearson": 0.5087914487090124,
+          "spearman": 0.5327455052056194,
+          "versus_fitted_ppr": {
+            "delta_mae": -0.013806794781409554,
+            "ci95": [
+              -0.06824375747958931,
+              0.04012910088921584
+            ],
+            "player_clusters": 255
+          },
+          "versus_ppr_mean": {
+            "delta_mae": -0.02467160297777339,
+            "ci95": [
+              -0.09129199724119051,
+              0.04226045166151072
+            ],
+            "player_clusters": 255
+          }
+        },
+        "ppr_two_stage": {
+          "n": 3802,
+          "mae": 5.143096024975407,
+          "rmse": 6.805867724331828,
+          "pearson": 0.5088701346148674,
+          "spearman": 0.535609577127744,
+          "versus_fitted_ppr": {
+            "delta_mae": 0.019268525764116962,
+            "ci95": [
+              -0.03775520780400005,
+              0.07822729471583034
+            ],
+            "player_clusters": 255
+          },
+          "versus_ppr_mean": {
+            "delta_mae": 0.008403717567753134,
+            "ci95": [
+              -0.06634197966788277,
+              0.08756506480115749
+            ],
+            "player_clusters": 255
+          }
+        }
+      }
+    },
+    "TE": {
+      "sample_n_all_seasons": 2944,
+      "evaluated_n": 1797,
+      "evaluated_players": 125,
+      "folds": {
+        "2023": {
+          "train_n": 1147,
+          "test_n": 586,
+          "prior_points_per_target": 1.7404006453347678,
+          "models": {
+            "target_mean": {
+              "n": 586,
+              "mae": 1.7174830194454769,
+              "rmse": 2.315660700493905,
+              "pearson": 0.615543231203613,
+              "spearman": 0.6295462500309136
+            },
+            "target_core": {
+              "n": 586,
+              "mae": 1.7143222836775804,
+              "rmse": 2.266953183283072,
+              "pearson": 0.6193044770075402,
+              "spearman": 0.6347429320333289
+            },
+            "target_context": {
+              "n": 586,
+              "mae": 1.717887183370624,
+              "rmse": 2.270993516102421,
+              "pearson": 0.6175596528902946,
+              "spearman": 0.6377827347822161
+            },
+            "ppr_mean": {
+              "n": 586,
+              "mae": 4.004356733994106,
+              "rmse": 5.595871678676607,
+              "pearson": 0.4855712588435436,
+              "spearman": 0.5077885622406166
+            },
+            "ppr_last": {
+              "n": 586,
+              "mae": 5.150341296928328,
+              "rmse": 7.280636106552844,
+              "pearson": 0.33469222836570844,
+              "spearman": 0.3795698681969445
+            },
+            "ppr_prior_fitted": {
+              "n": 586,
+              "mae": 4.061684655925891,
+              "rmse": 5.519707099419622,
+              "pearson": 0.48557125884354396,
+              "spearman": 0.507758011398407
+            },
+            "ppr_direct_core": {
+              "n": 586,
+              "mae": 3.9552665032876853,
+              "rmse": 5.3418124193703305,
+              "pearson": 0.5304529128746701,
+              "spearman": 0.5362806288789541
+            },
+            "ppr_direct_context": {
+              "n": 586,
+              "mae": 3.9492883799221135,
+              "rmse": 5.333680634299387,
+              "pearson": 0.5321288664824165,
+              "spearman": 0.5405113020615283
+            },
+            "ppr_xfp_mean": {
+              "n": 586,
+              "mae": 3.9624316192103306,
+              "rmse": 5.489755353576414,
+              "pearson": 0.5091695935261851,
+              "spearman": 0.5143235447208486
+            },
+            "ppr_xfp_fitted": {
+              "n": 586,
+              "mae": 3.9902822687342687,
+              "rmse": 5.434859817818574,
+              "pearson": 0.5129766998476186,
+              "spearman": 0.5190732996421199
+            },
+            "ppr_two_stage": {
+              "n": 586,
+              "mae": 3.9535655127882867,
+              "rmse": 5.368805828944039,
+              "pearson": 0.5243308356096131,
+              "spearman": 0.5340073679855615
+            }
+          }
+        },
+        "2024": {
+          "train_n": 1733,
+          "test_n": 592,
+          "prior_points_per_target": 1.729471799462847,
+          "models": {
+            "target_mean": {
+              "n": 592,
+              "mae": 1.8770095707595709,
+              "rmse": 2.5404303703792026,
+              "pearson": 0.6057676314946138,
+              "spearman": 0.6098597396384391
+            },
+            "target_core": {
+              "n": 592,
+              "mae": 1.8978702066062956,
+              "rmse": 2.498322733979209,
+              "pearson": 0.6098129983329147,
+              "spearman": 0.6158731661074608
+            },
+            "target_context": {
+              "n": 592,
+              "mae": 1.8854589826035315,
+              "rmse": 2.492517858076801,
+              "pearson": 0.6114468949507914,
+              "spearman": 0.6209948655456969
+            },
+            "ppr_mean": {
+              "n": 592,
+              "mae": 4.238191992176367,
+              "rmse": 5.643224699132624,
+              "pearson": 0.5034737762395857,
+              "spearman": 0.5216149811951758
+            },
+            "ppr_last": {
+              "n": 592,
+              "mae": 5.347128378378378,
+              "rmse": 7.1019351664252826,
+              "pearson": 0.3860249641338212,
+              "spearman": 0.4130514551341551
+            },
+            "ppr_prior_fitted": {
+              "n": 592,
+              "mae": 4.329925884045468,
+              "rmse": 5.604429450025571,
+              "pearson": 0.5034737762395859,
+              "spearman": 0.5216516737013237
+            },
+            "ppr_direct_core": {
+              "n": 592,
+              "mae": 4.270025610484765,
+              "rmse": 5.520568701087234,
+              "pearson": 0.5154173159959201,
+              "spearman": 0.5453329177548435
+            },
+            "ppr_direct_context": {
+              "n": 592,
+              "mae": 4.280329464168795,
+              "rmse": 5.526545705357072,
+              "pearson": 0.5128803545468824,
+              "spearman": 0.5441478473691559
+            },
+            "ppr_xfp_mean": {
+              "n": 592,
+              "mae": 4.231676810595561,
+              "rmse": 5.66153395697292,
+              "pearson": 0.5114823135559646,
+              "spearman": 0.5371916552471198
+            },
+            "ppr_xfp_fitted": {
+              "n": 592,
+              "mae": 4.271443259500296,
+              "rmse": 5.571894630675759,
+              "pearson": 0.5162005470816501,
+              "spearman": 0.5455959051649544
+            },
+            "ppr_two_stage": {
+              "n": 592,
+              "mae": 4.2542761789151555,
+              "rmse": 5.5373364498149495,
+              "pearson": 0.5144646279896243,
+              "spearman": 0.5479023584747743
+            }
+          }
+        },
+        "2025": {
+          "train_n": 2325,
+          "test_n": 619,
+          "prior_points_per_target": 1.7294192256341792,
+          "models": {
+            "target_mean": {
+              "n": 619,
+              "mae": 1.7117819960509784,
+              "rmse": 2.2553790250689194,
+              "pearson": 0.5755295148883263,
+              "spearman": 0.5818156644077586
+            },
+            "target_core": {
+              "n": 619,
+              "mae": 1.7056619052389252,
+              "rmse": 2.2035216701098332,
+              "pearson": 0.5824503105692317,
+              "spearman": 0.5840287660138525
+            },
+            "target_context": {
+              "n": 619,
+              "mae": 1.7096283201334468,
+              "rmse": 2.2094106897649533,
+              "pearson": 0.579761459036615,
+              "spearman": 0.5861650361891675
+            },
+            "ppr_mean": {
+              "n": 619,
+              "mae": 4.295880150185481,
+              "rmse": 5.906885251879981,
+              "pearson": 0.4541436503666484,
+              "spearman": 0.47597634474186445
+            },
+            "ppr_last": {
+              "n": 619,
+              "mae": 5.652180936995153,
+              "rmse": 7.7763809166958175,
+              "pearson": 0.31286777465338755,
+              "spearman": 0.34511117229677996
+            },
+            "ppr_prior_fitted": {
+              "n": 619,
+              "mae": 4.343479860289893,
+              "rmse": 5.832376642154318,
+              "pearson": 0.45414365036664833,
+              "spearman": 0.4759715541697298
+            },
+            "ppr_direct_core": {
+              "n": 619,
+              "mae": 4.270482384020471,
+              "rmse": 5.76384797173085,
+              "pearson": 0.4739334830382324,
+              "spearman": 0.49171547650890546
+            },
+            "ppr_direct_context": {
+              "n": 619,
+              "mae": 4.289455010114631,
+              "rmse": 5.779863311292918,
+              "pearson": 0.46957663912911424,
+              "spearman": 0.48816315576792546
+            },
+            "ppr_xfp_mean": {
+              "n": 619,
+              "mae": 4.193286674920843,
+              "rmse": 5.840564543921655,
+              "pearson": 0.4703223049686682,
+              "spearman": 0.488012101542034
+            },
+            "ppr_xfp_fitted": {
+              "n": 619,
+              "mae": 4.276025416264009,
+              "rmse": 5.792905412795393,
+              "pearson": 0.4662668075843421,
+              "spearman": 0.4836419626482981
+            },
+            "ppr_two_stage": {
+              "n": 619,
+              "mae": 4.237831874025043,
+              "rmse": 5.773535348435089,
+              "pearson": 0.4715909133096446,
+              "spearman": 0.4911737084751344
+            }
+          }
+        }
+      },
+      "summary": {
+        "target_mean": {
+          "n": 1797,
+          "mae": 1.7680733282360994,
+          "rmse": 2.3721192854135635,
+          "pearson": 0.5959568872822704,
+          "spearman": 0.6092842399879632
+        },
+        "target_core": {
+          "n": 1797,
+          "mae": 1.7718067556421166,
+          "rmse": 2.3247830329983983,
+          "pearson": 0.5996151132825371,
+          "spearman": 0.6126244227381884
+        },
+        "target_context": {
+          "n": 1797,
+          "mae": 1.7702468209900275,
+          "rmse": 2.325941261335395,
+          "pearson": 0.599145750710178,
+          "spearman": 0.6158677195344613
+        },
+        "ppr_mean": {
+          "n": 1797,
+          "mae": 4.181809971315397,
+          "rmse": 5.720264805519246,
+          "pearson": 0.47857550217454,
+          "spearman": 0.5015536442866146,
+          "versus_fitted_ppr": {
+            "delta_mae": -0.06531154523826599,
+            "ci95": [
+              -0.12506733778384582,
+              -0.011155163214312713
+            ],
+            "player_clusters": 125
+          },
+          "versus_ppr_mean": {
+            "delta_mae": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "player_clusters": 125
+          }
+        },
+        "ppr_last": {
+          "n": 1797,
+          "mae": 5.388035614913745,
+          "rmse": 7.398119374801027,
+          "pearson": 0.34354004189886156,
+          "spearman": 0.3796311029270979,
+          "versus_fitted_ppr": {
+            "delta_mae": 1.1409140983600823,
+            "ci95": [
+              0.9106215867959452,
+              1.3760761046677719
+            ],
+            "player_clusters": 125
+          },
+          "versus_ppr_mean": {
+            "delta_mae": 1.206225643598348,
+            "ci95": [
+              0.9981146005004655,
+              1.4239605800138795
+            ],
+            "player_clusters": 125
+          }
+        },
+        "ppr_prior_fitted": {
+          "n": 1797,
+          "mae": 4.247121516553663,
+          "rmse": 5.656881119793166,
+          "pearson": 0.4770738053194065,
+          "spearman": 0.5003857579365082,
+          "versus_fitted_ppr": {
+            "delta_mae": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "player_clusters": 125
+          },
+          "versus_ppr_mean": {
+            "delta_mae": 0.06531154523826599,
+            "ci95": [
+              0.011155163214312664,
+              0.1250673377838458
+            ],
+            "player_clusters": 125
+          }
+        },
+        "ppr_direct_core": {
+          "n": 1797,
+          "mae": 4.167540304976202,
+          "rmse": 5.548795201050731,
+          "pearson": 0.5051472863636473,
+          "spearman": 0.5252197449358872,
+          "versus_fitted_ppr": {
+            "delta_mae": -0.07958121157746033,
+            "ci95": [
+              -0.14716174716751917,
+              -0.013343391637645814
+            ],
+            "player_clusters": 125
+          },
+          "versus_ppr_mean": {
+            "delta_mae": -0.014269666339194305,
+            "ci95": [
+              -0.09106322541379053,
+              0.0681635698460731
+            ],
+            "player_clusters": 125
+          }
+        },
+        "ppr_direct_context": {
+          "n": 1797,
+          "mae": 4.175520692645098,
+          "rmse": 5.553940465949221,
+          "pearson": 0.5034360358772433,
+          "spearman": 0.5246766370400664,
+          "versus_fitted_ppr": {
+            "delta_mae": -0.07160082390856456,
+            "ci95": [
+              -0.1429337173936758,
+              -0.0020554015886635984
+            ],
+            "player_clusters": 125
+          },
+          "versus_ppr_mean": {
+            "delta_mae": -0.006289278670298567,
+            "ci95": [
+              -0.08817305700294656,
+              0.07853419954778142
+            ],
+            "player_clusters": 125
+          }
+        },
+        "ppr_xfp_mean": {
+          "n": 1797,
+          "mae": 4.13065222732656,
+          "rmse": 5.669006474437353,
+          "pearson": 0.4946527509626066,
+          "spearman": 0.5122414821436585,
+          "versus_fitted_ppr": {
+            "delta_mae": -0.11646928922710345,
+            "ci95": [
+              -0.19326413283763103,
+              -0.04612827247911103
+            ],
+            "player_clusters": 125
+          },
+          "versus_ppr_mean": {
+            "delta_mae": -0.05115774398883746,
+            "ci95": [
+              -0.10690127498322274,
+              0.004507605182831413
+            ],
+            "player_clusters": 125
+          }
+        },
+        "ppr_xfp_fitted": {
+          "n": 1797,
+          "mae": 4.181335309832987,
+          "rmse": 5.605296996730129,
+          "pearson": 0.4956941205514581,
+          "spearman": 0.5151594301924683,
+          "versus_fitted_ppr": {
+            "delta_mae": -0.065786206720676,
+            "ci95": [
+              -0.12008356483199216,
+              -0.010868235627902173
+            ],
+            "player_clusters": 125
+          },
+          "versus_ppr_mean": {
+            "delta_mae": -0.0004746614824100238,
+            "ci95": [
+              -0.06999713773719721,
+              0.07429740135863709
+            ],
+            "player_clusters": 125
+          }
+        },
+        "ppr_two_stage": {
+          "n": 1797,
+          "mae": 4.150550260675131,
+          "rmse": 5.566236734507425,
+          "pearson": 0.5021366315840657,
+          "spearman": 0.5241112968565422,
+          "versus_fitted_ppr": {
+            "delta_mae": -0.09657125587853202,
+            "ci95": [
+              -0.1628477640890118,
+              -0.033445993838462494
+            ],
+            "player_clusters": 125
+          },
+          "versus_ppr_mean": {
+            "delta_mae": -0.03125971064026601,
+            "ci95": [
+              -0.10467136205553154,
+              0.04719039710911907
+            ],
+            "player_clusters": 125
+          }
+        }
+      }
+    }
+  },
+  "limitations": [
+    "Conditional on source rows in both origin and future week: absence is not proof of inactivity or zero targets.",
+    "No routes in these weekly tables; route-based target-earning hypothesis remains untested.",
+    "Two-stage conversion uses only prior-season positional receiving points per target; not a learned target-quality model.",
+    "Cluster bootstrap groups players across weeks; team/game dependence is not captured.",
+    "Public historical XFP files are retrospective; train-period documentation does not guarantee historical real-time availability.",
+    "Repeated candidate comparisons make this exploratory; no score or production coefficients changed."
+  ]
+}

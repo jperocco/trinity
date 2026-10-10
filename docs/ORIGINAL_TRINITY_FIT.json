@@ -1,0 +1,3529 @@
+{
+  "objective": "Approximate scores in original report; not PPR prediction",
+  "reference_n": 12,
+  "anchored_best": {
+    "transform": "saturation_log",
+    "features": [
+      "target_share",
+      "yprr",
+      "air_yard_share"
+    ],
+    "intercept": 0.0,
+    "coefficients": {
+      "target_share": 1.1138610763585814,
+      "yprr": 0.9904953187865736,
+      "air_yard_share": 0.9700303261138122,
+      "redzone_targets_per_game": 0.0
+    },
+    "normalized_component_weights": {
+      "target_share": 0.36230350224205143,
+      "yprr": 0.32217655376190407,
+      "air_yard_share": 0.3155199439960445,
+      "redzone_targets_per_game": 0.0
+    },
+    "mae": 0.13973959601508698,
+    "max_error": 0.2798780027809773,
+    "loo_mae": 0.19165800968110314,
+    "spearman": 0.8526368275743421,
+    "predictions": [
+      8.762920358950252,
+      8.504674015258086,
+      8.53575138612835,
+      8.224283127658582,
+      8.181529022327904,
+      8.399878002780977,
+      7.805794027583106,
+      7.468376981096928,
+      7.940087433665876,
+      7.640622887485398,
+      7.930386400830058,
+      7.534085695519769
+    ]
+  },
+  "scales": {
+    "target_share": 40.0,
+    "yprr": 4.0,
+    "air_yard_share": 50.0,
+    "redzone_targets_per_game": 3.0
+  },
+  "best": {
+    "transform": "capped",
+    "features": [
+      "target_share",
+      "yprr"
+    ],
+    "intercept": 6.123490109466814,
+    "coefficients": {
+      "target_share": 1.3745783388350716,
+      "yprr": 1.4782776376923477,
+      "air_yard_share": 0.0,
+      "redzone_targets_per_game": 0.0
+    },
+    "normalized_component_weights": {
+      "target_share": 0.48182535331077214,
+      "yprr": 0.5181746466892279,
+      "air_yard_share": 0.0,
+      "redzone_targets_per_game": 0.0
+    },
+    "mae": 0.1268519229211719,
+    "max_error": 0.39878029183728536,
+    "loo_mae": 0.16432940360034962,
+    "spearman": 0.9017599369819174,
+    "predictions": [
+      8.835451806263638,
+      8.498426491291664,
+      8.3440400501301,
+      8.091182988529303,
+      8.024268809317553,
+      8.518780291837285,
+      7.902636371089303,
+      7.648333752115053,
+      7.867946445737057,
+      7.800326366707864,
+      7.743335465811541,
+      7.6152711611696535
+    ]
+  },
+  "candidates": [
+    {
+      "transform": "capped",
+      "features": [
+        "target_share",
+        "yprr"
+      ],
+      "intercept": 6.123490109466814,
+      "coefficients": {
+        "target_share": 1.3745783388350716,
+        "yprr": 1.4782776376923477,
+        "air_yard_share": 0.0,
+        "redzone_targets_per_game": 0.0
+      },
+      "normalized_component_weights": {
+        "target_share": 0.48182535331077214,
+        "yprr": 0.5181746466892279,
+        "air_yard_share": 0.0,
+        "redzone_targets_per_game": 0.0
+      },
+      "mae": 0.1268519229211719,
+      "max_error": 0.39878029183728536,
+      "loo_mae": 0.16432940360034962,
+      "spearman": 0.9017599369819174,
+      "predictions": [
+        8.835451806263638,
+        8.498426491291664,
+        8.3440400501301,
+        8.091182988529303,
+        8.024268809317553,
+        8.518780291837285,
+        7.902636371089303,
+        7.648333752115053,
+        7.867946445737057,
+        7.800326366707864,
+        7.743335465811541,
+        7.6152711611696535
+      ]
+    },
+    {
+      "transform": "capped",
+      "features": [
+        "target_share",
+        "yprr",
+        "air_yard_share"
+      ],
+      "intercept": 5.949042332763029,
+      "coefficients": {
+        "target_share": 1.1877885250816589,
+        "yprr": 1.423800608092993,
+        "air_yard_share": 0.4162521843958568,
+        "redzone_targets_per_game": 0.0
+      },
+      "normalized_component_weights": {
+        "target_share": 0.39228889512437237,
+        "yprr": 0.470236204199574,
+        "air_yard_share": 0.13747490067605353,
+        "redzone_targets_per_game": 0.0
+      },
+      "mae": 0.12478471838281753,
+      "max_error": 0.3816759902936173,
+      "loo_mae": 0.17588805057266158,
+      "spearman": 0.8982511434528049,
+      "predictions": [
+        8.854302822143877,
+        8.508345704053905,
+        8.298132734158093,
+        8.124728214356017,
+        8.078626547611341,
+        8.501675990293617,
+        7.847994033954319,
+        7.663464455569439,
+        7.884848039664291,
+        7.7196411558590095,
+        7.7809240721787765,
+        7.627316230157355
+      ]
+    },
+    {
+      "transform": "log",
+      "features": [
+        "target_share",
+        "yprr",
+        "air_yard_share"
+      ],
+      "intercept": 5.211018515095656,
+      "coefficients": {
+        "target_share": 1.944220897297201,
+        "yprr": 1.7783755415184908,
+        "air_yard_share": 1.551258221081734,
+        "redzone_targets_per_game": 0.0
+      },
+      "normalized_component_weights": {
+        "target_share": 0.36865272607550686,
+        "yprr": 0.3372060203026299,
+        "air_yard_share": 0.2941412536218633,
+        "redzone_targets_per_game": 0.0
+      },
+      "mae": 0.12214233426699132,
+      "max_error": 0.23959689374608573,
+      "loo_mae": 0.1794148623534837,
+      "spearman": 0.8526368275743421,
+      "predictions": [
+        8.795774393946378,
+        8.466565196606131,
+        8.53747594742337,
+        8.162383577364302,
+        8.11973552708145,
+        8.359596893746085,
+        7.809277406408692,
+        7.560362461771403,
+        7.9081802452656245,
+        7.683047431219703,
+        7.886904280374002,
+        7.600696638792876
+      ]
+    },
+    {
+      "transform": "linear",
+      "features": [
+        "target_share",
+        "yprr",
+        "air_yard_share"
+      ],
+      "intercept": 5.821029184359087,
+      "coefficients": {
+        "target_share": 1.1928315895028863,
+        "yprr": 0.9004801435820552,
+        "air_yard_share": 0.9840816067045671,
+        "redzone_targets_per_game": 0.0
+      },
+      "normalized_component_weights": {
+        "target_share": 0.38761102589000695,
+        "yprr": 0.2926113252859796,
+        "air_yard_share": 0.3197776488240133,
+        "redzone_targets_per_game": 0.0
+      },
+      "mae": 0.1257931326964329,
+      "max_error": 0.24970829687999085,
+      "loo_mae": 0.18760716145673872,
+      "spearman": 0.8421104469870047,
+      "predictions": [
+        8.807957128395469,
+        8.45067828971409,
+        8.552306924245942,
+        8.155248525279623,
+        8.112140590848364,
+        8.316292272594621,
+        7.79177422039763,
+        7.55783059491483,
+        7.897813049314361,
+        7.699611854271408,
+        7.949708296879991,
+        7.5986382531436965
+      ]
+    },
+    {
+      "transform": "saturation_log",
+      "features": [
+        "target_share",
+        "yprr",
+        "air_yard_share"
+      ],
+      "intercept": 0.0,
+      "coefficients": {
+        "target_share": 1.1138610763585814,
+        "yprr": 0.9904953187865736,
+        "air_yard_share": 0.9700303261138122,
+        "redzone_targets_per_game": 0.0
+      },
+      "normalized_component_weights": {
+        "target_share": 0.36230350224205143,
+        "yprr": 0.32217655376190407,
+        "air_yard_share": 0.3155199439960445,
+        "redzone_targets_per_game": 0.0
+      },
+      "mae": 0.13973959601508698,
+      "max_error": 0.2798780027809773,
+      "loo_mae": 0.19165800968110314,
+      "spearman": 0.8526368275743421,
+      "predictions": [
+        8.762920358950252,
+        8.504674015258086,
+        8.53575138612835,
+        8.224283127658582,
+        8.181529022327904,
+        8.399878002780977,
+        7.805794027583106,
+        7.468376981096928,
+        7.940087433665876,
+        7.640622887485398,
+        7.930386400830058,
+        7.534085695519769
+      ]
+    },
+    {
+      "transform": "capped",
+      "features": [
+        "target_share",
+        "yprr",
+        "redzone_targets_per_game"
+      ],
+      "intercept": 6.078181264573241,
+      "coefficients": {
+        "target_share": 1.2237685031792225,
+        "yprr": 1.5743510623585968,
+        "air_yard_share": 0.0,
+        "redzone_targets_per_game": 0.15023138724061688
+      },
+      "normalized_component_weights": {
+        "target_share": 0.4150688038091193,
+        "yprr": 0.533976818762019,
+        "air_yard_share": 0.0,
+        "redzone_targets_per_game": 0.05095437742886186
+      },
+      "mae": 0.134249577540308,
+      "max_error": 0.3476448900080733,
+      "loo_mae": 0.19627462805665327,
+      "spearman": 0.8982511434528049,
+      "predictions": [
+        8.876057381235704,
+        8.503585290689218,
+        8.380136824088892,
+        8.068850806950747,
+        7.976239729767272,
+        8.467644890008073,
+        7.88897484068546,
+        7.646715042576574,
+        7.840800119083311,
+        7.840722761701698,
+        7.738868011665406,
+        7.661404301547669
+      ]
+    },
+    {
+      "transform": "saturation_capped",
+      "features": [
+        "yprr",
+        "air_yard_share",
+        "redzone_targets_per_game"
+      ],
+      "intercept": 0.0,
+      "coefficients": {
+        "target_share": 0.0,
+        "yprr": 1.0291961128604041,
+        "air_yard_share": 0.9217977772564543,
+        "redzone_targets_per_game": 0.3839353913972327
+      },
+      "normalized_component_weights": {
+        "target_share": 0.0,
+        "yprr": 0.4407825628847394,
+        "air_yard_share": 0.39478616528322097,
+        "redzone_targets_per_game": 0.16443127183203973
+      },
+      "mae": 0.15345726223592573,
+      "max_error": 0.369134146365929,
+      "loo_mae": 0.20290828291250973,
+      "spearman": 0.7578994022883042,
+      "predictions": [
+        8.965944304315457,
+        8.586816479503053,
+        8.393456552039504,
+        8.161915363299325,
+        8.052751333691827,
+        8.297872803137992,
+        7.550865853634071,
+        7.654927740391443,
+        7.795329125767219,
+        7.588256680046461,
+        7.843307214946792,
+        7.858023701269335
+      ]
+    },
+    {
+      "transform": "linear",
+      "features": [
+        "target_share",
+        "yprr",
+        "air_yard_share",
+        "redzone_targets_per_game"
+      ],
+      "intercept": 5.7964121973137885,
+      "coefficients": {
+        "target_share": 1.1383929885504054,
+        "yprr": 0.9086234260957875,
+        "air_yard_share": 1.027215253383285,
+        "redzone_targets_per_game": 0.03853089748185149
+      },
+      "normalized_component_weights": {
+        "target_share": 0.365717899965622,
+        "yprr": 0.2919025807374836,
+        "air_yard_share": 0.33000115870210794,
+        "redzone_targets_per_game": 0.012378360594786345
+      },
+      "mae": 0.12608589957282956,
+      "max_error": 0.2557412407050297,
+      "loo_mae": 0.20384931187507918,
+      "spearman": 0.8421104469870047,
+      "predictions": [
+        8.818086613223551,
+        8.451590967712328,
+        8.557640394799302,
+        8.153179494307231,
+        8.105204888740726,
+        8.298106146319705,
+        7.7836957615403675,
+        7.557455208882416,
+        7.893157339242111,
+        7.704271668156412,
+        7.95574124070503,
+        7.61187027637084
+      ]
+    },
+    {
+      "transform": "saturation_log",
+      "features": [
+        "yprr",
+        "air_yard_share",
+        "redzone_targets_per_game"
+      ],
+      "intercept": 0.0,
+      "coefficients": {
+        "target_share": 0.0,
+        "yprr": 1.052745920254458,
+        "air_yard_share": 1.6046727276660249,
+        "redzone_targets_per_game": 0.38115095787932396
+      },
+      "normalized_component_weights": {
+        "target_share": 0.0,
+        "yprr": 0.3464610184492898,
+        "air_yard_share": 0.5281013555204196,
+        "redzone_targets_per_game": 0.12543762603029068
+      },
+      "mae": 0.14941431495004456,
+      "max_error": 0.35593207362496493,
+      "loo_mae": 0.205113756063523,
+      "spearman": 0.803513718166767,
+      "predictions": [
+        8.764318216763838,
+        8.4634304098308,
+        8.604425243232521,
+        8.195198660419825,
+        8.112778463387036,
+        8.134709174696122,
+        7.669004132509757,
+        7.726282752587005,
+        7.919057428424199,
+        7.603539486240419,
+        7.9808344759873995,
+        7.905932073624965
+      ]
+    },
+    {
+      "transform": "log",
+      "features": [
+        "target_share",
+        "yprr",
+        "air_yard_share",
+        "redzone_targets_per_game"
+      ],
+      "intercept": 5.088093108293648,
+      "coefficients": {
+        "target_share": 1.643385636230032,
+        "yprr": 1.8453511261682525,
+        "air_yard_share": 1.8085241141202204,
+        "redzone_targets_per_game": 0.21895814601860766
+      },
+      "normalized_component_weights": {
+        "target_share": 0.2979188515749287,
+        "yprr": 0.33453188109987475,
+        "air_yard_share": 0.3278557480642626,
+        "redzone_targets_per_game": 0.03969351926093405
+      },
+      "mae": 0.12364812661524464,
+      "max_error": 0.20764121219870368,
+      "loo_mae": 0.20529532277314835,
+      "spearman": 0.8421104469870047,
+      "predictions": [
+        8.838605009785622,
+        8.476608379309159,
+        8.562229305193537,
+        8.15677768715219,
+        8.087476142998305,
+        8.280845091743299,
+        7.783860679776601,
+        7.5571039187458,
+        7.891047074519577,
+        7.696284432326488,
+        7.907641212198704,
+        7.651521066250742
+      ]
+    },
+    {
+      "transform": "saturation_log",
+      "features": [
+        "target_share",
+        "yprr",
+        "air_yard_share",
+        "redzone_targets_per_game"
+      ],
+      "intercept": 0.0,
+      "coefficients": {
+        "target_share": 0.8115800636675541,
+        "yprr": 1.030299073360593,
+        "air_yard_share": 1.053460617522277,
+        "redzone_targets_per_game": 0.20936243905318405
+      },
+      "normalized_component_weights": {
+        "target_share": 0.26140351410824314,
+        "yprr": 0.33185117576920686,
+        "air_yard_share": 0.33931132579886253,
+        "redzone_targets_per_game": 0.06743398432368755
+      },
+      "mae": 0.13271264948534287,
+      "max_error": 0.2655380431955088,
+      "loo_mae": 0.21281107701055446,
+      "spearman": 0.8421104469870047,
+      "predictions": [
+        8.786633925881643,
+        8.501564800826552,
+        8.575412911923776,
+        8.201615250610018,
+        8.107889607646959,
+        8.26924584725494,
+        7.788198831248717,
+        7.495551188215634,
+        7.9109371289692,
+        7.7231602723655115,
+        7.965538043195509,
+        7.679711194544703
+      ]
+    },
+    {
+      "transform": "log",
+      "features": [
+        "target_share",
+        "yprr"
+      ],
+      "intercept": 5.781819688603278,
+      "coefficients": {
+        "target_share": 2.5644676224571405,
+        "yprr": 1.8388627614971094,
+        "air_yard_share": 0.0,
+        "redzone_targets_per_game": 0.0
+      },
+      "normalized_component_weights": {
+        "target_share": 0.5823927343271966,
+        "yprr": 0.41760726567280326,
+        "air_yard_share": 0.0,
+        "redzone_targets_per_game": 0.0
+      },
+      "mae": 0.15149508504073164,
+      "max_error": 0.25445043709133053,
+      "loo_mae": 0.21519192297986459,
+      "spearman": 0.9087775240401426,
+      "predictions": [
+        8.733218638896005,
+        8.431706864561914,
+        8.626613030872079,
+        8.09554956290867,
+        8.010519848661954,
+        8.370775052964744,
+        7.935245909697058,
+        7.520034574727078,
+        7.879405781737555,
+        7.87535620498666,
+        7.830367211246396,
+        7.581207318739909
+      ]
+    },
+    {
+      "transform": "log",
+      "features": [
+        "yprr",
+        "air_yard_share",
+        "redzone_targets_per_game"
+      ],
+      "intercept": 4.949593126086752,
+      "coefficients": {
+        "target_share": 0.0,
+        "yprr": 1.9246609313778356,
+        "air_yard_share": 3.1092597193376936,
+        "redzone_targets_per_game": 0.5927547982936289
+      },
+      "normalized_component_weights": {
+        "target_share": 0.0,
+        "yprr": 0.3420600581675211,
+        "air_yard_share": 0.5525926895046391,
+        "redzone_targets_per_game": 0.10534725232783976
+      },
+      "mae": 0.14245520340568385,
+      "max_error": 0.3004346023821185,
+      "loo_mae": 0.21711880797993466,
+      "spearman": 0.803513718166767,
+      "predictions": [
+        8.83077336644862,
+        8.440066092843903,
+        8.602897831357138,
+        8.156379303457417,
+        8.096965456228768,
+        8.12365600769198,
+        7.659008077305998,
+        7.734618102873564,
+        7.893893376508033,
+        7.5728498497298204,
+        7.928457933172659,
+        7.850434602382118
+      ]
+    },
+    {
+      "transform": "capped",
+      "features": [
+        "yprr",
+        "air_yard_share",
+        "redzone_targets_per_game"
+      ],
+      "intercept": 5.6591026191941864,
+      "coefficients": {
+        "target_share": 0.0,
+        "yprr": 1.6701399584359786,
+        "air_yard_share": 1.2100795762688532,
+        "redzone_targets_per_game": 0.49398020192325853
+      },
+      "normalized_component_weights": {
+        "target_share": 0.0,
+        "yprr": 0.4949736496941894,
+        "air_yard_share": 0.35862713257102896,
+        "redzone_targets_per_game": 0.1463992177347816
+      },
+      "mae": 0.15183616459631852,
+      "max_error": 0.3166043420899287,
+      "loo_mae": 0.22566119549305164,
+      "spearman": 0.7859697505212043,
+      "predictions": [
+        8.948552163015863,
+        8.497941533739608,
+        8.37406360505586,
+        8.096290002755937,
+        8.028644152225668,
+        8.301056334615756,
+        7.688372625226934,
+        7.790989126310166,
+        7.837658726766465,
+        7.663671093418086,
+        7.7961562947797365,
+        7.8666043420899285
+      ]
+    },
+    {
+      "transform": "log",
+      "features": [
+        "target_share",
+        "yprr",
+        "redzone_targets_per_game"
+      ],
+      "intercept": 5.781819688603278,
+      "coefficients": {
+        "target_share": 2.5644676224571405,
+        "yprr": 1.8388627614971094,
+        "air_yard_share": 0.0,
+        "redzone_targets_per_game": 0.0
+      },
+      "normalized_component_weights": {
+        "target_share": 0.5823927343271966,
+        "yprr": 0.41760726567280326,
+        "air_yard_share": 0.0,
+        "redzone_targets_per_game": 0.0
+      },
+      "mae": 0.15149508504073195,
+      "max_error": 0.25445043709133053,
+      "loo_mae": 0.23177104351301944,
+      "spearman": 0.9087775240401426,
+      "predictions": [
+        8.733218638896004,
+        8.431706864561914,
+        8.62661303087208,
+        8.09554956290867,
+        8.010519848661954,
+        8.370775052964744,
+        7.935245909697058,
+        7.520034574727078,
+        7.879405781737555,
+        7.87535620498666,
+        7.830367211246396,
+        7.581207318739909
+      ]
+    },
+    {
+      "transform": "saturation_capped",
+      "features": [
+        "target_share",
+        "yprr",
+        "air_yard_share",
+        "redzone_targets_per_game"
+      ],
+      "intercept": 0.0,
+      "coefficients": {
+        "target_share": 0.2793048644355848,
+        "yprr": 1.0021568315208056,
+        "air_yard_share": 0.7649812576668988,
+        "redzone_targets_per_game": 0.31139058179602097
+      },
+      "normalized_component_weights": {
+        "target_share": 0.11845826273987319,
+        "yprr": 0.4250329026483139,
+        "air_yard_share": 0.32444243674346446,
+        "redzone_targets_per_game": 0.1320663978683483
+      },
+      "mae": 0.1480896622241442,
+      "max_error": 0.29896518833028374,
+      "loo_mae": 0.23180349014836352,
+      "spearman": 0.7789521634629794,
+      "predictions": [
+        8.97282871493304,
+        8.606056990507032,
+        8.368515065582564,
+        8.170507250483913,
+        8.05283954586663,
+        8.354619432330688,
+        7.621034811669716,
+        7.540200766914342,
+        7.797017410456056,
+        7.638585875486265,
+        7.843951229000785,
+        7.736399466479623
+      ]
+    },
+    {
+      "transform": "capped",
+      "features": [
+        "target_share",
+        "yprr",
+        "air_yard_share",
+        "redzone_targets_per_game"
+      ],
+      "intercept": 5.776936648749294,
+      "coefficients": {
+        "target_share": 0.8296390524051069,
+        "yprr": 1.5573959167674116,
+        "air_yard_share": 0.6431621463335732,
+        "redzone_targets_per_game": 0.2553422899339735
+      },
+      "normalized_component_weights": {
+        "target_share": 0.2525122818589312,
+        "yprr": 0.47401529081913846,
+        "air_yard_share": 0.19575542002894591,
+        "redzone_targets_per_game": 0.0777170072929845
+      },
+      "mae": 0.13623132923277895,
+      "max_error": 0.28543918720549755,
+      "loo_mae": 0.232420142647082,
+      "spearman": 0.8701807952199049,
+      "predictions": [
+        8.933594678702839,
+        8.522521131923217,
+        8.334459699807837,
+        8.10505747779432,
+        8.02662526503625,
+        8.405439187205497,
+        7.794987107908344,
+        7.668961342133371,
+        7.84792201352578,
+        7.744317674814365,
+        7.793821452045394,
+        7.712292969102812
+      ]
+    },
+    {
+      "transform": "saturation_log",
+      "features": [
+        "target_share",
+        "yprr"
+      ],
+      "intercept": 0.0,
+      "coefficients": {
+        "target_share": 1.9940970184096911,
+        "yprr": 1.217385081463679,
+        "air_yard_share": 0.0,
+        "redzone_targets_per_game": 0.0
+      },
+      "normalized_component_weights": {
+        "target_share": 0.6209273339833714,
+        "yprr": 0.3790726660166286,
+        "air_yard_share": 0.0,
+        "redzone_targets_per_game": 0.0
+      },
+      "mae": 0.18818322959356645,
+      "max_error": 0.6243527629209664,
+      "loo_mae": 0.23396489447907629,
+      "spearman": 0.9087775240401426,
+      "predictions": [
+        8.82783782007056,
+        8.545729713593511,
+        8.661849478125617,
+        8.15216724087937,
+        8.021517324263742,
+        8.453178280715717,
+        7.932555124896186,
+        7.095647237079033,
+        7.832201458861076,
+        7.871418283278219,
+        7.812694104025426,
+        7.272798638893225
+      ]
+    },
+    {
+      "transform": "linear",
+      "features": [
+        "yprr",
+        "air_yard_share",
+        "redzone_targets_per_game"
+      ],
+      "intercept": 5.665621401815926,
+      "coefficients": {
+        "target_share": 0.0,
+        "yprr": 0.9616738382310612,
+        "air_yard_share": 1.8688286799732727,
+        "redzone_targets_per_game": 0.34234162960419473
+      },
+      "normalized_component_weights": {
+        "target_share": 0.0,
+        "yprr": 0.3030952021060618,
+        "air_yard_share": 0.5890073993278446,
+        "redzone_targets_per_game": 0.1078973985660937
+      },
+      "mae": 0.14817263953872742,
+      "max_error": 0.2873967375899129,
+      "loo_mae": 0.2352029800706695,
+      "spearman": 0.803513718166767,
+      "predictions": [
+        8.813733722930808,
+        8.405277969317146,
+        8.604546507555686,
+        8.150289611412934,
+        8.122647727140338,
+        8.136238101634182,
+        7.638940182721078,
+        7.723263579590946,
+        7.8910577615966355,
+        7.592722676385683,
+        7.987396737589913,
+        7.823885422124675
+      ]
+    },
+    {
+      "transform": "linear",
+      "features": [
+        "target_share",
+        "yprr"
+      ],
+      "intercept": 6.296140014826041,
+      "coefficients": {
+        "target_share": 1.6583261461150218,
+        "yprr": 0.9194617585429782,
+        "air_yard_share": 0.0,
+        "redzone_targets_per_game": 0.0
+      },
+      "normalized_component_weights": {
+        "target_share": 0.643313650094512,
+        "yprr": 0.35668634990548803,
+        "air_yard_share": 0.0,
+        "redzone_targets_per_game": 0.0
+      },
+      "mae": 0.16150425788733194,
+      "max_error": 0.26964484805314903,
+      "loo_mae": 0.2361652567598269,
+      "spearman": 0.8982511434528049,
+      "predictions": [
+        8.738429305452613,
+        8.413989537492448,
+        8.637489749036986,
+        8.08035515194685,
+        7.984508717858589,
+        8.326228797838656,
+        7.9349648697712425,
+        7.513691739925518,
+        7.867194969125918,
+        7.919531718720272,
+        7.896134868588491,
+        7.577480574242438
+      ]
+    },
+    {
+      "transform": "saturation_capped",
+      "features": [
+        "target_share",
+        "yprr"
+      ],
+      "intercept": 0.0,
+      "coefficients": {
+        "target_share": 1.3106113956399732,
+        "yprr": 1.1234884921920978,
+        "air_yard_share": 0.0,
+        "redzone_targets_per_game": 0.0
+      },
+      "normalized_component_weights": {
+        "target_share": 0.5384378028985771,
+        "yprr": 0.461562197101423,
+        "air_yard_share": 0.0,
+        "redzone_targets_per_game": 0.0
+      },
+      "mae": 0.19588724711601033,
+      "max_error": 0.5908798796932633,
+      "loo_mae": 0.23747327376834929,
+      "spearman": 0.8982511434528049,
+      "predictions": [
+        8.997173138726623,
+        8.669499803366193,
+        8.397818004849674,
+        8.137997077106109,
+        8.005371197327706,
+        8.645641541711713,
+        7.8310231596450475,
+        7.1291201203067365,
+        7.738765157162506,
+        7.692753246663539,
+        7.600215583380306,
+        7.137134679563407
+      ]
+    },
+    {
+      "transform": "linear",
+      "features": [
+        "target_share",
+        "yprr",
+        "redzone_targets_per_game"
+      ],
+      "intercept": 6.296140014826041,
+      "coefficients": {
+        "target_share": 1.6583261461150218,
+        "yprr": 0.9194617585429782,
+        "air_yard_share": 0.0,
+        "redzone_targets_per_game": 0.0
+      },
+      "normalized_component_weights": {
+        "target_share": 0.643313650094512,
+        "yprr": 0.35668634990548803,
+        "air_yard_share": 0.0,
+        "redzone_targets_per_game": 0.0
+      },
+      "mae": 0.1615042578873318,
+      "max_error": 0.26964484805314903,
+      "loo_mae": 0.2391759335394338,
+      "spearman": 0.8982511434528049,
+      "predictions": [
+        8.738429305452614,
+        8.413989537492448,
+        8.637489749036986,
+        8.08035515194685,
+        7.984508717858589,
+        8.326228797838656,
+        7.9349648697712425,
+        7.513691739925518,
+        7.867194969125918,
+        7.919531718720272,
+        7.896134868588491,
+        7.577480574242438
+      ]
+    },
+    {
+      "transform": "capped",
+      "features": [
+        "yprr",
+        "redzone_targets_per_game"
+      ],
+      "intercept": 6.452999441457351,
+      "coefficients": {
+        "target_share": 0.0,
+        "yprr": 1.8983899677883977,
+        "air_yard_share": 0.0,
+        "redzone_targets_per_game": 0.520706282983518
+      },
+      "normalized_component_weights": {
+        "target_share": 0.0,
+        "yprr": 0.7847517299828957,
+        "air_yard_share": 0.0,
+        "redzone_targets_per_game": 0.21524827001710428
+      },
+      "mae": 0.18850708638295477,
+      "max_error": 0.38917094411940134,
+      "loo_mae": 0.2435981999078883,
+      "spearman": 0.7859697505212043,
+      "predictions": [
+        8.785311311732013,
+        8.3988520953347,
+        8.58281442390509,
+        7.965611545716065,
+        7.868656799406482,
+        8.341897459406807,
+        7.828656689024793,
+        7.90662459876225,
+        7.798824007561192,
+        7.851711084543003,
+        7.6218690404882325,
+        7.939170944119401
+      ]
+    },
+    {
+      "transform": "saturation_linear",
+      "features": [
+        "yprr",
+        "air_yard_share",
+        "redzone_targets_per_game"
+      ],
+      "intercept": 0.0,
+      "coefficients": {
+        "target_share": 0.0,
+        "yprr": 0.5869665265356613,
+        "air_yard_share": 1.3380730199180162,
+        "redzone_targets_per_game": 0.29029630644699256
+      },
+      "normalized_component_weights": {
+        "target_share": 0.0,
+        "yprr": 0.2649560001329421,
+        "air_yard_share": 0.6040045883634296,
+        "redzone_targets_per_game": 0.13103941150362844
+      },
+      "mae": 0.1799373954133483,
+      "max_error": 0.4463858565598553,
+      "loo_mae": 0.25387041647970127,
+      "spearman": 0.7859697505212043,
+      "predictions": [
+        8.876670706802853,
+        8.504409973942577,
+        8.597868120027375,
+        8.224500520375027,
+        8.165180087664787,
+        8.113516992505737,
+        7.473614143440145,
+        7.552822395815312,
+        7.868443348284097,
+        7.479159882627499,
+        8.088345098536363,
+        7.800765292351003
+      ]
+    },
+    {
+      "transform": "saturation_linear",
+      "features": [
+        "target_share",
+        "yprr",
+        "air_yard_share",
+        "redzone_targets_per_game"
+      ],
+      "intercept": 0.0,
+      "coefficients": {
+        "target_share": 0.4791864931446011,
+        "yprr": 0.573809950286245,
+        "air_yard_share": 1.0366339912456426,
+        "redzone_targets_per_game": 0.17192653553232282
+      },
+      "normalized_component_weights": {
+        "target_share": 0.21188344996693026,
+        "yprr": 0.25372341172252877,
+        "air_yard_share": 0.45837182299676016,
+        "redzone_targets_per_game": 0.07602131531378079
+      },
+      "mae": 0.16173048218035566,
+      "max_error": 0.37014998662748866,
+      "loo_mae": 0.256856190375043,
+      "spearman": 0.8245664793414421,
+      "predictions": [
+        8.895542177962144,
+        8.54309501742732,
+        8.569374066450077,
+        8.231649296274643,
+        8.154913044723832,
+        8.232231984046166,
+        7.599215100077536,
+        7.349850013372511,
+        7.863232924720403,
+        7.5728627425872315,
+        8.068634462997293,
+        7.5835092950035925
+      ]
+    },
+    {
+      "transform": "saturation_log",
+      "features": [
+        "yprr",
+        "air_yard_share"
+      ],
+      "intercept": 0.0,
+      "coefficients": {
+        "target_share": 0.0,
+        "yprr": 0.9703084216071689,
+        "air_yard_share": 1.924201110396445,
+        "redzone_targets_per_game": 0.0
+      },
+      "normalized_component_weights": {
+        "target_share": 0.0,
+        "yprr": 0.3352237782874081,
+        "air_yard_share": 0.6647762217125919,
+        "redzone_targets_per_game": 0.0
+      },
+      "mae": 0.22125639430479857,
+      "max_error": 0.47586833311557175,
+      "loo_mae": 0.258494195531628,
+      "spearman": 0.8210576858123296,
+      "predictions": [
+        8.676652763337014,
+        8.43380777261342,
+        8.530078669699261,
+        8.248150831004967,
+        8.303609764467293,
+        8.36643101903357,
+        7.597256998263598,
+        7.871690938794778,
+        8.001940830917441,
+        7.234131666884428,
+        7.903588260177271,
+        7.777737280671396
+      ]
+    },
+    {
+      "transform": "saturation_capped",
+      "features": [
+        "target_share",
+        "yprr",
+        "air_yard_share"
+      ],
+      "intercept": 0.0,
+      "coefficients": {
+        "target_share": 0.7418202870693806,
+        "yprr": 0.8806396006889359,
+        "air_yard_share": 0.6866730573715356,
+        "redzone_targets_per_game": 0.0
+      },
+      "normalized_component_weights": {
+        "target_share": 0.3212549059307908,
+        "yprr": 0.38137241190303744,
+        "air_yard_share": 0.29737268216617174,
+        "redzone_targets_per_game": 0.0
+      },
+      "mae": 0.18388983291360392,
+      "max_error": 0.43042650645198144,
+      "loo_mae": 0.25988736522580563,
+      "spearman": 0.8807071758072424,
+      "predictions": [
+        8.926566839324844,
+        8.620651915490273,
+        8.261449861468165,
+        8.240992345187534,
+        8.206256661758108,
+        8.55042650645198,
+        7.685541332118483,
+        7.44169828909694,
+        7.877891131999112,
+        7.438857225254649,
+        7.8173392028064415,
+        7.412611378761196
+      ]
+    },
+    {
+      "transform": "saturation_capped",
+      "features": [
+        "target_share",
+        "yprr",
+        "redzone_targets_per_game"
+      ],
+      "intercept": 0.0,
+      "coefficients": {
+        "target_share": 0.9833836443387629,
+        "yprr": 1.246275256011577,
+        "air_yard_share": 0.0,
+        "redzone_targets_per_game": 0.25624422659152957
+      },
+      "normalized_component_weights": {
+        "target_share": 0.395584057029813,
+        "yprr": 0.5013370161148359,
+        "air_yard_share": 0.0,
+        "redzone_targets_per_game": 0.10307892685535111
+      },
+      "mae": 0.19021376247274704,
+      "max_error": 0.5298357135667127,
+      "loo_mae": 0.2605532185933539,
+      "spearman": 0.8526368275743421,
+      "predictions": [
+        9.039031682967968,
+        8.662459150052019,
+        8.491076706067055,
+        8.066515701835273,
+        7.844649518510395,
+        8.506360569635413,
+        7.794874105198427,
+        7.190164286433287,
+        7.6541489072639415,
+        7.86291259250751,
+        7.603082275772172,
+        7.410922456439466
+      ]
+    },
+    {
+      "transform": "log",
+      "features": [
+        "yprr",
+        "air_yard_share"
+      ],
+      "intercept": 5.333806023171244,
+      "coefficients": {
+        "target_share": 0.0,
+        "yprr": 1.7180976502935725,
+        "air_yard_share": 3.0338301201868,
+        "redzone_targets_per_game": 0.0
+      },
+      "normalized_component_weights": {
+        "target_share": 0.0,
+        "yprr": 0.361558031451284,
+        "air_yard_share": 0.6384419685487159,
+        "redzone_targets_per_game": 0.0
+      },
+      "mae": 0.1967232513548831,
+      "max_error": 0.3058223921051777,
+      "loo_mae": 0.26287730972492396,
+      "spearman": 0.8421104469870047,
+      "predictions": [
+        8.656472055860746,
+        8.374177607894822,
+        8.534740810069838,
+        8.178166691545222,
+        8.230834876778495,
+        8.320452797571775,
+        7.669094333788778,
+        7.875408083629882,
+        7.963411125495043,
+        7.431749802781142,
+        7.861806664355647,
+        7.793685150228628
+      ]
+    },
+    {
+      "transform": "saturation_log",
+      "features": [
+        "target_share",
+        "yprr",
+        "redzone_targets_per_game"
+      ],
+      "intercept": 0.0,
+      "coefficients": {
+        "target_share": 1.865645314969717,
+        "yprr": 1.2510143404506568,
+        "air_yard_share": 0.0,
+        "redzone_targets_per_game": 0.11869407637071466
+      },
+      "normalized_component_weights": {
+        "target_share": 0.5766433811046985,
+        "yprr": 0.38667003492013735,
+        "air_yard_share": 0.0,
+        "redzone_targets_per_game": 0.03668658397516421
+      },
+      "mae": 0.18856477694941506,
+      "max_error": 0.6260348120323735,
+      "loo_mae": 0.263243309903658,
+      "spearman": 0.8982511434528049,
+      "predictions": [
+        8.843672894781719,
+        8.545991318454124,
+        8.688293011698258,
+        8.135214680268602,
+        7.9681478763603355,
+        8.385473552998624,
+        7.929189751403525,
+        7.093965187967626,
+        7.809416704814649,
+        7.924403863073451,
+        7.827984252304173,
+        7.352337644630729
+      ]
+    },
+    {
+      "transform": "capped",
+      "features": [
+        "yprr"
+      ],
+      "intercept": 6.9085920945395305,
+      "coefficients": {
+        "target_share": 0.0,
+        "yprr": 1.6188535723988038,
+        "air_yard_share": 0.0,
+        "redzone_targets_per_game": 0.0
+      },
+      "normalized_component_weights": {
+        "target_share": 0.0,
+        "yprr": 1.0,
+        "air_yard_share": 0.0,
+        "redzone_targets_per_game": 0.0
+      },
+      "mae": 0.22151702435932194,
+      "max_error": 0.3993513990763411,
+      "loo_mae": 0.26480719449532625,
+      "spearman": 0.8084371008826343,
+      "predictions": [
+        8.527445666938334,
+        8.308900434664496,
+        8.527445666938334,
+        8.013459657701715,
+        8.041789595218694,
+        8.51935139907634,
+        7.859668568323828,
+        8.074166666666668,
+        7.908234175495792,
+        7.657311871773977,
+        7.5723220592230405,
+        7.8799042379788125
+      ]
+    },
+    {
+      "transform": "capped",
+      "features": [
+        "yprr",
+        "air_yard_share"
+      ],
+      "intercept": 6.052270919498449,
+      "coefficients": {
+        "target_share": 0.0,
+        "yprr": 1.3947334061129177,
+        "air_yard_share": 1.2678833406564591,
+        "redzone_targets_per_game": 0.0
+      },
+      "normalized_component_weights": {
+        "target_share": 0.0,
+        "yprr": 0.5238205640391861,
+        "air_yard_share": 0.4761794359608139,
+        "redzone_targets_per_game": 0.0
+      },
+      "mae": 0.19980331335919596,
+      "max_error": 0.34701616451253514,
+      "loo_mae": 0.26507874811401505,
+      "spearman": 0.810531305224992,
+      "predictions": [
+        8.712351899586514,
+        8.417560689146127,
+        8.311700763939072,
+        8.147807242442642,
+        8.20010851054406,
+        8.467016164512534,
+        7.711015567104365,
+        7.943997310359272,
+        7.94304007038622,
+        7.470743957626114,
+        7.75759932255162,
+        7.807058501801476
+      ]
+    },
+    {
+      "transform": "saturation_linear",
+      "features": [
+        "target_share",
+        "yprr",
+        "air_yard_share"
+      ],
+      "intercept": 0.0,
+      "coefficients": {
+        "target_share": 0.735460799438887,
+        "yprr": 0.5534940547951757,
+        "air_yard_share": 0.9522420736347591,
+        "redzone_targets_per_game": 0.0
+      },
+      "normalized_component_weights": {
+        "target_share": 0.32815536657827055,
+        "yprr": 0.24696359695687212,
+        "air_yard_share": 0.42488103646485736,
+        "redzone_targets_per_game": 0.0
+      },
+      "mae": 0.19057476341319765,
+      "max_error": 0.41425183664487,
+      "loo_mae": 0.26615079266643965,
+      "spearman": 0.8491280340452296,
+      "predictions": [
+        8.874844380921,
+        8.556698074131134,
+        8.529448109696835,
+        8.261679977408587,
+        8.228321725642505,
+        8.374289353340377,
+        7.637358427572428,
+        7.30574816335513,
+        7.898548772636774,
+        7.454426419275535,
+        8.02227780263237,
+        7.394921922168675
+      ]
+    },
+    {
+      "transform": "saturation_linear",
+      "features": [
+        "yprr",
+        "air_yard_share"
+      ],
+      "intercept": 0.0,
+      "coefficients": {
+        "target_share": 0.0,
+        "yprr": 0.5514759669335403,
+        "air_yard_share": 1.5433819057170226,
+        "redzone_targets_per_game": 0.0
+      },
+      "normalized_component_weights": {
+        "target_share": 0.0,
+        "yprr": 0.26325221110861036,
+        "air_yard_share": 0.7367477888913898,
+        "redzone_targets_per_game": 0.0
+      },
+      "mae": 0.22708037919014998,
+      "max_error": 0.7324401317987892,
+      "loo_mae": 0.26727747318495715,
+      "spearman": 0.810531305224992,
+      "predictions": [
+        8.790588792997099,
+        8.485769605030988,
+        8.533611353193377,
+        8.294135079936108,
+        8.366921252767932,
+        8.345122211551974,
+        7.396454575779212,
+        7.7177653724152755,
+        7.9684022022015855,
+        6.977559868201211,
+        7.99288870269081,
+        7.650292122236014
+      ]
+    },
+    {
+      "transform": "linear",
+      "features": [
+        "yprr",
+        "air_yard_share"
+      ],
+      "intercept": 5.927521132752091,
+      "coefficients": {
+        "target_share": 0.0,
+        "yprr": 0.8817114097299262,
+        "air_yard_share": 1.8276490725678063,
+        "redzone_targets_per_game": 0.0
+      },
+      "normalized_component_weights": {
+        "target_share": 0.0,
+        "yprr": 0.3254315605069177,
+        "air_yard_share": 0.6745684394930823,
+        "redzone_targets_per_game": 0.0
+      },
+      "mae": 0.19659987522653632,
+      "max_error": 0.3193272455045477,
+      "loo_mae": 0.27202090729416617,
+      "spearman": 0.8210576858123296,
+      "predictions": [
+        8.666290494769559,
+        8.360672754495452,
+        8.560468992043644,
+        8.177828633348927,
+        8.233466862615693,
+        8.28521973421329,
+        7.65543027200831,
+        7.841707698555102,
+        7.9560289751853785,
+        7.450178594018544,
+        7.92294108161698,
+        7.779765907129139
+      ]
+    },
+    {
+      "transform": "saturation_capped",
+      "features": [
+        "yprr",
+        "air_yard_share"
+      ],
+      "intercept": 0.0,
+      "coefficients": {
+        "target_share": 0.0,
+        "yprr": 0.8751451282569475,
+        "air_yard_share": 1.285885080443223,
+        "redzone_targets_per_game": 0.0
+      },
+      "normalized_component_weights": {
+        "target_share": 0.0,
+        "yprr": 0.40496663338331357,
+        "air_yard_share": 0.5950333666166865,
+        "redzone_targets_per_game": 0.0
+      },
+      "mae": 0.23763155853349494,
+      "max_error": 0.7548163035625501,
+      "loo_mae": 0.2825613624828937,
+      "spearman": 0.8070225116958795,
+      "predictions": [
+        8.844969610994667,
+        8.551851862655488,
+        8.26593850864016,
+        8.274649530797953,
+        8.348265927819831,
+        8.522651724188048,
+        7.447223968362103,
+        7.835128417746693,
+        7.949580736590642,
+        6.95518369643745,
+        7.787342396701053,
+        7.668487455254156
+      ]
+    },
+    {
+      "transform": "log",
+      "features": [
+        "yprr"
+      ],
+      "intercept": 7.050004126200764,
+      "coefficients": {
+        "target_share": 0.0,
+        "yprr": 1.834177788341452,
+        "air_yard_share": 0.0,
+        "redzone_targets_per_game": 0.0
+      },
+      "normalized_component_weights": {
+        "target_share": 0.0,
+        "yprr": 1.0,
+        "air_yard_share": 0.0,
+        "redzone_targets_per_game": 0.0
+      },
+      "mae": 0.2409888433376314,
+      "max_error": 0.48682429387265636,
+      "loo_mae": 0.30463871962873057,
+      "spearman": 0.8000049246376544,
+      "predictions": [
+        8.355431682640862,
+        8.193175706127343,
+        8.78307871265042,
+        8.004291581230571,
+        8.023270678165469,
+        8.316768102987918,
+        7.897688561514129,
+        8.044723294510673,
+        7.93202674608768,
+        7.747261860385946,
+        7.680208730295849,
+        7.912074343403163
+      ]
+    },
+    {
+      "transform": "saturation_log",
+      "features": [
+        "target_share",
+        "air_yard_share"
+      ],
+      "intercept": 0.0,
+      "coefficients": {
+        "target_share": 1.0316306892917835,
+        "yprr": 0.0,
+        "air_yard_share": 1.971884890995627,
+        "redzone_targets_per_game": 0.0
+      },
+      "normalized_component_weights": {
+        "target_share": 0.343474392496098,
+        "yprr": 0.0,
+        "air_yard_share": 0.6565256075039021,
+        "redzone_targets_per_game": 0.0
+      },
+      "mae": 0.25700796045996704,
+      "max_error": 0.7774443949171754,
+      "loo_mae": 0.30734281691454374,
+      "spearman": 0.5157926487795403,
+      "predictions": [
+        8.68089477420158,
+        8.481835928036856,
+        7.702555605082825,
+        8.36938968980067,
+        8.337808425944486,
+        8.174187565371138,
+        7.826315397563855,
+        7.393060640027516,
+        8.099064394673999,
+        7.76882276477148,
+        8.394816013894275,
+        7.654669015976187
+      ]
+    },
+    {
+      "transform": "saturation_log",
+      "features": [
+        "target_share",
+        "air_yard_share",
+        "redzone_targets_per_game"
+      ],
+      "intercept": 0.0,
+      "coefficients": {
+        "target_share": 0.9932176916298026,
+        "yprr": 0.0,
+        "air_yard_share": 1.9874331544980597,
+        "redzone_targets_per_game": 0.026317475502465864
+      },
+      "normalized_component_weights": {
+        "target_share": 0.3303053392632006,
+        "yprr": 0.0,
+        "air_yard_share": 0.6609424981971564,
+        "redzone_targets_per_game": 0.008752162539642908
+      },
+      "mae": 0.2567709938791947,
+      "max_error": 0.7747433338433574,
+      "loo_mae": 0.3213245740524864,
+      "spearman": 0.5157926487795403,
+      "predictions": [
+        8.683673424876918,
+        8.481323204511819,
+        7.705256666156643,
+        8.367490772654763,
+        8.330251459072258,
+        8.154857685490537,
+        7.824235235493401,
+        7.396209190966864,
+        8.096476101792112,
+        7.779414388797713,
+        8.400323647317903,
+        7.673135593430694
+      ]
+    },
+    {
+      "transform": "linear",
+      "features": [
+        "target_share",
+        "air_yard_share"
+      ],
+      "intercept": 6.439942341987098,
+      "coefficients": {
+        "target_share": 1.1018146526844645,
+        "yprr": 0.0,
+        "air_yard_share": 1.1508929631446019,
+        "redzone_targets_per_game": 0.0
+      },
+      "normalized_component_weights": {
+        "target_share": 0.4891068174770486,
+        "yprr": 0.0,
+        "air_yard_share": 0.5108931825229514,
+        "redzone_targets_per_game": 0.0
+      },
+      "mae": 0.23963767383312606,
+      "max_error": 0.6601687446986739,
+      "loo_mae": 0.3228422482589415,
+      "spearman": 0.4982486811339778,
+      "predictions": [
+        8.577412169989717,
+        8.370555695817124,
+        7.8198312553013265,
+        8.246563514990942,
+        8.197510671123922,
+        8.113135996064528,
+        7.931785690992282,
+        7.614675324837615,
+        8.041065292934615,
+        7.93804813606983,
+        8.281428957393164,
+        7.757987294484954
+      ]
+    },
+    {
+      "transform": "capped",
+      "features": [
+        "target_share",
+        "air_yard_share"
+      ],
+      "intercept": 6.439942341987098,
+      "coefficients": {
+        "target_share": 1.1018146526844645,
+        "yprr": 0.0,
+        "air_yard_share": 1.1508929631446019,
+        "redzone_targets_per_game": 0.0
+      },
+      "normalized_component_weights": {
+        "target_share": 0.4891068174770486,
+        "yprr": 0.0,
+        "air_yard_share": 0.5108931825229514,
+        "redzone_targets_per_game": 0.0
+      },
+      "mae": 0.23963767383312606,
+      "max_error": 0.6601687446986739,
+      "loo_mae": 0.3228422482589415,
+      "spearman": 0.4982486811339778,
+      "predictions": [
+        8.577412169989717,
+        8.370555695817124,
+        7.8198312553013265,
+        8.246563514990942,
+        8.197510671123922,
+        8.113135996064528,
+        7.931785690992282,
+        7.614675324837615,
+        8.041065292934615,
+        7.93804813606983,
+        8.281428957393164,
+        7.757987294484954
+      ]
+    },
+    {
+      "transform": "linear",
+      "features": [
+        "target_share",
+        "air_yard_share",
+        "redzone_targets_per_game"
+      ],
+      "intercept": 6.439942341987098,
+      "coefficients": {
+        "target_share": 1.1018146526844645,
+        "yprr": 0.0,
+        "air_yard_share": 1.1508929631446019,
+        "redzone_targets_per_game": 0.0
+      },
+      "normalized_component_weights": {
+        "target_share": 0.4891068174770486,
+        "yprr": 0.0,
+        "air_yard_share": 0.5108931825229514,
+        "redzone_targets_per_game": 0.0
+      },
+      "mae": 0.23963767383312606,
+      "max_error": 0.6601687446986739,
+      "loo_mae": 0.3228422482589415,
+      "spearman": 0.4982486811339778,
+      "predictions": [
+        8.577412169989717,
+        8.370555695817124,
+        7.8198312553013265,
+        8.246563514990942,
+        8.197510671123922,
+        8.113135996064528,
+        7.931785690992282,
+        7.614675324837615,
+        8.041065292934615,
+        7.93804813606983,
+        8.281428957393164,
+        7.757987294484954
+      ]
+    },
+    {
+      "transform": "capped",
+      "features": [
+        "target_share",
+        "air_yard_share",
+        "redzone_targets_per_game"
+      ],
+      "intercept": 6.439942341987098,
+      "coefficients": {
+        "target_share": 1.1018146526844645,
+        "yprr": 0.0,
+        "air_yard_share": 1.1508929631446019,
+        "redzone_targets_per_game": 0.0
+      },
+      "normalized_component_weights": {
+        "target_share": 0.4891068174770486,
+        "yprr": 0.0,
+        "air_yard_share": 0.5108931825229514,
+        "redzone_targets_per_game": 0.0
+      },
+      "mae": 0.23963767383312606,
+      "max_error": 0.6601687446986739,
+      "loo_mae": 0.3228422482589415,
+      "spearman": 0.4982486811339778,
+      "predictions": [
+        8.577412169989717,
+        8.370555695817124,
+        7.8198312553013265,
+        8.246563514990942,
+        8.197510671123922,
+        8.113135996064528,
+        7.931785690992282,
+        7.614675324837615,
+        8.041065292934615,
+        7.93804813606983,
+        8.281428957393164,
+        7.757987294484954
+      ]
+    },
+    {
+      "transform": "log",
+      "features": [
+        "target_share",
+        "air_yard_share"
+      ],
+      "intercept": 5.992286092975048,
+      "coefficients": {
+        "target_share": 1.71271321273493,
+        "yprr": 0.0,
+        "air_yard_share": 2.1065513118011694,
+        "redzone_targets_per_game": 0.0
+      },
+      "normalized_component_weights": {
+        "target_share": 0.4484405837123738,
+        "yprr": 0.0,
+        "air_yard_share": 0.5515594162876263,
+        "redzone_targets_per_game": 0.0
+      },
+      "mae": 0.24390437448815824,
+      "max_error": 0.6528224036865282,
+      "loo_mae": 0.3285673698241333,
+      "spearman": 0.5157926487795403,
+      "predictions": [
+        8.547385167727006,
+        8.364178854566763,
+        7.827177596313472,
+        8.252893962007139,
+        8.207624099602807,
+        8.12304136273888,
+        7.933070515049787,
+        7.604938172456681,
+        8.054811242320913,
+        7.926831407275373,
+        8.283905233237203,
+        7.7641423867039965
+      ]
+    },
+    {
+      "transform": "log",
+      "features": [
+        "yprr",
+        "redzone_targets_per_game"
+      ],
+      "intercept": 6.7368730011504,
+      "coefficients": {
+        "target_share": 0.0,
+        "yprr": 2.026203523476015,
+        "air_yard_share": 0.0,
+        "redzone_targets_per_game": 0.5434448449802711
+      },
+      "normalized_component_weights": {
+        "target_share": 0.0,
+        "yprr": 0.7885139260097501,
+        "air_yard_share": 0.0,
+        "redzone_targets_per_game": 0.2114860739902499
+      },
+      "mae": 0.22872668108771044,
+      "max_error": 0.43054278151907255,
+      "loo_mae": 0.32875215149606524,
+      "spearman": 0.7894785440503169,
+      "predictions": [
+        8.50837117639802,
+        8.249457218480927,
+        8.8512266525334,
+        7.980353233395394,
+        7.895806225410813,
+        8.136258409420755,
+        7.893652059788596,
+        7.919504782389708,
+        7.867576631360396,
+        7.883816062189201,
+        7.737175985938734,
+        7.966801562694083
+      ]
+    },
+    {
+      "transform": "linear",
+      "features": [
+        "air_yard_share"
+      ],
+      "intercept": 6.52653060591011,
+      "coefficients": {
+        "target_share": 0.0,
+        "yprr": 0.0,
+        "air_yard_share": 1.928118015892722,
+        "redzone_targets_per_game": 0.0
+      },
+      "normalized_component_weights": {
+        "target_share": 0.0,
+        "yprr": 0.0,
+        "air_yard_share": 1.0,
+        "redzone_targets_per_game": 0.0
+      },
+      "mae": 0.27487391099660585,
+      "max_error": 0.6384929072510541,
+      "loo_mae": 0.32906502889018335,
+      "spearman": 0.4666695393719651,
+      "predictions": [
+        8.450792385771047,
+        8.288830472436057,
+        7.841507092748946,
+        8.265693056245345,
+        8.308111652594985,
+        8.088306198783215,
+        7.802944732431092,
+        7.876213217035016,
+        8.092162434815,
+        7.702682595604671,
+        8.250268112118203,
+        7.92248804941644
+      ]
+    },
+    {
+      "transform": "capped",
+      "features": [
+        "air_yard_share"
+      ],
+      "intercept": 6.52653060591011,
+      "coefficients": {
+        "target_share": 0.0,
+        "yprr": 0.0,
+        "air_yard_share": 1.928118015892722,
+        "redzone_targets_per_game": 0.0
+      },
+      "normalized_component_weights": {
+        "target_share": 0.0,
+        "yprr": 0.0,
+        "air_yard_share": 1.0,
+        "redzone_targets_per_game": 0.0
+      },
+      "mae": 0.27487391099660585,
+      "max_error": 0.6384929072510541,
+      "loo_mae": 0.32906502889018335,
+      "spearman": 0.4666695393719651,
+      "predictions": [
+        8.450792385771047,
+        8.288830472436057,
+        7.841507092748946,
+        8.265693056245345,
+        8.308111652594985,
+        8.088306198783215,
+        7.802944732431092,
+        7.876213217035016,
+        8.092162434815,
+        7.702682595604671,
+        8.250268112118203,
+        7.92248804941644
+      ]
+    },
+    {
+      "transform": "log",
+      "features": [
+        "target_share",
+        "air_yard_share",
+        "redzone_targets_per_game"
+      ],
+      "intercept": 5.992286092975048,
+      "coefficients": {
+        "target_share": 1.71271321273493,
+        "yprr": 0.0,
+        "air_yard_share": 2.1065513118011694,
+        "redzone_targets_per_game": 0.0
+      },
+      "normalized_component_weights": {
+        "target_share": 0.4484405837123738,
+        "yprr": 0.0,
+        "air_yard_share": 0.5515594162876263,
+        "redzone_targets_per_game": 0.0
+      },
+      "mae": 0.24390437448815824,
+      "max_error": 0.6528224036865282,
+      "loo_mae": 0.3293417760282078,
+      "spearman": 0.5157926487795403,
+      "predictions": [
+        8.547385167727006,
+        8.364178854566763,
+        7.827177596313472,
+        8.252893962007139,
+        8.207624099602807,
+        8.12304136273888,
+        7.933070515049787,
+        7.604938172456681,
+        8.054811242320913,
+        7.926831407275373,
+        8.283905233237203,
+        7.7641423867039965
+      ]
+    },
+    {
+      "transform": "log",
+      "features": [
+        "air_yard_share"
+      ],
+      "intercept": 6.077468724311555,
+      "coefficients": {
+        "target_share": 0.0,
+        "yprr": 0.0,
+        "air_yard_share": 3.401231214563952,
+        "redzone_targets_per_game": 0.0
+      },
+      "normalized_component_weights": {
+        "target_share": 0.0,
+        "yprr": 0.0,
+        "air_yard_share": 1.0,
+        "redzone_targets_per_game": 0.0
+      },
+      "mae": 0.27742083232230946,
+      "max_error": 0.6339469550818766,
+      "loo_mae": 0.33155102033587364,
+      "spearman": 0.4666695393719651,
+      "predictions": [
+        8.43161961815427,
+        8.285532019315777,
+        7.846053044918124,
+        8.264140557516711,
+        8.303256036571131,
+        8.095510510908941,
+        7.805367975896079,
+        7.882258095153687,
+        8.099266702582323,
+        7.697251279356251,
+        8.249804472163387,
+        7.929939687463339
+      ]
+    },
+    {
+      "transform": "saturation_log",
+      "features": [
+        "air_yard_share",
+        "redzone_targets_per_game"
+      ],
+      "intercept": 0.0,
+      "coefficients": {
+        "target_share": 0.0,
+        "yprr": 0.0,
+        "air_yard_share": 2.690340299926354,
+        "redzone_targets_per_game": 0.23267927952242964
+      },
+      "normalized_component_weights": {
+        "target_share": 0.0,
+        "yprr": 0.0,
+        "air_yard_share": 0.9203976322436034,
+        "redzone_targets_per_game": 0.07960236775639655
+      },
+      "mae": 0.28552500369185724,
+      "max_error": 0.7461682851798255,
+      "loo_mae": 0.33167647082655377,
+      "spearman": 0.44912557172640244,
+      "predictions": [
+        8.650897247575918,
+        8.433090540305294,
+        7.733831714820175,
+        8.364570406793945,
+        8.34112171520836,
+        7.973451762587712,
+        7.680177856125166,
+        7.685608375608288,
+        8.11028655297074,
+        7.636668910447004,
+        8.425279222814007,
+        7.948768553984792
+      ]
+    },
+    {
+      "transform": "linear",
+      "features": [
+        "yprr"
+      ],
+      "intercept": 7.369436633190769,
+      "coefficients": {
+        "target_share": 0.0,
+        "yprr": 0.9142443677525185,
+        "air_yard_share": 0.0,
+        "redzone_targets_per_game": 0.0
+      },
+      "normalized_component_weights": {
+        "target_share": 0.0,
+        "yprr": 1.0,
+        "air_yard_share": 0.0,
+        "redzone_targets_per_game": 0.0
+      },
+      "mae": 0.25206758665408974,
+      "max_error": 0.5197419887033021,
+      "loo_mae": 0.33524564733378676,
+      "spearman": 0.8000049246376544,
+      "predictions": [
+        8.317965164734007,
+        8.160258011296698,
+        8.807085901481603,
+        7.993408414181863,
+        8.00940769061753,
+        8.279109779104525,
+        7.906555199245373,
+        8.027692577972582,
+        7.933982530277949,
+        7.7922746532763085,
+        7.744276823969301,
+        7.91798325384228
+      ]
+    },
+    {
+      "transform": "saturation_log",
+      "features": [
+        "air_yard_share"
+      ],
+      "intercept": 0.0,
+      "coefficients": {
+        "target_share": 0.0,
+        "yprr": 0.0,
+        "air_yard_share": 2.8380065002424684,
+        "redzone_targets_per_game": 0.0
+      },
+      "normalized_component_weights": {
+        "target_share": 0.0,
+        "yprr": 0.0,
+        "air_yard_share": 1.0,
+        "redzone_targets_per_game": 0.0
+      },
+      "mae": 0.30943627982315847,
+      "max_error": 0.7661481374193455,
+      "loo_mae": 0.33697210855524595,
+      "spearman": 0.4666695393719651,
+      "predictions": [
+        8.597483230241362,
+        8.41566520514675,
+        7.713851862580655,
+        8.38713227892412,
+        8.438923555968127,
+        8.143450514903908,
+        7.6349096687356655,
+        7.781882934554558,
+        8.149260180062724,
+        7.411627247519576,
+        8.367723121316846,
+        7.8683999863716245
+      ]
+    },
+    {
+      "transform": "saturation_linear",
+      "features": [
+        "target_share",
+        "yprr"
+      ],
+      "intercept": 0.0,
+      "coefficients": {
+        "target_share": 1.7000264703683792,
+        "yprr": 0.7161994888278316,
+        "air_yard_share": 0.0,
+        "redzone_targets_per_game": 0.0
+      },
+      "normalized_component_weights": {
+        "target_share": 0.7035875365455949,
+        "yprr": 0.29641246345440503,
+        "air_yard_share": 0.0,
+        "redzone_targets_per_game": 0.0
+      },
+      "mae": 0.2757078148898706,
+      "max_error": 1.0984350302267583,
+      "loo_mae": 0.3407588733629767,
+      "spearman": 0.8526368275743421,
+      "predictions": [
+        8.965669491032632,
+        8.612780443123413,
+        8.705211834750155,
+        8.126121253301687,
+        7.924444612527063,
+        8.436856589971388,
+        7.871217209134098,
+        6.6215649697732415,
+        7.702513052468723,
+        7.897612287941545,
+        7.872018706743247,
+        6.920233591432292
+      ]
+    },
+    {
+      "transform": "linear",
+      "features": [
+        "target_share"
+      ],
+      "intercept": 7.012894132178855,
+      "coefficients": {
+        "target_share": 1.645915400821165,
+        "yprr": 0.0,
+        "air_yard_share": 0.0,
+        "redzone_targets_per_game": 0.0
+      },
+      "normalized_component_weights": {
+        "target_share": 1.0,
+        "yprr": 0.0,
+        "air_yard_share": 0.0,
+        "redzone_targets_per_game": 0.0
+      },
+      "mae": 0.2813179488325504,
+      "max_error": 0.5783115513777162,
+      "loo_mae": 0.34143228261247677,
+      "spearman": 0.4105288429061648,
+      "predictions": [
+        8.49010320441585,
+        8.325511664333733,
+        7.901688448622284,
+        8.160920124251618,
+        8.049820834696188,
+        8.119772239231088,
+        8.103313085222876,
+        7.564275791453945,
+        8.00867294967566,
+        8.202068009272146,
+        8.226756740284465,
+        7.737096908540168
+      ]
+    },
+    {
+      "transform": "capped",
+      "features": [
+        "target_share"
+      ],
+      "intercept": 7.012894132178855,
+      "coefficients": {
+        "target_share": 1.645915400821165,
+        "yprr": 0.0,
+        "air_yard_share": 0.0,
+        "redzone_targets_per_game": 0.0
+      },
+      "normalized_component_weights": {
+        "target_share": 1.0,
+        "yprr": 0.0,
+        "air_yard_share": 0.0,
+        "redzone_targets_per_game": 0.0
+      },
+      "mae": 0.2813179488325504,
+      "max_error": 0.5783115513777162,
+      "loo_mae": 0.34143228261247677,
+      "spearman": 0.4105288429061648,
+      "predictions": [
+        8.49010320441585,
+        8.325511664333733,
+        7.901688448622284,
+        8.160920124251618,
+        8.049820834696188,
+        8.119772239231088,
+        8.103313085222876,
+        7.564275791453945,
+        8.00867294967566,
+        8.202068009272146,
+        8.226756740284465,
+        7.737096908540168
+      ]
+    },
+    {
+      "transform": "linear",
+      "features": [
+        "target_share",
+        "redzone_targets_per_game"
+      ],
+      "intercept": 7.012894132178855,
+      "coefficients": {
+        "target_share": 1.645915400821165,
+        "yprr": 0.0,
+        "air_yard_share": 0.0,
+        "redzone_targets_per_game": 0.0
+      },
+      "normalized_component_weights": {
+        "target_share": 1.0,
+        "yprr": 0.0,
+        "air_yard_share": 0.0,
+        "redzone_targets_per_game": 0.0
+      },
+      "mae": 0.2813179488325504,
+      "max_error": 0.5783115513777162,
+      "loo_mae": 0.34143228261247677,
+      "spearman": 0.4105288429061648,
+      "predictions": [
+        8.49010320441585,
+        8.325511664333733,
+        7.901688448622284,
+        8.160920124251618,
+        8.049820834696188,
+        8.119772239231088,
+        8.103313085222876,
+        7.564275791453945,
+        8.00867294967566,
+        8.202068009272146,
+        8.226756740284465,
+        7.737096908540168
+      ]
+    },
+    {
+      "transform": "capped",
+      "features": [
+        "target_share",
+        "redzone_targets_per_game"
+      ],
+      "intercept": 7.012894132178855,
+      "coefficients": {
+        "target_share": 1.645915400821165,
+        "yprr": 0.0,
+        "air_yard_share": 0.0,
+        "redzone_targets_per_game": 0.0
+      },
+      "normalized_component_weights": {
+        "target_share": 1.0,
+        "yprr": 0.0,
+        "air_yard_share": 0.0,
+        "redzone_targets_per_game": 0.0
+      },
+      "mae": 0.2813179488325504,
+      "max_error": 0.5783115513777162,
+      "loo_mae": 0.34143228261247677,
+      "spearman": 0.4105288429061648,
+      "predictions": [
+        8.49010320441585,
+        8.325511664333733,
+        7.901688448622284,
+        8.160920124251618,
+        8.049820834696188,
+        8.119772239231088,
+        8.103313085222876,
+        7.564275791453945,
+        8.00867294967566,
+        8.202068009272146,
+        8.226756740284465,
+        7.737096908540168
+      ]
+    },
+    {
+      "transform": "saturation_linear",
+      "features": [
+        "target_share",
+        "air_yard_share"
+      ],
+      "intercept": 0.0,
+      "coefficients": {
+        "target_share": 0.7247353568029015,
+        "yprr": 0.0,
+        "air_yard_share": 1.48219297432033,
+        "redzone_targets_per_game": 0.0
+      },
+      "normalized_component_weights": {
+        "target_share": 0.3283909797080009,
+        "yprr": 0.0,
+        "air_yard_share": 0.671609020291999,
+        "redzone_targets_per_game": 0.0
+      },
+      "mae": 0.2860736283819984,
+      "max_error": 0.9405192178351953,
+      "loo_mae": 0.34526692751275245,
+      "spearman": 0.5157926487795403,
+      "predictions": [
+        8.811245022676344,
+        8.55243292571097,
+        7.539480782164805,
+        8.415697703732572,
+        8.38964361774907,
+        8.151038266619622,
+        7.680767829024786,
+        7.220520537567752,
+        8.064086114993165,
+        7.601541874066021,
+        8.442608590362994,
+        7.514201781662765
+      ]
+    },
+    {
+      "transform": "saturation_capped",
+      "features": [
+        "target_share",
+        "air_yard_share"
+      ],
+      "intercept": 0.0,
+      "coefficients": {
+        "target_share": 0.7247353568029015,
+        "yprr": 0.0,
+        "air_yard_share": 1.48219297432033,
+        "redzone_targets_per_game": 0.0
+      },
+      "normalized_component_weights": {
+        "target_share": 0.3283909797080009,
+        "yprr": 0.0,
+        "air_yard_share": 0.671609020291999,
+        "redzone_targets_per_game": 0.0
+      },
+      "mae": 0.2860736283819984,
+      "max_error": 0.9405192178351953,
+      "loo_mae": 0.34526692751275245,
+      "spearman": 0.5157926487795403,
+      "predictions": [
+        8.811245022676344,
+        8.55243292571097,
+        7.539480782164805,
+        8.415697703732572,
+        8.38964361774907,
+        8.151038266619622,
+        7.680767829024786,
+        7.220520537567752,
+        8.064086114993165,
+        7.601541874066021,
+        8.442608590362994,
+        7.514201781662765
+      ]
+    },
+    {
+      "transform": "saturation_linear",
+      "features": [
+        "target_share",
+        "air_yard_share",
+        "redzone_targets_per_game"
+      ],
+      "intercept": 0.0,
+      "coefficients": {
+        "target_share": 0.6508455962568542,
+        "yprr": 0.0,
+        "air_yard_share": 1.5120875625304449,
+        "redzone_targets_per_game": 0.04949433295138903
+      },
+      "normalized_component_weights": {
+        "target_share": 0.2941771419344333,
+        "yprr": 0.0,
+        "air_yard_share": 0.6834518049412482,
+        "redzone_targets_per_game": 0.022371053124318554
+      },
+      "mae": 0.2783896962756294,
+      "max_error": 0.9344121244396408,
+      "loo_mae": 0.3469410986611181,
+      "spearman": 0.45263436525551504,
+      "predictions": [
+        8.816894802380455,
+        8.54847314827578,
+        7.54558787556036,
+        8.40942645792885,
+        8.372354643141689,
+        8.103328507464608,
+        7.670506754775394,
+        7.232784807078464,
+        8.056461471304853,
+        7.635701398346068,
+        8.457106676619905,
+        7.568604400193385
+      ]
+    },
+    {
+      "transform": "saturation_capped",
+      "features": [
+        "target_share",
+        "air_yard_share",
+        "redzone_targets_per_game"
+      ],
+      "intercept": 0.0,
+      "coefficients": {
+        "target_share": 0.6508455962568542,
+        "yprr": 0.0,
+        "air_yard_share": 1.5120875625304449,
+        "redzone_targets_per_game": 0.04949433295138903
+      },
+      "normalized_component_weights": {
+        "target_share": 0.2941771419344333,
+        "yprr": 0.0,
+        "air_yard_share": 0.6834518049412482,
+        "redzone_targets_per_game": 0.022371053124318554
+      },
+      "mae": 0.2783896962756294,
+      "max_error": 0.9344121244396408,
+      "loo_mae": 0.3469410986611181,
+      "spearman": 0.45263436525551504,
+      "predictions": [
+        8.816894802380455,
+        8.54847314827578,
+        7.54558787556036,
+        8.40942645792885,
+        8.372354643141689,
+        8.103328507464608,
+        7.670506754775394,
+        7.232784807078464,
+        8.056461471304853,
+        7.635701398346068,
+        8.457106676619905,
+        7.568604400193385
+      ]
+    },
+    {
+      "transform": "log",
+      "features": [
+        "target_share"
+      ],
+      "intercept": 6.813496534152069,
+      "coefficients": {
+        "target_share": 2.554541969065732,
+        "yprr": 0.0,
+        "air_yard_share": 0.0,
+        "redzone_targets_per_game": 0.0
+      },
+      "normalized_component_weights": {
+        "target_share": 1.0,
+        "yprr": 0.0,
+        "air_yard_share": 0.0,
+        "redzone_targets_per_game": 0.0
+      },
+      "mae": 0.2873036721308499,
+      "max_error": 0.5634971615842783,
+      "loo_mae": 0.34968466137170523,
+      "spearman": 0.4105288429061648,
+      "predictions": [
+        8.449775771670987,
+        8.311471797389432,
+        7.916502838415722,
+        8.165249227120725,
+        8.061594687253121,
+        8.127347315671738,
+        8.112027677740253,
+        7.551583645364927,
+        8.022111026902774,
+        8.20259699717019,
+        8.224746343756973,
+        7.744992671543186
+      ]
+    },
+    {
+      "transform": "log",
+      "features": [
+        "target_share",
+        "redzone_targets_per_game"
+      ],
+      "intercept": 6.813496534152069,
+      "coefficients": {
+        "target_share": 2.554541969065732,
+        "yprr": 0.0,
+        "air_yard_share": 0.0,
+        "redzone_targets_per_game": 0.0
+      },
+      "normalized_component_weights": {
+        "target_share": 1.0,
+        "yprr": 0.0,
+        "air_yard_share": 0.0,
+        "redzone_targets_per_game": 0.0
+      },
+      "mae": 0.2873036721308499,
+      "max_error": 0.5634971615842783,
+      "loo_mae": 0.34968466137170523,
+      "spearman": 0.4105288429061648,
+      "predictions": [
+        8.449775771670987,
+        8.311471797389432,
+        7.916502838415722,
+        8.165249227120725,
+        8.061594687253121,
+        8.127347315671738,
+        8.112027677740253,
+        7.551583645364927,
+        8.022111026902774,
+        8.20259699717019,
+        8.224746343756973,
+        7.744992671543186
+      ]
+    },
+    {
+      "transform": "linear",
+      "features": [
+        "air_yard_share",
+        "redzone_targets_per_game"
+      ],
+      "intercept": 6.474188565460636,
+      "coefficients": {
+        "target_share": 0.0,
+        "yprr": 0.0,
+        "air_yard_share": 1.940799378514578,
+        "redzone_targets_per_game": 0.08632451953705544
+      },
+      "normalized_component_weights": {
+        "target_share": 0.0,
+        "yprr": 0.0,
+        "air_yard_share": 0.957415272139988,
+        "redzone_targets_per_game": 0.04258472786001196
+      },
+      "mae": 0.2755311604547317,
+      "max_error": 0.6438198052648421,
+      "loo_mae": 0.35052911658275604,
+      "spearman": 0.44210798466817747,
+      "predictions": [
+        8.483043444832397,
+        8.29843516715291,
+        7.836180194735158,
+        8.260758154687894,
+        8.281874611130949,
+        8.046236062057444,
+        7.802160013805814,
+        7.847135550343683,
+        8.078892500660158,
+        7.744400705891585,
+        8.27400659950546,
+        7.936876995196561
+      ]
+    },
+    {
+      "transform": "capped",
+      "features": [
+        "air_yard_share",
+        "redzone_targets_per_game"
+      ],
+      "intercept": 6.474188565460636,
+      "coefficients": {
+        "target_share": 0.0,
+        "yprr": 0.0,
+        "air_yard_share": 1.940799378514578,
+        "redzone_targets_per_game": 0.08632451953705544
+      },
+      "normalized_component_weights": {
+        "target_share": 0.0,
+        "yprr": 0.0,
+        "air_yard_share": 0.957415272139988,
+        "redzone_targets_per_game": 0.04258472786001196
+      },
+      "mae": 0.2755311604547317,
+      "max_error": 0.6438198052648421,
+      "loo_mae": 0.35052911658275604,
+      "spearman": 0.44210798466817747,
+      "predictions": [
+        8.483043444832397,
+        8.29843516715291,
+        7.836180194735158,
+        8.260758154687894,
+        8.281874611130949,
+        8.046236062057444,
+        7.802160013805814,
+        7.847135550343683,
+        8.078892500660158,
+        7.744400705891585,
+        8.27400659950546,
+        7.936876995196561
+      ]
+    },
+    {
+      "transform": "log",
+      "features": [
+        "air_yard_share",
+        "redzone_targets_per_game"
+      ],
+      "intercept": 5.997285983502437,
+      "coefficients": {
+        "target_share": 0.0,
+        "yprr": 0.0,
+        "air_yard_share": 3.43376122344158,
+        "redzone_targets_per_game": 0.16122142959882182
+      },
+      "normalized_component_weights": {
+        "target_share": 0.0,
+        "yprr": 0.0,
+        "air_yard_share": 0.9551537670251423,
+        "redzone_targets_per_game": 0.04484623297485769
+      },
+      "mae": 0.2771608908701187,
+      "max_error": 0.6379295112668117,
+      "loo_mae": 0.35339680330004347,
+      "spearman": 0.40351125584793973,
+      "predictions": [
+        8.471674495780173,
+        8.300554066241531,
+        7.842070488733189,
+        8.26102605661676,
+        8.26921353318545,
+        8.034628697644042,
+        7.807080849763602,
+        7.844189089037721,
+        8.084801329224875,
+        7.744310619989981,
+        8.280620412441019,
+        7.949830361341674
+      ]
+    },
+    {
+      "transform": "saturation_linear",
+      "features": [
+        "target_share",
+        "yprr",
+        "redzone_targets_per_game"
+      ],
+      "intercept": 0.0,
+      "coefficients": {
+        "target_share": 1.6840031833360123,
+        "yprr": 0.7194583292129653,
+        "air_yard_share": 0.0,
+        "redzone_targets_per_game": 0.01612989478400261
+      },
+      "normalized_component_weights": {
+        "target_share": 0.6959865943614927,
+        "yprr": 0.29734703431022497,
+        "air_yard_share": 0.0,
+        "redzone_targets_per_game": 0.0066663713282822225
+      },
+      "mae": 0.2771717290359758,
+      "max_error": 1.099560642925887,
+      "loo_mae": 0.36791872974080064,
+      "spearman": 0.8526368275743421,
+      "predictions": [
+        8.968191961651916,
+        8.61201647249321,
+        8.709917320211547,
+        8.121935409492732,
+        7.91377973875597,
+        8.425036787859533,
+        7.869863061076239,
+        6.620439357074113,
+        7.697210953535602,
+        7.91031482431085,
+        7.875455536626955,
+        6.937610689801225
+      ]
+    },
+    {
+      "transform": "linear",
+      "features": [
+        "yprr",
+        "redzone_targets_per_game"
+      ],
+      "intercept": 7.168547207133125,
+      "coefficients": {
+        "target_share": 0.0,
+        "yprr": 0.9849072505983472,
+        "air_yard_share": 0.0,
+        "redzone_targets_per_game": 0.29977958326654747
+      },
+      "normalized_component_weights": {
+        "target_share": 0.0,
+        "yprr": 0.7666516264009022,
+        "air_yard_share": 0.0,
+        "redzone_targets_per_game": 0.23334837359909774
+      },
+      "mae": 0.24896027970432008,
+      "max_error": 0.4846365975271514,
+      "loo_mae": 0.3743349826308937,
+      "spearman": 0.7438642281718542,
+      "predictions": [
+        8.440204799017701,
+        8.195363402472848,
+        8.850549229039713,
+        7.965654565360892,
+        7.907945546429726,
+        8.148529921478481,
+        7.8970700084929275,
+        7.927643691441693,
+        7.87665396213312,
+        7.923846393801408,
+        7.7971938673283585,
+        7.959344613003164
+      ]
+    },
+    {
+      "transform": "saturation_linear",
+      "features": [
+        "air_yard_share"
+      ],
+      "intercept": 0.0,
+      "coefficients": {
+        "target_share": 0.0,
+        "yprr": 0.0,
+        "air_yard_share": 2.06283884434078,
+        "redzone_targets_per_game": 0.0
+      },
+      "normalized_component_weights": {
+        "target_share": 0.0,
+        "yprr": 0.0,
+        "air_yard_share": 1.0,
+        "redzone_targets_per_game": 0.0
+      },
+      "mae": 0.34702921071364806,
+      "max_error": 0.9291205505435602,
+      "loo_mae": 0.3759795615416113,
+      "spearman": 0.4666695393719651,
+      "predictions": [
+        8.723819125130483,
+        8.482369268853544,
+        7.55087944945644,
+        8.444332902259452,
+        8.513354854968059,
+        8.119221796776563,
+        7.4477233161544945,
+        7.640150367523024,
+        8.126965296870528,
+        7.158723571247068,
+        8.418447173238231,
+        7.754137196369121
+      ]
+    },
+    {
+      "transform": "saturation_capped",
+      "features": [
+        "air_yard_share"
+      ],
+      "intercept": 0.0,
+      "coefficients": {
+        "target_share": 0.0,
+        "yprr": 0.0,
+        "air_yard_share": 2.06283884434078,
+        "redzone_targets_per_game": 0.0
+      },
+      "normalized_component_weights": {
+        "target_share": 0.0,
+        "yprr": 0.0,
+        "air_yard_share": 1.0,
+        "redzone_targets_per_game": 0.0
+      },
+      "mae": 0.34702921071364806,
+      "max_error": 0.9291205505435602,
+      "loo_mae": 0.3759795615416113,
+      "spearman": 0.4666695393719651,
+      "predictions": [
+        8.723819125130483,
+        8.482369268853544,
+        7.55087944945644,
+        8.444332902259452,
+        8.513354854968059,
+        8.119221796776563,
+        7.4477233161544945,
+        7.640150367523024,
+        8.126965296870528,
+        7.158723571247068,
+        8.418447173238231,
+        7.754137196369121
+      ]
+    },
+    {
+      "transform": "saturation_capped",
+      "features": [
+        "yprr",
+        "redzone_targets_per_game"
+      ],
+      "intercept": 0.0,
+      "coefficients": {
+        "target_share": 0.0,
+        "yprr": 1.8078784229285383,
+        "air_yard_share": 0.0,
+        "redzone_targets_per_game": 0.7024265040308805
+      },
+      "normalized_component_weights": {
+        "target_share": 0.0,
+        "yprr": 0.7201827967243456,
+        "air_yard_share": 0.0,
+        "redzone_targets_per_game": 0.2798172032756544
+      },
+      "mae": 0.317385010631333,
+      "max_error": 0.6292881640434462,
+      "loo_mae": 0.3779598332796958,
+      "spearman": 0.6421092158275911,
+      "predictions": [
+        9.086661535264366,
+        8.61039231938431,
+        8.799765309943838,
+        7.827170230371444,
+        7.490711835956553,
+        8.345090934205603,
+        7.566712393383841,
+        7.579820902938654,
+        7.408911652530957,
+        7.853121732603746,
+        7.186202311228459,
+        7.883902261352663
+      ]
+    },
+    {
+      "transform": "saturation_linear",
+      "features": [
+        "air_yard_share",
+        "redzone_targets_per_game"
+      ],
+      "intercept": 0.0,
+      "coefficients": {
+        "target_share": 0.0,
+        "yprr": 0.0,
+        "air_yard_share": 1.9398311503875485,
+        "redzone_targets_per_game": 0.20775483830631583
+      },
+      "normalized_component_weights": {
+        "target_share": 0.0,
+        "yprr": 0.0,
+        "air_yard_share": 0.9032612247425446,
+        "redzone_targets_per_game": 0.09673877525745536
+      },
+      "mae": 0.32833694510107025,
+      "max_error": 0.9085266697740835,
+      "loo_mae": 0.3860470564272032,
+      "spearman": 0.4315816040808399,
+      "predictions": [
+        8.786505064166635,
+        8.495607594823229,
+        7.571473330225917,
+        8.405926197660836,
+        8.391092618387333,
+        7.92217461011409,
+        7.504374367486304,
+        7.5154849705230085,
+        8.068705340396015,
+        7.511865450112846,
+        8.489319946772987,
+        7.8624846254477
+      ]
+    },
+    {
+      "transform": "saturation_capped",
+      "features": [
+        "air_yard_share",
+        "redzone_targets_per_game"
+      ],
+      "intercept": 0.0,
+      "coefficients": {
+        "target_share": 0.0,
+        "yprr": 0.0,
+        "air_yard_share": 1.9398311503875485,
+        "redzone_targets_per_game": 0.20775483830631583
+      },
+      "normalized_component_weights": {
+        "target_share": 0.0,
+        "yprr": 0.0,
+        "air_yard_share": 0.9032612247425446,
+        "redzone_targets_per_game": 0.09673877525745536
+      },
+      "mae": 0.32833694510107025,
+      "max_error": 0.9085266697740835,
+      "loo_mae": 0.3860470564272032,
+      "spearman": 0.4315816040808399,
+      "predictions": [
+        8.786505064166635,
+        8.495607594823229,
+        7.571473330225917,
+        8.405926197660836,
+        8.391092618387333,
+        7.92217461011409,
+        7.504374367486304,
+        7.5154849705230085,
+        8.068705340396015,
+        7.511865450112846,
+        8.489319946772987,
+        7.8624846254477
+      ]
+    },
+    {
+      "transform": "saturation_log",
+      "features": [
+        "yprr",
+        "redzone_targets_per_game"
+      ],
+      "intercept": 0.0,
+      "coefficients": {
+        "target_share": 0.0,
+        "yprr": 2.2405699180677723,
+        "air_yard_share": 0.0,
+        "redzone_targets_per_game": 1.0107781594977265
+      },
+      "normalized_component_weights": {
+        "target_share": 0.0,
+        "yprr": 0.6891202862984256,
+        "air_yard_share": 0.0,
+        "redzone_targets_per_game": 0.31087971370157436
+      },
+      "mae": 0.34777534860067627,
+      "max_error": 0.7261219033051614,
+      "loo_mae": 0.41598711939091465,
+      "spearman": 0.533336616425103,
+      "predictions": [
+        8.900066362104743,
+        8.444744432517643,
+        9.169866484732857,
+        7.808034076053064,
+        7.393878096694838,
+        7.87207184384171,
+        7.643336113137566,
+        7.461286489750734,
+        7.454433649241978,
+        7.882533225579376,
+        7.3696920751593575,
+        7.918314887188032
+      ]
+    },
+    {
+      "transform": "linear",
+      "features": [
+        "redzone_targets_per_game"
+      ],
+      "intercept": 8.056752909876955,
+      "coefficients": {
+        "target_share": 0.0,
+        "yprr": 0.0,
+        "air_yard_share": 0.0,
+        "redzone_targets_per_game": 0.035652810109744734
+      },
+      "normalized_component_weights": {
+        "target_share": 0.0,
+        "yprr": 0.0,
+        "air_yard_share": 0.0,
+        "redzone_targets_per_game": 1.0
+      },
+      "mae": 0.3587218711894468,
+      "max_error": 0.7435364150315902,
+      "loo_mae": 0.4166212097587001,
+      "spearman": -0.11423567729863311,
+      "predictions": [
+        8.08646358496841,
+        8.077550382440974,
+        8.072598603259065,
+        8.071608247422683,
+        8.062695044895246,
+        8.056752909876955,
+        8.074579314931828,
+        8.062695044895246,
+        8.068637179913537,
+        8.0924057199867,
+        8.083492517459264,
+        8.080521449950119
+      ]
+    },
+    {
+      "transform": "capped",
+      "features": [
+        "redzone_targets_per_game"
+      ],
+      "intercept": 8.056752909876955,
+      "coefficients": {
+        "target_share": 0.0,
+        "yprr": 0.0,
+        "air_yard_share": 0.0,
+        "redzone_targets_per_game": 0.035652810109744734
+      },
+      "normalized_component_weights": {
+        "target_share": 0.0,
+        "yprr": 0.0,
+        "air_yard_share": 0.0,
+        "redzone_targets_per_game": 1.0
+      },
+      "mae": 0.3587218711894468,
+      "max_error": 0.7435364150315902,
+      "loo_mae": 0.4166212097587001,
+      "spearman": -0.11423567729863311,
+      "predictions": [
+        8.08646358496841,
+        8.077550382440974,
+        8.072598603259065,
+        8.071608247422683,
+        8.062695044895246,
+        8.056752909876955,
+        8.074579314931828,
+        8.062695044895246,
+        8.068637179913537,
+        8.0924057199867,
+        8.083492517459264,
+        8.080521449950119
+      ]
+    },
+    {
+      "transform": "log",
+      "features": [
+        "redzone_targets_per_game"
+      ],
+      "intercept": 8.043407533373726,
+      "coefficients": {
+        "target_share": 0.0,
+        "yprr": 0.0,
+        "air_yard_share": 0.0,
+        "redzone_targets_per_game": 0.0811812120730101
+      },
+      "normalized_component_weights": {
+        "target_share": 0.0,
+        "yprr": 0.0,
+        "air_yard_share": 0.0,
+        "redzone_targets_per_game": 1.0
+      },
+      "mae": 0.3604000211755585,
+      "max_error": 0.7373856274115873,
+      "loo_mae": 0.41802683169238236,
+      "spearman": -0.11423567729863311,
+      "predictions": [
+        8.092614372588413,
+        8.080712924859402,
+        8.07325987673358,
+        8.071683492987564,
+        8.055921672403981,
+        8.043407533373726,
+        8.076323682303261,
+        8.055921672403981,
+        8.066761912707037,
+        8.099678061636572,
+        8.088837821333517,
+        8.084876976669001
+      ]
+    },
+    {
+      "transform": "saturation_log",
+      "features": [
+        "target_share"
+      ],
+      "intercept": 0.0,
+      "coefficients": {
+        "target_share": 3.325341179475611,
+        "yprr": 0.0,
+        "air_yard_share": 0.0,
+        "redzone_targets_per_game": 0.0
+      },
+      "normalized_component_weights": {
+        "target_share": 1.0,
+        "yprr": 0.0,
+        "air_yard_share": 0.0,
+        "redzone_targets_per_game": 0.0
+      },
+      "mae": 0.424403160360856,
+      "max_error": 1.5458856010227748,
+      "loo_mae": 0.453803832616316,
+      "spearman": 0.4105288429061648,
+      "predictions": [
+        8.811632799951886,
+        8.577215835594638,
+        7.620807265216417,
+        8.278908081686634,
+        8.030283053890482,
+        8.191862632036056,
+        8.155442571168464,
+        6.174114398977225,
+        7.926398019570097,
+        8.360580918398618,
+        8.407174724966007,
+        7.025659506491689
+      ]
+    },
+    {
+      "transform": "saturation_log",
+      "features": [
+        "target_share",
+        "redzone_targets_per_game"
+      ],
+      "intercept": 0.0,
+      "coefficients": {
+        "target_share": 3.325341179475611,
+        "yprr": 0.0,
+        "air_yard_share": 0.0,
+        "redzone_targets_per_game": 0.0
+      },
+      "normalized_component_weights": {
+        "target_share": 1.0,
+        "yprr": 0.0,
+        "air_yard_share": 0.0,
+        "redzone_targets_per_game": 0.0
+      },
+      "mae": 0.424403160360856,
+      "max_error": 1.5458856010227748,
+      "loo_mae": 0.453803832616316,
+      "spearman": 0.4105288429061648,
+      "predictions": [
+        8.811632799951886,
+        8.577215835594638,
+        7.620807265216417,
+        8.278908081686634,
+        8.030283053890482,
+        8.191862632036056,
+        8.155442571168464,
+        6.174114398977225,
+        7.926398019570097,
+        8.360580918398618,
+        8.407174724966007,
+        7.025659506491689
+      ]
+    },
+    {
+      "transform": "saturation_linear",
+      "features": [
+        "target_share"
+      ],
+      "intercept": 0.0,
+      "coefficients": {
+        "target_share": 2.5139074076051933,
+        "yprr": 0.0,
+        "air_yard_share": 0.0,
+        "redzone_targets_per_game": 0.0
+      },
+      "normalized_component_weights": {
+        "target_share": 1.0,
+        "yprr": 0.0,
+        "air_yard_share": 0.0,
+        "redzone_targets_per_game": 0.0
+      },
+      "mae": 0.5058136906715663,
+      "max_error": 2.027794737961707,
+      "loo_mae": 0.5377625199880071,
+      "spearman": 0.4105288429061648,
+      "predictions": [
+        8.9525557026266,
+        8.653183128363557,
+        7.426993414172589,
+        8.268246158508665,
+        7.947982560194888,
+        8.155916582477207,
+        8.108970413599922,
+        5.692205262038293,
+        7.814879203643957,
+        8.373733346863128,
+        8.433915774627302,
+        6.691596212501327
+      ]
+    },
+    {
+      "transform": "saturation_capped",
+      "features": [
+        "target_share"
+      ],
+      "intercept": 0.0,
+      "coefficients": {
+        "target_share": 2.5139074076051933,
+        "yprr": 0.0,
+        "air_yard_share": 0.0,
+        "redzone_targets_per_game": 0.0
+      },
+      "normalized_component_weights": {
+        "target_share": 1.0,
+        "yprr": 0.0,
+        "air_yard_share": 0.0,
+        "redzone_targets_per_game": 0.0
+      },
+      "mae": 0.5058136906715663,
+      "max_error": 2.027794737961707,
+      "loo_mae": 0.5377625199880071,
+      "spearman": 0.4105288429061648,
+      "predictions": [
+        8.9525557026266,
+        8.653183128363557,
+        7.426993414172589,
+        8.268246158508665,
+        7.947982560194888,
+        8.155916582477207,
+        8.108970413599922,
+        5.692205262038293,
+        7.814879203643957,
+        8.373733346863128,
+        8.433915774627302,
+        6.691596212501327
+      ]
+    },
+    {
+      "transform": "saturation_linear",
+      "features": [
+        "target_share",
+        "redzone_targets_per_game"
+      ],
+      "intercept": 0.0,
+      "coefficients": {
+        "target_share": 2.5139074076051933,
+        "yprr": 0.0,
+        "air_yard_share": 0.0,
+        "redzone_targets_per_game": 0.0
+      },
+      "normalized_component_weights": {
+        "target_share": 1.0,
+        "yprr": 0.0,
+        "air_yard_share": 0.0,
+        "redzone_targets_per_game": 0.0
+      },
+      "mae": 0.5058136906715663,
+      "max_error": 2.027794737961707,
+      "loo_mae": 0.5377625199880071,
+      "spearman": 0.4105288429061648,
+      "predictions": [
+        8.9525557026266,
+        8.653183128363557,
+        7.426993414172589,
+        8.268246158508665,
+        7.947982560194888,
+        8.155916582477207,
+        8.108970413599922,
+        5.692205262038293,
+        7.814879203643957,
+        8.373733346863128,
+        8.433915774627302,
+        6.691596212501327
+      ]
+    },
+    {
+      "transform": "saturation_capped",
+      "features": [
+        "target_share",
+        "redzone_targets_per_game"
+      ],
+      "intercept": 0.0,
+      "coefficients": {
+        "target_share": 2.5139074076051933,
+        "yprr": 0.0,
+        "air_yard_share": 0.0,
+        "redzone_targets_per_game": 0.0
+      },
+      "normalized_component_weights": {
+        "target_share": 1.0,
+        "yprr": 0.0,
+        "air_yard_share": 0.0,
+        "redzone_targets_per_game": 0.0
+      },
+      "mae": 0.5058136906715663,
+      "max_error": 2.027794737961707,
+      "loo_mae": 0.5377625199880071,
+      "spearman": 0.4105288429061648,
+      "predictions": [
+        8.9525557026266,
+        8.653183128363557,
+        7.426993414172589,
+        8.268246158508665,
+        7.947982560194888,
+        8.155916582477207,
+        8.108970413599922,
+        5.692205262038293,
+        7.814879203643957,
+        8.373733346863128,
+        8.433915774627302,
+        6.691596212501327
+      ]
+    },
+    {
+      "transform": "saturation_capped",
+      "features": [
+        "yprr"
+      ],
+      "intercept": 0.0,
+      "coefficients": {
+        "target_share": 0.0,
+        "yprr": 2.2255946440492695,
+        "air_yard_share": 0.0,
+        "redzone_targets_per_game": 0.0
+      },
+      "normalized_component_weights": {
+        "target_share": 0.0,
+        "yprr": 1.0,
+        "air_yard_share": 0.0,
+        "redzone_targets_per_game": 0.0
+      },
+      "mae": 0.5442274471926155,
+      "max_error": 1.715216581104814,
+      "loo_mae": 0.5823921412082778,
+      "spearman": 0.8084371008826343,
+      "predictions": [
+        8.919968239099653,
+        8.541445720087275,
+        8.919968239099653,
+        7.810623613116311,
+        7.894256014126658,
+        8.907882554716995,
+        7.295145180712295,
+        7.985931210691105,
+        7.469845418465663,
+        6.427564521270338,
+        5.984783418895186,
+        7.369356990622293
+      ]
+    },
+    {
+      "transform": "saturation_log",
+      "features": [
+        "yprr"
+      ],
+      "intercept": 0.0,
+      "coefficients": {
+        "target_share": 0.0,
+        "yprr": 2.849487186516154,
+        "air_yard_share": 0.0,
+        "redzone_targets_per_game": 0.0
+      },
+      "normalized_component_weights": {
+        "target_share": 0.0,
+        "yprr": 1.0,
+        "air_yard_share": 0.0,
+        "redzone_targets_per_game": 0.0
+      },
+      "mae": 0.5424559164752664,
+      "max_error": 1.4566613830392035,
+      "loo_mae": 0.5858842576228473,
+      "spearman": 0.8000049246376544,
+      "predictions": [
+        8.684077538996942,
+        8.306816121424937,
+        9.322830182047634,
+        7.729382843243675,
+        7.79535457542048,
+        8.602613479304047,
+        7.320407294217597,
+        7.867619470036141,
+        7.459607197903926,
+        6.6149785866317465,
+        6.243338616960797,
+        7.379629358884523
+      ]
+    },
+    {
+      "transform": "saturation_linear",
+      "features": [
+        "yprr",
+        "redzone_targets_per_game"
+      ],
+      "intercept": 0.0,
+      "coefficients": {
+        "target_share": 0.0,
+        "yprr": 1.4449779589923288,
+        "air_yard_share": 0.0,
+        "redzone_targets_per_game": 0.9711255410460732
+      },
+      "normalized_component_weights": {
+        "target_share": 0.0,
+        "yprr": 0.5980612829580199,
+        "air_yard_share": 0.0,
+        "redzone_targets_per_game": 0.4019387170419802
+      },
+      "mae": 0.5666958785050881,
+      "max_error": 1.2133240741603863,
+      "loo_mae": 0.672184374455688,
+      "spearman": 0.4701783329010776,
+      "predictions": [
+        9.005833740929038,
+        8.373892276539046,
+        9.330520074821566,
+        7.5113211337226335,
+        6.906675925839613,
+        7.6253928250233605,
+        7.367068743970975,
+        6.9947922340552395,
+        7.035813314879103,
+        8.059089397048854,
+        7.33074348716523,
+        7.800607270456801
+      ]
+    },
+    {
+      "transform": "saturation_linear",
+      "features": [
+        "yprr"
+      ],
+      "intercept": 0.0,
+      "coefficients": {
+        "target_share": 0.0,
+        "yprr": 1.9474894400253409,
+        "air_yard_share": 0.0,
+        "redzone_targets_per_game": 0.0
+      },
+      "normalized_component_weights": {
+        "target_share": 0.0,
+        "yprr": 1.0,
+        "air_yard_share": 0.0,
+        "redzone_targets_per_game": 0.0
+      },
+      "mae": 0.8741156949036899,
+      "max_error": 2.200166619217806,
+      "loo_mae": 0.934600849967835,
+      "spearman": 0.8000049246376544,
+      "predictions": [
+        8.674135368137211,
+        8.144773618102331,
+        9.532259699920179,
+        7.353008928496504,
+        7.441701254661647,
+        8.559726393333499,
+        6.815054915439798,
+        7.5394308224344355,
+        6.995802841381289,
+        5.937204729506317,
+        5.499833380782194,
+        6.891651895467671
+      ]
+    },
+    {
+      "transform": "saturation_log",
+      "features": [
+        "redzone_targets_per_game"
+      ],
+      "intercept": 0.0,
+      "coefficients": {
+        "target_share": 0.0,
+        "yprr": 0.0,
+        "air_yard_share": 0.0,
+        "redzone_targets_per_game": 3.5068706591945014
+      },
+      "normalized_component_weights": {
+        "target_share": 0.0,
+        "yprr": 0.0,
+        "air_yard_share": 0.0,
+        "redzone_targets_per_game": 1.0
+      },
+      "mae": 1.9680211172169393,
+      "max_error": 8.12,
+      "loo_mae": 2.0464909766362953,
+      "spearman": -0.11423567729863311,
+      "predictions": [
+        8.806434282685249,
+        8.004160726905013,
+        7.2460896395684715,
+        7.05202478627675,
+        4.175934270439381,
+        0.0,
+        7.587481067080723,
+        4.175934270439381,
+        6.353669665894621,
+        9.120315903329288,
+        8.594933116086867,
+        8.332733096476703
+      ]
+    },
+    {
+      "transform": "saturation_linear",
+      "features": [
+        "redzone_targets_per_game"
+      ],
+      "intercept": 0.0,
+      "coefficients": {
+        "target_share": 0.0,
+        "yprr": 0.0,
+        "air_yard_share": 0.0,
+        "redzone_targets_per_game": 2.57805574458595
+      },
+      "normalized_component_weights": {
+        "target_share": 0.0,
+        "yprr": 0.0,
+        "air_yard_share": 0.0,
+        "redzone_targets_per_game": 1.0
+      },
+      "mae": 2.2472492176234042,
+      "max_error": 8.12,
+      "loo_mae": 2.3337269330502806,
+      "spearman": -0.11423567729863311,
+      "predictions": [
+        8.833269601245501,
+        7.777307626344029,
+        6.820313713617308,
+        6.584256451730459,
+        3.4928007848188276,
+        0.0,
+        7.244614884430255,
+        3.4928007848188276,
+        5.765635837394552,
+        9.24078528648967,
+        8.55364979305567,
+        8.207016013844267
+      ]
+    },
+    {
+      "transform": "saturation_capped",
+      "features": [
+        "redzone_targets_per_game"
+      ],
+      "intercept": 0.0,
+      "coefficients": {
+        "target_share": 0.0,
+        "yprr": 0.0,
+        "air_yard_share": 0.0,
+        "redzone_targets_per_game": 2.57805574458595
+      },
+      "normalized_component_weights": {
+        "target_share": 0.0,
+        "yprr": 0.0,
+        "air_yard_share": 0.0,
+        "redzone_targets_per_game": 1.0
+      },
+      "mae": 2.2472492176234042,
+      "max_error": 8.12,
+      "loo_mae": 2.3337269330502806,
+      "spearman": -0.11423567729863311,
+      "predictions": [
+        8.833269601245501,
+        7.777307626344029,
+        6.820313713617308,
+        6.584256451730459,
+        3.4928007848188276,
+        0.0,
+        7.244614884430255,
+        3.4928007848188276,
+        5.765635837394552,
+        9.24078528648967,
+        8.55364979305567,
+        8.207016013844267
+      ]
+    }
+  ],
+  "limitations": [
+    "12 visible top-ranked players only, including one TE; cannot establish full-universe ranking or position-specific weights.",
+    "Leave-one-out measures interpolation within this selected report, not independent validation; candidate selection also uses these rows.",
+    "Displayed input rounding limits identifiability; several weight combinations can fit similarly.",
+    "Weights depend on the declared metric normalization; they are not recovered proprietary weights.",
+    "Red-zone targets missing in JJ are never filled with zero. Reference metrics used directly to isolate formula fit from source differences.",
+    "0\u201310 clipping and nonnegative intercept/coefficients are approximation assumptions."
+  ]
+}
